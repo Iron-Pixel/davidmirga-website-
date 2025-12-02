@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+---
+
+<BaseLayout pageTitle="Über mich" description="Vom Maurer zum KI-Experten. David Mirga's Weg zur digitalen Praxis.">
+  
+  <section class="py-20 bg-brand-light">
+    <div class="container text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-brand-navy mb-6">
+        Nicht der typische <span class="text-brand-red">Tech-Nerd.</span>
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        Ich komme nicht aus dem Silicon Valley, sondern von der Baustelle. 
+        Genau deshalb verstehe ich, dass KI am Ende des Tages nur eines tun muss: 
+        <br><strong>Funktionieren. Ohne Ausreden.</strong>
+      </p>
+    </div>
+
+    <div class="container">
+        <Timeline />
+    </div>
+  </section>
+
+</BaseLayout>

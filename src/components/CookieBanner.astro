@@ -1,0 +1,77 @@
+
+---
+// Cookie Banner für DSGVO-Konformität (Österreich)
+---
+
+<div 
+  id="cookie-banner" 
+  class="fixed bottom-0 left-0 right-0 bg-brand-navy text-white p-6 shadow-2xl z-50 transform translate-y-full transition-transform duration-500"
+  style="display: none;"
+>
+  <div class="container max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex-1">
+      <h3 class="font-bold text-lg mb-2">🍪 Diese Website verwendet Cookies</h3>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        Wir verwenden technisch notwendige Cookies, um die Funktionalität dieser Website zu gewährleisten. 
+        Durch die weitere Nutzung stimmen Sie der Verwendung von Cookies gemäß unserer 
+        <a href="/datenschutz" class="underline hover:text-brand-red">Datenschutzerklärung</a> zu.
+      </p>
+    </div>
+    <div class="flex gap-4">
+      <button 
+        id="cookie-accept"
+        class="px-6 py-3 bg-brand-red text-white font-bold rounded hover:bg-red-700 transition-colors whitespace-nowrap"
+      >
+        Alle akzeptieren
+      </button>
+      <button 
+        id="cookie-decline"
+        class="px-6 py-3 bg-white/10 text-white font-bold rounded hover:bg-white/20 transition-colors whitespace-nowrap"
+      >
+        Nur notwendige
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Banner Logik
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  // Prüfe ob User bereits entschieden hat
+  const cookieConsent = localStorage.getItem('cookieConsent');
+
+  if (!cookieConsent) {
+    // Banner anzeigen nach 1 Sekunde
+    setTimeout(() => {
+      if (banner) {
+        banner.style.display = 'block';
+        banner.classList.remove('translate-y-full');
+      }
+    }, 1000);
+  }
+
+  // Accept Handler
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideBanner();
+    // Hier kannst du später Analytics/Tracking aktivieren
+  });
+
+  // Decline Handler
+  declineBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    hideBanner();
+  });
+
+  function hideBanner() {
+    if (banner) {
+      banner.classList.add('translate-y-full');
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 500);
+    }
+  }
+</script>
