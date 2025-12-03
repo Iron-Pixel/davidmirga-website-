@@ -1,0 +1,78 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SocialCTA from '../components/SocialCTA.astro';
+
+const { frontmatter } = Astro.props;
+
+const content = await Astro.slots.render('default');
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+const categoryLabels: Record<string, string> = {
+  'ki-sicherheit': 'KI-Sicherheit',
+  'ki-praxis': 'KI-Praxis',
+  'ki-strategie': 'KI-Strategie',
+  'ki-wissen': 'KI-Wissen'
+};
+---
+
+<BaseLayout pageTitle={frontmatter.title} description={frontmatter.description}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    
+    <span class="text-sm font-medium text-[#DC2626] uppercase tracking-wide">
+      {categoryLabels[frontmatter.category]}
+    </span>
+    
+    <h1 class="text-3xl md:text-4xl font-bold text-[#0B1F3F] mt-2 mb-4 font-['Manrope']">
+      {frontmatter.title}
+    </h1>
+    
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-8">
+      <span>{new Date(frontmatter.date).toLocaleDateString('de-AT')}</span>
+      <span>·</span>
+      <span>{frontmatter.author}</span>
+      <span>·</span>
+      <span>{readingTime} Min. Lesezeit</span>
+    </div>
+    
+    {frontmatter.image && (
+      <img 
+        src={frontmatter.image} 
+        alt={frontmatter.title}
+        class="w-full rounded-lg mb-8"
+        loading="lazy"
+      />
+    )}
+    
+    {frontmatter.video && (
+      <div class="aspect-video mb-8">
+        <iframe 
+          src={frontmatter.video}
+          class="w-full h-full rounded-lg"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    )}
+    
+    {frontmatter.deepDive && (
+      <div class="bg-[#F4F7F9] border-l-4 border-[#DC2626] p-4 mb-8">
+        <p class="text-[#0B1F3F]">
+          Zu diesem Thema habe ich einen Deep Dive an meine Newsletter-Abonnenten verschickt. 
+          <a href="/newsletter" class="text-[#DC2626] underline">Du willst auch dabei sein?</a>
+        </p>
+      </div>
+    )}
+    
+    <div class="prose prose-lg max-w-none text-[#0B1F3F]">
+      <slot />
+    </div>
+    
+    <SocialCTA 
+      linkedin={frontmatter.linkedin}
+      instagram={frontmatter.instagram}
+      x={frontmatter.x}
+    />
+    
+  </article>
+</BaseLayout>
