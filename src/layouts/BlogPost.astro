@@ -55,24 +55,48 @@ const categoryLabels: Record<string, string> = {
       </div>
     )}
     
-    {frontmatter.deepDive && (
-      <div class="bg-[#F4F7F9] border-l-4 border-[#DC2626] p-4 mb-8">
-        <p class="text-[#0B1F3F]">
-          Zu diesem Thema habe ich einen Deep Dive an meine Newsletter-Abonnenten verschickt. 
-          <a href="/newsletter" class="text-[#DC2626] underline">Du willst auch dabei sein?</a>
-        </p>
-      </div>
-    )}
-    
+    <!-- ARTIKEL CONTENT -->
     <div class="prose prose-lg max-w-none text-[#0B1F3F]">
       <slot />
     </div>
     
-    <SocialCTA 
-      linkedin={frontmatter.linkedin}
-      instagram={frontmatter.instagram}
-      x={frontmatter.x}
-    />
+    <!-- NEWSLETTER CTA (kompakt, zuerst) -->
+    <div class="mt-12 pt-8 border-t-2 border-gray-200">
+      <div class="bg-gradient-to-r from-[#0B1F3F] to-[#0B1F3F]/90 rounded-lg p-5 text-white">
+        <h3 class="text-lg font-bold mb-2 font-['Manrope']">Mein Tipp:</h3>
+        <p class="text-sm mb-3">
+          Abonniere den <strong>KI im Puls</strong> Newsletter. Du bekommst professionelle Workflows, 
+          praxisnahe Tools und klare Hintergrundinformationen – vieles abseits des Hypes.
+        </p>
+        <a 
+          href="/abonnieren" 
+          class="inline-block px-5 py-2 bg-[#DC2626] text-white text-sm font-bold rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Hier anmelden
+        </a>
+      </div>
+    </div>
+    
+    <!-- ÜBER MICH CTA (wenn deepDive aktiv) -->
+    {frontmatter.deepDive && (
+      <div class="mt-6">
+        <div class="bg-[#F4F7F9] rounded-lg p-5 border-l-4 border-[#DC2626]">
+          <p class="text-[#0B1F3F] text-sm">
+            <strong>Falls du mehr zu mir und meinem Weg erfahren willst</strong> – und warum gerade ich diesen Artikel schreibe – 
+            <a href="/ueber-mich" class="text-[#DC2626] font-semibold hover:underline">lies hier meine Geschichte (Über mich)</a>
+          </p>
+        </div>
+      </div>
+    )}
+    
+    <!-- SOCIAL MEDIA CTAs -->
+    <div class="mt-12">
+      <SocialCTA 
+        linkedin={frontmatter.linkedin}
+        instagram={frontmatter.instagram}
+        x={frontmatter.x}
+      />
+    </div>
     
   </article>
 </BaseLayout>

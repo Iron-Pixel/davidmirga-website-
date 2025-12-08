@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  pageTitle="Der ultimative KI-Kompass – Gratis Download"
+  description="598 Seiten KI-Wissen – extra verständlich für Anfänger aller Generationen. Regulär 27,69€ auf Amazon, jetzt als PDF-Geschenk."
+>
+  <!-- HERO + FORM SECTION - Vertikal zentriert -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-brand-navy to-brand-navy/95">
+    <div class="container max-w-3xl px-4 py-8 mx-auto">
+      
+      <!-- Weiße Box -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8">
+        <h1 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy mb-2">
+          Der ultimative KI-Kompass
+        </h1>
+        <p class="text-sm md:text-base text-slate-600 mb-3">
+          Extra verständlich für Anfänger aller Generationen
+        </p>
+        <div class="inline-block bg-brand-light px-3 py-1.5 rounded-lg mb-6">
+          <p class="text-xs md:text-sm text-slate-700">
+            598 Seiten | <span class="line-through">27,69€</span> | <span class="font-bold text-brand-red">Heute kostenlos</span>
+          </p>
+        </div>
+
+        <h2 class="text-lg md:text-xl font-bold text-brand-navy mb-4">
+          E-Mail-Adresse eingeben, um dein Geschenk zu downloaden
+        </h2>
+
+        <!-- BREVO FORMULAR -->
+        <div class="brevo-form-wrapper">
+          <iframe width="540" height="540" src="https://a57da0ee.sibforms.com/serve/MUIFAI6-ODovhBjF-czZulGHB5dHrAZaTmdi94uy6Lvp968_GYSZuh0hU8zpikwoTwFukiNBdP60Jeqaxs0hRrKZ_Kt0WPFWYui8x5gcUn8PqUnTqNYbzA3uefKpBN5BpSLQYJa_1rhi-TFWB54Ic8i4Zm_2bF7Xyyu0C9BpTEu7vvmxH0230boz3Li9Shxhll9YPqf531awDJiV0A==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+        </div>
+
+        <!-- DSGVO -->
+        <p class="text-xs text-slate-500 text-center mt-4">
+          Deine Daten sind sicher. Kein Spam. Jederzeit abmeldbar.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRINT OPTION - Zentrierte Box -->
+  <section class="py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center">
+    <div class="container max-w-3xl px-4 mx-auto">
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 text-center">
+        <h3 class="text-lg md:text-xl font-heading font-bold text-brand-navy mb-2">
+          Du willst ein echtes Buch in der Hand halten?
+        </h3>
+        <p class="text-xs md:text-sm text-slate-600 mb-4">
+          Optional kannst du es auch auf Amazon kaufen.
+        </p>
+        <a 
+          href="https://amzn.eu/d/2xBuoOO" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-5 py-2.5 md:px-6 md:py-3 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-colors"
+        >
+          Jetzt auf Amazon bestellen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SECTION - Zentrierte Box -->
+  <section class="py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center">
+    <div class="container max-w-3xl px-4 mx-auto">
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8">
+        <div class="grid grid-cols-3 gap-4 md:gap-6 text-center">
+          
+          <div>
+            <div class="text-2xl md:text-3xl mb-1 md:mb-2">⭐</div>
+            <h4 class="font-bold text-brand-navy text-sm md:text-base mb-0.5 md:mb-1">5,0 Sterne</h4>
+            <p class="text-xs text-slate-600">Auf Amazon</p>
+          </div>
+
+          <div>
+            <div class="text-2xl md:text-3xl mb-1 md:mb-2">📚</div>
+            <h4 class="font-bold text-brand-navy text-sm md:text-base mb-0.5 md:mb-1">598 Seiten</h4>
+            <p class="text-xs text-slate-600">Umfassend</p>
+          </div>
+
+          <div>
+            <div class="text-2xl md:text-3xl mb-1 md:mb-2">🎯</div>
+            <h4 class="font-bold text-brand-navy text-sm md:text-base mb-0.5 md:mb-1">Praxisnah</h4>
+            <p class="text-xs text-slate-600">Anwendbar</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .brevo-form-wrapper {
+    min-height: 300px;
+  }
+</style>

@@ -1,24 +1,249 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Timeline from '../components/Timeline.astro';
 ---
 
 <BaseLayout pageTitle="Über mich" description="Vom Maurer zum KI-Experten. David Mirga's Weg zur digitalen Praxis.">
   
-  <section class="py-20 bg-brand-light">
-    <div class="container text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-4xl md:text-5xl font-heading font-bold text-brand-navy mb-6">
-        Nicht der typische <span class="text-brand-red">Tech-Nerd.</span>
-      </h1>
-      <p class="text-xl text-slate-600 leading-relaxed">
-        Ich komme nicht aus dem Silicon Valley, sondern von der Baustelle. 
-        Genau deshalb verstehe ich, dass KI am Ende des Tages nur eines tun muss: 
-        <br><strong>Funktionieren. Ohne Ausreden.</strong>
-      </p>
-    </div>
+  <!-- HERO + HELDENREISE - Box Design -->
+  <section class="min-h-screen py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center items-start">
+    <div class="container max-w-3xl px-4 py-8 mx-auto">
+      
+      <!-- Hero Box -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-4">
+          Nicht der typische <span class="text-brand-red">Tech-Nerd.</span>
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed mb-4">
+          Ich komme nicht aus dem Silicon Valley, sondern von der Baustelle. 
+          Genau deshalb verstehe ich, dass KI am Ende des Tages nur eines tun muss: 
+          <strong>Funktionieren. Ohne Ausreden.</strong>
+        </p>
+        <p class="text-base text-slate-600 leading-relaxed italic">
+          Manchmal muss man ganz unten ankommen, um zu verstehen, wohin man eigentlich will.
+        </p>
+      </div>
 
-    <div class="container">
-        <Timeline />
+      <!-- Intro Box -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <p class="text-base text-slate-800 text-lg leading-relaxed mb-4">
+          Ich bin David Mirga. Diplomierter KI-Manager aus Wien, Autor von vier Fachbüchern, und jemand, der weiß, wie sich echte Arbeit anfühlt – weil ich sie jahrzehntelang gemacht habe.
+        </p>
+        <p class="text-base text-slate-800 text-lg leading-relaxed mb-4">
+          Wenn Sie jemanden suchen, der Ihnen in akademischen Schachtelsätzen erklärt, wie die Welt funktionieren sollte, sind Sie hier falsch. Wenn Sie aber jemanden suchen, der weiß, wie man Ärmel hochkrempelt, Probleme anpackt und echte Ergebnisse liefert, dann sollten wir reden.
+        </p>
+        <p class="text-base text-slate-800 text-lg leading-relaxed font-semibold">
+          Aber der Reihe nach.
+        </p>
+      </div>
+
+      <!-- Phase 1: Das Fundament -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl md:text-5xl flex-shrink-0">🧱</div>
+          <div>
+            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
+              2008 - 2012
+            </span>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
+              Phase 1: Das Fundament
+            </h2>
+            <h3 class="text-lg font-bold text-brand-red mb-3">Wo ich herkomme</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+          <p>
+            Ich wurde in der Tschechoslowakei geboren. Mit zwei Monaten kam ich mit meiner Mutter nach Österreich. Armut und häusliche Gewalt sind mir nicht fremd.
+          </p>
+          <p>
+            Aber ich war schon als Kind anders. In der Grundschule verkaufte ich Äpfel in der Pause, um mir mein Schulessen zu finanzieren. Mit 16 eröffnete ich meinen ersten Imbissstand. Mein Geschäftssinn war schon da – nur fehlte mir jemand, der ihn förderte.
+          </p>
+          <p>
+            Nach der Schule lernte ich Maurer. Leider hatte ich nie das große Talent für diesen Beruf – aber Bauleitung lag mir dafür schon eher. Die Ausbildung hat mir trotzdem mehr beigebracht als jedes Seminar: Dass man ein Fundament setzt, bevor man hochzieht. Dass Qualität Zeit braucht. Und dass man nicht aufhört, nur weil es anstrengend wird.
+          </p>
+          <p>
+            Später wechselte ich in die Sicherheitsbranche – Objektschutz und Personenschutz. Parallel dazu entdeckte ich meine wahre Leidenschaft: Technologie. Schon 2005 – Jahre bevor Social Media zum Mainstream wurde – promotete ich Künstler auf Plattformen wie MySpace und später YouTube. Ich half Musikern, Millionen von Klicks zu erzielen, als die meisten noch nicht mal wussten, was ein "virales Video" ist. Ab 2014 machte ich auch Social Media Marketing für Gastronomen in Wien. Diese frühe Faszination für digitale Möglichkeiten hat mich nie losgelassen – so wie heute KI.
+          </p>
+          <p class="font-semibold">
+            Was ich aus dieser Zeit mitgenommen habe: Ein Fundament, das nicht wackelt. Ich weiß, wie es ist, um 5 Uhr morgens auf der Baustelle zu stehen. Ich weiß, wie es ist, Technologie zu nutzen, wenn andere noch skeptisch sind. Ich bin kein Theoretiker aus dem Elfenbeinturm.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase 2: Der Aufstieg -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl md:text-5xl flex-shrink-0">💼</div>
+          <div>
+            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
+              2013 - 2020
+            </span>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
+              Phase 2: Der Aufstieg
+            </h2>
+            <h3 class="text-lg font-bold text-brand-red mb-3">Wie ich Unternehmer wurde</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+          <p>
+            2008 gründete ich mit meinem Bruder eine Baufirma. Alle Aufträge holte ich über das Internet – damals war das revolutionär. Ich verstand früh: Wer digital sichtbar ist, gewinnt.
+          </p>
+          <p>
+            Dann kam der Vertrieb. Ab 2011 war ich selbstständiger Unternehmer für Vodafone – Hard Sales, Kaltakquise, Außendienst. Mit einem kleinen Team habe ich gelernt, was Verkaufen wirklich bedeutet: Ablehnung aushalten. Einwände entkräften. Und dranbleiben, wenn andere aufgeben.
+          </p>
+          <p>
+            Dann kam ein Wendepunkt, mit dem ich nicht gerechnet hatte. Mein bester Freund Ergün bat mich, ihm in seinem Restaurant als Barkeeper auszuhelfen. Ich hatte null Ahnung. Aber er sah etwas in mir, das ich selbst noch nicht sah. Ich fing an, arbeitete mich hoch, wurde Barchef. Zum ersten Mal öffnete ich mich für eine Arbeit, die mir wirklich Freude machte.
+          </p>
+          <p class="italic">
+            Drei Jahre später starb Ergün an einem Hirntumor. Er hat mir gezeigt, dass manchmal jemand anderes erkennen muss, was in dir steckt. Dafür bin ich ihm bis heute dankbar.
+          </p>
+          <p>
+            Als Corona kam und das Lokal schloss, war für mich klar: Jetzt ist der Moment. Ich hatte schon vorher angefangen, mich im Bereich Online-Marketing weiterzubilden. Jetzt ging ich all-in.
+          </p>
+          <p>
+            2020 gründete ich mit einem Partner die Agentur "Addvengers" – Social Recruiting und Performance Marketing. Anfangs für Autohäuser, Handwerksbetriebe und Gastronomen, doch wir spezialisierten uns schnell auf die Automobilbranche. Innerhalb von zwei Jahren bauten wir das Unternehmen auf 5-stellige Monatsumsätze aus. Jeden Euro Gewinn steckte ich in Bildung und Wachstum.
+          </p>
+          <p>
+            Vielleicht kennen Sie das: Sie suchen seit Monaten einen Mitarbeiter, schalten Anzeigen, aber es meldet sich niemand Brauchbares. Genau da haben wir angesetzt – und geliefert. Wir haben für nahezu alle namhaften Automarken-Händler erfolgreich Mitarbeiter rekrutiert. <strong>91% Einstellungsquote. In unter 28 Tagen.</strong> Zwei Jahre lang konnte ich fast jede Mechatroniker-Stelle besetzen, die wir übernahmen.
+          </p>
+          <p>
+            Aber während wir Erfolge feierten, sah ich bereits die nächste Welle kommen. Der Recruiting-Markt war uns längst zu einem "Red Ocean" geworden – ein Haifischbecken, in dem immer mehr Agenturen um dieselben Kunden kämpften. Ich beschäftigte mich schon 2021 mit KI-Themen, vor allem Richtung Content und Creation, und erkannte: Hier liegt die Zukunft. Mir war klar – unsere Kunden werden neben Recruiting auch Hilfe mit KI-Themen brauchen. Mein Plan war, die Agentur genau dorthin weiterzuentwickeln. Neues Territorium, echte Probleme lösen. Ein digitaler Pionier, wie schon damals mit Social Media.
+          </p>
+          <p class="font-semibold">
+            Ich war bereit für den nächsten Schritt. Dann kam der Bruch.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase 3: Der Bruch -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl md:text-5xl flex-shrink-0">⚡</div>
+          <div>
+            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
+              2023
+            </span>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
+              Phase 3: Der Bruch
+            </h2>
+            <h3 class="text-lg font-bold text-brand-red mb-3">Was mich zu Boden warf – und warum ich wieder aufgestanden bin</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+          <p>
+            2023 wurde ich aus dem Unternehmen gedrängt, das ich selbst mitaufgebaut habe. Von einem Tag auf den anderen stand ich mit fast nichts da. Jahre der Arbeit, des Verzichts, der investierten Nächte – weg. Zeitgleich kam der körperliche Knockout: Eine schwere Verletzung. Offener Fuß. 18 Monate Schmerzen, die mich an manchen Tagen nicht aufstehen ließen.
+          </p>
+          <p>
+            Ich könnte jetzt jammern. Könnte Schuldzuweisungen machen. Könnte mich als Opfer darstellen.
+          </p>
+          <p class="font-semibold">
+            Aber das ist nicht mein Stil.
+          </p>
+          <p>
+            Die Wahrheit ist: Diese Zeit hat mir die Fesseln gelöst. Sie hat mir gezeigt, dass ich nie wieder von einem Partner abhängig sein will. Dass ich mein nächstes Kapitel alleine schreiben werde. Und dass die Technologie, die ich schon 2021 kommen sah, jetzt mein Rettungsanker werden würde.
+          </p>
+          <p class="font-semibold">
+            Ich wandte mich vollständig der KI zu.
+          </p>
+          <p>
+            Nicht als Hobby. Nicht als Spielerei. Sondern als Neustart.
+          </p>
+          <p>
+            In den 18 Monaten meiner Zwangspause habe ich mehr gelernt als in den Jahren davor zusammen: Über 20 internationale KI-Zertifizierungen. Tägliches Testen aktueller Tools. Das Studium globaler KI-Strategien von CEOs und führenden Unternehmen weltweit. Und ich habe geschrieben – vier Bücher, darunter das erste deutsche KI-Lexikon mit über 5.000 Begriffen.
+          </p>
+          <p class="font-semibold text-brand-red">
+            Das war mein Rocky-Moment. Nicht das Hinfallen definiert dich. Sondern das Aufstehen.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase 4: Die Zukunft -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl md:text-5xl flex-shrink-0">🤖</div>
+          <div>
+            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
+              Heute
+            </span>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
+              Phase 4: Die Zukunft
+            </h2>
+            <h3 class="text-lg font-bold text-brand-red mb-3">Was sich für Sie ändert</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+          <p class="font-semibold">
+            Heute stehe ich wieder auf zwei Beinen.
+          </p>
+          
+          <div class="bg-brand-light p-4 rounded-lg">
+            <h4 class="font-bold text-brand-navy mb-2">KI-Sicherheitsexperte:</h4>
+            <p>
+              Im März 2026 erscheint mein Praxisleitfaden "KI, Datenschutz & Compliance". Parallel dazu starte ich mit Kursen und Beratung. Während andere mit Horrorgeschichten über Millionenstrafen Angst machen, bekommen Sie bei mir Klarheit und Sicherheit. Sie lernen, wie Sie KI rechtssicher einsetzen – entspannt und ohne schlaflose Nächte.
+            </p>
+          </div>
+
+          <div class="bg-brand-light p-4 rounded-lg">
+            <h4 class="font-bold text-brand-navy mb-2">KI-Trainer & Berater:</h4>
+            <p>
+              Ich weiß, dass viele Mitarbeiter Angst haben, von KI ersetzt zu werden. Diese Angst ist real – und sie blockiert oft den ganzen Prozess. Genau deshalb mache ich das: Ich nehme Ihrem Team die Angst und zeige, wie KI sie stärker macht, nicht überflüssig. Eine gut geschulte Belegschaft, die KI akzeptiert statt fürchtet – das ist die halbe Miete.
+            </p>
+          </div>
+
+          <p>
+            Seit über einem Jahr teile ich auf LinkedIn praxisnahe Einblicke zu KI-Workflows und tieferen Themen – meist abseits des Hypes. Nicht um laut zu sein, sondern um zu zeigen, was wirklich funktioniert.
+          </p>
+          
+          <p class="font-semibold text-brand-red text-lg">
+            Meine Überzeugung: KI ersetzt keine Mitarbeiter. Sie macht sie leistungsfähiger. Der Mensch mit KI – das ist die Zukunft.
+          </p>
+        </div>
+      </div>
+
+      <!-- Warum ich der Richtige bin -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy mb-4">
+          Warum ich der Richtige für Sie bin
+        </h2>
+        
+        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+          <p>
+            Ich bin kein 20-jähriger Tech-Nerd, der Ihnen im Hoodie erklärt, wie die Zukunft funktioniert. Ich bin jemand, der weiß, wie es sich anfühlt, morgens um fünf auf der Baustelle zu stehen. Der weiß, was es heißt, ein Team durch schwierige Zeiten zu führen. Der verstanden hat, dass Technologie nur dann etwas wert ist, wenn sie echte Probleme löst.
+          </p>
+          <p>
+            Ich spreche Ihre Sprache. Tacheles, ohne Bullshit-Bingo. Von Unternehmer zu Unternehmer. Und ich weiß, was auf dem Spiel steht – nicht nur für Ihre Effizienz, sondern auch für Ihre Rechtssicherheit.
+          </p>
+          <p class="font-semibold">
+            Ich habe bewiesen – mir selbst und anderen – dass man auch nach dem härtesten Rückschlag wieder aufstehen kann. Stärker als vorher.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="bg-gradient-to-r from-brand-navy to-brand-navy/90 rounded-xl p-6 md:p-8 text-white">
+        <h2 class="text-2xl font-heading font-bold mb-4">
+          Bereit für den nächsten Schritt?
+        </h2>
+        <p class="mb-4 leading-relaxed">
+          Wenn Sie wissen wollen, wie KI Ihrem Unternehmen konkret helfen kann – sicher, rechtssicher und ohne Risiko – dann lassen Sie uns reden.
+        </p>
+        <p class="mb-6 italic text-white/90">
+          "Der Kern meines Schaffens ist es, den Menschen die Angst davor zu nehmen, von KI ersetzt zu werden."
+        </p>
+        <a 
+          href="/kontakt" 
+          class="inline-block px-6 py-3 bg-brand-red text-white font-bold rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Kostenloses Erstgespräch buchen
+        </a>
+        <p class="mt-4 text-sm text-white/80">
+          Keine Verkaufsshow. Nur ein ehrliches Gespräch darüber, wo Sie stehen und wohin Sie wollen.
+        </p>
+      </div>
+
     </div>
   </section>
 

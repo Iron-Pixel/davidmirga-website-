@@ -1,4 +1,6 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 const steps = [
   {
     year: "2008 - 2012",
@@ -31,39 +33,60 @@ const steps = [
 ];
 ---
 
-<div class="relative max-w-3xl mx-auto py-10">
-  <!-- Vertikale Linie -->
-  <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-brand-navy/20"></div>
-
-  <div class="space-y-12">
-    {steps.map((step, index) => (
-      <div class={`relative flex items-center justify-between md:justify-normal ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-        
-        <!-- Punkt auf der Linie -->
-        <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-brand-red border-4 border-white shadow transform -translate-x-1.5 md:-translate-x-2"></div>
-
-        <!-- Leere Hälfte für Desktop (damit es alterniert) -->
-        <div class="hidden md:block w-5/12"></div>
-
-        <!-- Content Box -->
-        <div class="pl-12 md:pl-0 md:w-5/12">
-          <div class={`p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-            <!-- Pfeil für Desktop -->
-            <div class={`hidden md:block absolute top-6 w-4 h-4 bg-white border-b border-l border-slate-100 transform rotate-45 ${index % 2 === 0 ? '-left-2' : '-right-2 border-r border-t border-b-0 border-l-0'}`}></div>
-            
-            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
-              {step.year}
-            </span>
-            <div class="text-3xl mb-2">{step.icon}</div>
-            <h3 class="text-xl font-heading font-bold text-brand-navy">{step.title}</h3>
-            <div class="text-sm font-bold text-brand-red mb-2">{step.role}</div>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              {step.desc}
-            </p>
-          </div>
-        </div>
-
+<BaseLayout pageTitle="Über mich" description="Vom Maurer zum KI-Experten. David Mirga's Weg zur digitalen Praxis.">
+  
+  <!-- HERO + STORY SECTION - Box Design -->
+  <section class="min-h-screen py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center items-start">
+    <div class="container max-w-3xl px-4 py-8 mx-auto">
+      
+      <!-- Hero Box -->
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-4">
+          Nicht der typische <span class="text-brand-red">Tech-Nerd.</span>
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Ich komme nicht aus dem Silicon Valley, sondern von der Baustelle. 
+          Genau deshalb verstehe ich, dass KI am Ende des Tages nur eines tun muss: 
+          <strong>Funktionieren. Ohne Ausreden.</strong>
+        </p>
       </div>
-    ))}
-  </div>
-</div>
+
+      <!-- Story Boxes -->
+      <div class="space-y-6">
+        {steps.map((step) => (
+          <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8">
+            
+            <div class="flex items-start gap-4">
+              <div class="text-4xl md:text-5xl flex-shrink-0">
+                {step.icon}
+              </div>
+              
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full">
+                    {step.year}
+                  </span>
+                </div>
+                
+                <h3 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-1">
+                  {step.title}
+                </h3>
+                
+                <div class="text-sm font-bold text-brand-red mb-3">
+                  {step.role}
+                </div>
+                
+                <p class="text-slate-600 leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
