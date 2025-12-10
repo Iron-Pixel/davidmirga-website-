@@ -1,15 +1,96 @@
 ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KI Kompass Vienna - Strategischer KI-Check | David Mirga</title>
-    <meta name="description" content="Ermittle deinen KI-Reifegrad für dein Unternehmen in Wien & Österreich. Prüfe deine Compliance-Fitness und identifiziere Potenziale." />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#0B1F3F] min-h-screen m-0 p-0 font-['Inter']">
-  </body>
-</html>
+<BaseLayout 
+  pageTitle="Danke für dein Vertrauen" 
+  description="Dein KI-Kompass Download startet automatisch."
+>
+  
+  <!-- AUTO-DOWNLOAD SCRIPT -->
+  <script is:inline>
+    // Auto-Download nach 2 Sekunden
+    setTimeout(() => {
+      window.location.href = 'https://drive.google.com/uc?export=download&id=1A_l1CboAom7Xzg-N2-dZXhcMsz9W9gVx';
+    }, 2000);
+  </script>
+
+  <!-- DANKE SECTION - Smartphone Look -->
+  <section class="min-h-screen py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center items-center">
+    <div class="container max-w-2xl px-4 mx-auto">
+      
+      <!-- Danke Box -->
+      <div class="bg-white rounded-xl shadow-2xl p-8 md:p-12 text-center">
+        
+        <!-- Success Icon -->
+        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-4">
+          Fast geschafft!
+        </h1>
+
+        <!-- Text -->
+        <p class="text-lg text-slate-800 mb-6 leading-relaxed">
+          Dein Download startet in wenigen Sekunden automatisch.<br>
+          Falls nicht, klicke einfach auf den Button unten.
+        </p>
+
+        <!-- Manual Download Button -->
+        <a 
+          href="https://drive.google.com/uc?export=download&id=1A_l1CboAom7Xzg-N2-dZXhcMsz9W9gVx"
+          class="inline-block px-8 py-4 bg-brand-red text-white font-bold rounded-lg hover:bg-red-700 transition-colors mb-8"
+          download
+        >
+          📥 Download jetzt starten
+        </a>
+
+        <!-- Divider -->
+        <div class="border-t border-slate-200 pt-8">
+          
+          <h2 class="text-xl font-heading font-bold text-brand-navy mb-4">
+            Nächster Schritt:
+          </h2>
+          
+          <p class="text-slate-800 mb-6 leading-relaxed">
+            Bestätige deine E-Mail-Adresse, um weitere exklusive Inhalte zu erhalten.
+          </p>
+
+          <!-- Fair Exchange Box -->
+          <div class="bg-brand-light rounded-lg p-6 mt-6">
+            <h3 class="text-lg font-heading font-bold text-brand-navy mb-3">
+              ⚡ Hat dir der KI-Kompass geholfen?
+            </h3>
+            <p class="text-slate-700 mb-4 leading-relaxed">
+              Unterstütze mich mit einer ehrlichen Amazon-Bewertung und folge mir auf LinkedIn.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a 
+                href="https://www.amazon.de/review/create-review?asin=DEIN_ASIN" 
+                target="_blank"
+                class="inline-block px-5 py-2 bg-brand-red text-white font-bold rounded-lg hover:bg-red-700 transition-colors text-center text-sm"
+              >
+                📝 Amazon-Bewertung
+              </a>
+              <a 
+                href="https://linkedin.com/in/davidmirga" 
+                target="_blank"
+                class="inline-block px-5 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors text-center text-sm"
+              >
+                🔗 LinkedIn folgen
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
