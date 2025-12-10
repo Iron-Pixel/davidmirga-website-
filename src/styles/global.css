@@ -1,17 +1,13 @@
-@import "tailwindcss";
+/* --- TEIL 1: Die Tailwind 3 Engine (Das repariert den Fehler) --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-@theme {
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Manrope', sans-serif;
-}
-
-/* Wir laden hier deine Konfiguration von vorhin */
-@config "../../tailwind.config.mjs";
-
+/* --- TEIL 2: Deine Premium-Optimierungen (Bleiben erhalten!) --- */
 html, body {
   height: 100%;
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif; /* Standard-Schrift */
 }
 
 /* INTER FONT OPTIMIERUNG - Premium Look & 40+ Lesbarkeit */
@@ -25,10 +21,14 @@ body {
   
   /* Text-Rendering für bessere Lesbarkeit */
   text-rendering: optimizeLegibility;
+
+  /* WICHTIG: Verhindert seitliches Wackeln am Handy */
+  overflow-x: hidden; 
 }
 
 /* Headings bleiben kraftvoll */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif; /* Deine Heading-Font */
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

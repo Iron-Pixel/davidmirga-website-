@@ -1,0 +1,20 @@
+---
+// src/pages/ki-check.astro
+// Importiert die React-App aus dem Komponenten-Ordner
+import App from '../components/KiKompassQuiz/App.tsx';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KI Kompass Vienna - Check</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="bg-brand-navy font-sans min-h-screen text-white">
+    <App client:only="react" />
+  </body>
+</html>
