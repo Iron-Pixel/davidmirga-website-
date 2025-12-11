@@ -76,7 +76,7 @@ const schema = JSON.stringify({
         </a>
       </div>
 
-      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-width: 900px; background-color: #fff;">
+      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-w-900px; background-color: #fff;">
         <p class="text-base text-slate-800 leading-relaxed font-medium">
           Diese Webseite wurde im Rahmen meiner Diplomarbeit erstellt. Ich bin derzeit Privatperson und nicht unternehmerisch tätig – es werden keine kommerziellen Dienstleistungen angeboten. Blog und Downloads stehen kostenfrei zur Verfügung, Kontaktaufnahme ist jederzeit möglich. Die beschriebenen Leistungen werden nach Unternehmensgründung verfügbar sein – voraussichtlich ab März/April 2026.
         </p>
@@ -184,8 +184,15 @@ const schema = JSON.stringify({
               </p>
             </div>
           </div>
-          <button onclick="toggleDetails('compass')" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
-            <span>Mehr erfahren</span> <span class="text-lg">↓</span>
+          <button 
+            onclick="toggleDetails(this)" 
+            data-target="compass-details" 
+            aria-controls="compass-details" 
+            aria-expanded="false"
+            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
+          >
+            <span>Mehr erfahren</span> 
+            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
           </button>
           
           <div id="compass-details" class="hidden mt-6 pt-6 border-t border-slate-200">
@@ -212,7 +219,7 @@ const schema = JSON.stringify({
                     <strong>Nach dem Check:</strong> Du weißt, wo KI Sinn macht, welche Prozesse Priorität haben, welche Risiken du absichern musst – und du hast einen klaren Fahrplan mit ersten Quick Wins.
                 </p>
              </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Kostenloses Erstgespräch</a>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Kostenloses Erstgespräch</a>
           </div>
         </div>
 
@@ -228,8 +235,15 @@ const schema = JSON.stringify({
               </p>
             </div>
           </div>
-          <button onclick="toggleDetails('training')" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
-            <span>Mehr erfahren</span> <span class="text-lg">↓</span>
+          <button 
+            onclick="toggleDetails(this)" 
+            data-target="training-details" 
+            aria-controls="training-details" 
+            aria-expanded="false"
+            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
+          >
+            <span>Mehr erfahren</span> 
+            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
           </button>
 
           <div id="training-details" class="hidden mt-6 pt-6 border-t border-slate-200">
@@ -260,7 +274,7 @@ const schema = JSON.stringify({
                     <strong>Nach der Schulung:</strong> Dein Team kann KI produktiv einsetzen, erkennt Halluzinationen und Bias, und weiß, wie man compliant arbeitet – und du erfüllst die AI Act-Pflicht.
                 </p>
              </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Schulung anfragen</a>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Schulung anfragen</a>
           </div>
         </div>
 
@@ -276,8 +290,15 @@ const schema = JSON.stringify({
               </p>
             </div>
           </div>
-          <button onclick="toggleDetails('weekend')" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
-            <span>Mehr erfahren</span> <span class="text-lg">↓</span>
+          <button 
+            onclick="toggleDetails(this)" 
+            data-target="weekend-details" 
+            aria-controls="weekend-details" 
+            aria-expanded="false"
+            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
+          >
+            <span>Mehr erfahren</span> 
+            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
           </button>
 
           <div id="weekend-details" class="hidden mt-6 pt-6 border-t border-slate-200">
@@ -304,7 +325,7 @@ const schema = JSON.stringify({
                     <strong>Nach dem Workshop:</strong> Du hast fertige Workflows für deine echten Aufgaben, sparst ab Montag Zeit und weißt genau, wie du KI in deinem Alltag einsetzt.
                 </p>
              </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Termin anfragen</a>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Termin anfragen</a>
           </div>
         </div>
 
@@ -320,8 +341,15 @@ const schema = JSON.stringify({
               </p>
             </div>
           </div>
-          <button onclick="toggleDetails('executive')" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
-            <span>Mehr erfahren</span> <span class="text-lg">↓</span>
+          <button 
+            onclick="toggleDetails(this)" 
+            data-target="executive-details" 
+            aria-controls="executive-details" 
+            aria-expanded="false"
+            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
+          >
+            <span>Mehr erfahren</span> 
+            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
           </button>
 
           <div id="executive-details" class="hidden mt-6 pt-6 border-t border-slate-200">
@@ -352,7 +380,7 @@ const schema = JSON.stringify({
                 <p class="text-xs font-semibold text-brand-red mb-1">Optional: Red Button</p>
                 <p class="text-xs text-slate-700">WhatsApp-Zugang – Antwort in max. 3 Stunden, meistens innerhalb von 15 Minuten.</p>
              </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Let's talk</a>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Let's talk</a>
           </div>
         </div>
 
@@ -398,7 +426,7 @@ const schema = JSON.stringify({
             <p class="text-slate-600 leading-relaxed mb-6">
               Du willst KI einführen – aber richtig. Nicht alles auf einmal, nicht blind dem Hype nach, sondern mit Plan und Struktur. Der KI-Fahrplan bringt alles zusammen: Analyse, Schulung, Umsetzung und Begleitung.
             </p>
-            <a href="https://tally.so/r/Y5PdoB" target="_blank" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-colors">
+            <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-colors">
               Klick hier für ein persönliches Gespräch
             </a>
           </div>
@@ -521,22 +549,44 @@ const schema = JSON.stringify({
   </section>
 
   <script is:inline>
-    function toggleDetails(id) {
-      const element = document.getElementById(id + '-details');
-      const allDetails = document.querySelectorAll('[id$="-details"]');
+    // Funktion zum Umschalten der Details und Setzen der korrekten A11Y-Attribute
+    function toggleDetails(button) {
+      // 1. Hole die ID des Details-Elements aus dem data-target Attribut
+      const id = button.getAttribute('data-target');
+      const element = document.getElementById(id);
       
       if (!element) return;
       
-      // Close all other details
-      allDetails.forEach(detail => {
-        if (detail.id !== id + '-details') {
-          detail.classList.add('hidden');
+      // 2. Status der aktuellen Expansion ermitteln
+      const isCurrentlyExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // 3. Alle anderen Details schließen und Buttons zurücksetzen
+      const allButtons = document.querySelectorAll('button[data-target]');
+      allButtons.forEach(btn => {
+        const targetId = btn.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement && targetElement.id !== id) {
+          targetElement.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          // Visuelle Anpassung des Pfeils (optional, aber gut für UX)
+          const arrow = btn.querySelector('span:last-child');
+          if (arrow) arrow.style.transform = 'rotate(0deg)';
         }
       });
       
-      // Toggle current
-      element.classList.toggle('hidden');
+      // 4. Aktuelles Element umschalten
+      if (!isCurrentlyExpanded) {
+        element.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+        const arrow = button.querySelector('span:last-child');
+        if (arrow) arrow.style.transform = 'rotate(90deg)';
+      } else {
+        element.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+        const arrow = button.querySelector('span:last-child');
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      }
     }
   </script>
-
 </BaseLayout>
