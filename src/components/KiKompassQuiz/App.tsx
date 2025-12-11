@@ -78,7 +78,22 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1F3F] text-slate-100 flex flex-col font-sans selection:bg-[#DC2626] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B1F3F] text-slate-100 flex flex-col font-sans selection:bg-[#DC2626] selection:text-white overflow-x-hidden relative">
+      
+      {/* --- NEU: EXIT BUTTON (Global für die App) --- */}
+      <nav className="absolute top-0 right-0 z-50 p-4 md:p-6">
+        <a 
+          href="/" 
+          className="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 group"
+          title="Quiz verlassen"
+        >
+          <span className="group-hover:-translate-x-1 transition-transform text-lg">&larr;</span>
+          <span className="hidden md:inline">Zurück zur Startseite</span>
+          <span className="md:hidden">Exit</span>
+        </a>
+      </nav>
+      {/* --------------------------------------------- */}
+
       {/* Background decoration (Subtle Navy Gradient) - Professional & Dark */}
       <div className="fixed inset-0 pointer-events-none">
          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4"></div>
