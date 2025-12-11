@@ -1,6 +1,6 @@
 ---
 // Cookie Banner für DSGVO-Konformität (Österreich)
-// FIXES: CLS-Problem behoben, Performance-Blockade behoben (TBT)
+// FINAL FIX: CLS und TBT-Probleme behoben
 ---
 
 <div 
@@ -36,13 +36,13 @@
 </div>
 
 <script>
-  // 1. NEUER FIX: Warten auf DOMContentLoaded, um TBT zu minimieren
+  // Der gesamte JavaScript-Code wird asynchron geladen, um TBT zu eliminieren.
+  // CLS-Problem wird behoben, da die Position des Banners schon im CSS definiert ist.
   document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('cookie-accept');
     const declineBtn = document.getElementById('cookie-decline');
 
-    // Prüfe ob User bereits entschieden hat
     const cookieConsent = localStorage.getItem('cookieConsent');
 
     function hideBanner() {
@@ -59,7 +59,7 @@
       // Banner anzeigen nach 1 Sekunde (Verzögerung für besseren FCP)
       setTimeout(() => {
         if (banner) {
-          // CLS FIX: Animation startet jetzt sanft, da display: block entfernt wurde.
+          // CLS FIX: Fährt von translate-y-full (unten) nach oben
           banner.classList.remove('translate-y-full');
         }
       }, 1000);
@@ -73,7 +73,6 @@
     acceptBtn?.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'accepted');
       hideBanner();
-      // Hier kannst du später Analytics/Tracking aktivieren
     });
 
     // Decline Handler
