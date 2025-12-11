@@ -6,15 +6,26 @@ import App from '../components/KiKompassQuiz/App.tsx';
 
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KI Kompass Vienna - Check</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  
-  <body class="bg-brand-navy font-sans min-h-screen text-white">
-    <App client:only="react" />
-  </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KI Kompass Vienna - Check</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="bg-brand-navy font-sans min-h-screen text-white">
+
+    <div class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 flex justify-end">
+        <a 
+            href="/" 
+            class="text-white/80 hover:text-white transition-colors text-sm font-medium underline-offset-4 hover:underline"
+        >
+            &larr; Zurück zur Startseite
+        </a>
+    </div>
+
+        <App client:only="react" />
+
+  </body>
 </html>
