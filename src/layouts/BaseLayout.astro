@@ -24,7 +24,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico">
+
   <meta name="theme-color" content="#0B1F3F" />
   
   <title>{pageTitle} | David Mirga</title>
@@ -68,7 +74,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
       
       <nav class="hidden md:flex gap-6 font-medium text-brand-navy items-center">
-        <a href="/leistungen" class="hover:text-brand-red transition-colors">Leistungen</a>
+        <a href="/#leistungen" class="hover:text-brand-red transition-colors">Leistungen</a>
         <a href="/ueber-mich" class="hover:text-brand-red transition-colors">Über mich</a>
         
         <a href="/ki-check" class="text-brand-red hover:text-red-700 font-bold transition-colors flex items-center gap-1">
@@ -94,7 +100,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     
     <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 absolute w-full shadow-lg">
       <div class="px-6 flex flex-col gap-4">
-        <a href="/leistungen" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Leistungen</a>
+        <a href="/#leistungen" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Leistungen</a>
         <a href="/ueber-mich" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Über mich</a>
         
         <a href="/ki-check" class="py-2 text-brand-red hover:text-red-700 font-bold transition-colors flex items-center gap-2">

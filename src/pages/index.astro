@@ -1,8 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Das SEO Schema für Google (JSON-LD) - Stärkerer E-E-A-T-Faktor
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "David Mirga - Verfasser des großen KI-Lexikons, 4x Buchautor, KI Trainer & Executive Coach",
+  "image": "https://www.davidmirga.com/david-mirga-profil.png",
+  "url": "https://www.davidmirga.com",
+  "telephone": "", 
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Guriegelstraße 42-50",
+    "addressLocality": "Wien",
+    "postalCode": "1100",
+    "addressCountry": "AT"
+  },
+  // Autoritätshinweise (Links zu Magazinen/PR-Artikeln)
+  "sameAs": [
+    "https://www.linkedin.com/in/david-mirga-847336134/",
+    "https://www.instagram.com/david_mirga_/",
+    "https://x.com/davetherealrave",
+    "https://www.unternehmerjournal.de/david-stancin-und-david-mirga-von-addvengers-portrait/",
+    "https://gewinnermagazin.de/david-mirga-und-david-stancin-von-agentur-addvengers-interview/"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.2082,
+    "longitude": 16.3738
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$$",
+  "description": "4-facher Buchautor, KI-Trainer und Executive Coach. Verfasser des ersten großen deutschsprachigen KI-Lexikons. Spezialisiert auf KI-Strategie, AI Act Compliance, Team-Schulungen und Management-Beratung für KMU und Handwerk in Wien."
+});
 ---
 
 <BaseLayout pageTitle="Startseite">
+  <script type="application/ld+json" slot="head-schema" set:html={schema} />
 
   <section class="pt-16 pb-20 bg-white">
     <div class="container mx-auto px-6 md:px-8 max-w-7xl text-center">
@@ -16,7 +61,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         für Führung und Team.
       </h1>
 
-      <p class="text-base md:text-lg text-slate-700 mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
+      <p class="text-base md:text-lg text-slate-800 mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
         Ich unterstütze Unternehmen in Österreich dabei, KI rechtskonform und praxisnah einzuführen –
         mit Trainings für Geschäftsführer und Mitarbeitende. Damit Ihre Teams KI verstehen,
         anwenden können und die Unsicherheit verschwindet.
@@ -393,16 +438,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span class="inline-block py-1 px-3 rounded bg-brand-red/20 text-brand-red border border-brand-red/50 text-xs font-bold tracking-widest uppercase mb-6">
         Beta Access
       </span>
+      
       <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-6 leading-tight">
         Frisch aus dem <br /> KI Entwickler Labor
       </h2>
-      <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-2xl mx-auto">
+      
+      <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-3xl mx-auto leading-normal">
         "Das ist kein Quiz. <strong class="text-white font-bold">Das ist eine Diagnose.</strong>"
       </p>
-      <p class="text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto">
-        Vergiss statische Fragebögen. Diese App analysiert deine Antworten in Echtzeit.
-        Sie findet schonungslos heraus, wo du stehst – und füllt deine Wissenslücken sofort.
+
+      <p class="text-lg md:text-xl text-white font-bold mb-6 tracking-wide">
+        Lerne KI – Teste dich regelmäßig – Finde heraus, wo du stehst.
       </p>
+
+      <p class="text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
+        Egal, ob du nur kurz deinen Status quo checken willst oder tief eintauchen möchtest: 
+        Du bist herzlich eingeladen, regelmäßig wiederzukommen. 
+        Im <strong class="text-slate-200">Lernmodus</strong> erfährst du alles über den AI Act und 5 weitere Themen rund um KI – 
+        und kannst dein Wissen immer wieder in <strong class="text-slate-200">Prüfungen</strong> testen.
+      </p>
+
       <a href="/ki-check" class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-brand-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105">
         <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-brand-red rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
         <span class="relative flex items-center gap-2">
@@ -410,6 +465,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </span>
       </a>
+      
     </div>
   </section>
 
