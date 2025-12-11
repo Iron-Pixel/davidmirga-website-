@@ -1,18 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  // WICHTIG: Die Pfade wurden erweitert, damit Tailwind ALLE verwendeten
+  // Klassen findet und den ungenutzten Code (Purge) entfernt.
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/astro-layouts/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@astrojs/**/*.{js,ts}',
+    './public/**/*.html'
+  ],
   theme: {
     extend: {
       colors: {
         brand: {
-          navy: '#0B1F3F',   // ZURÜCK ZUM ALTEN BLAU (Dein Favorit)
-          red: '#DC2626',    // DAS NEUE ROT (Knalliger)
+          navy: '#0B1F3F',
+          red: '#DC2626',
           white: '#FFFFFF',
-          light: '#F4F7F9',  // Der leicht bläuliche Hintergrund passend zum Navy
+          light: '#F4F7F9',
         },
         action: {
-          DEFAULT: '#DC2626', // Neues Rot
-          hover: '#B91C1C',   // Dunkleres Rot beim Hover
+          DEFAULT: '#DC2626',
+          hover: '#B91C1C',
         }
       },
       fontFamily: {
