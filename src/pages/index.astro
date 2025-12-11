@@ -5,7 +5,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "David Mirga - Verfasser des großen KI-Lexikons, 4x Buchautor, KI Trainer & Executive Coach",
+  // SEO FIX: Offizieller Titel im Haupt-Schema
+  "name": "David Mirga - Verfasser: Das erste große deutschsprachige KI-Lexikon, 4x Buchautor, KI Trainer & Executive Coach",
   "image": "https://www.davidmirga.com/david-mirga-profil.png",
   "url": "https://www.davidmirga.com",
   "telephone": "", 
@@ -42,7 +43,8 @@ const schema = JSON.stringify({
     "closes": "17:00"
   },
   "priceRange": "$$$",
-  "description": "4-facher Buchautor, KI-Trainer und Executive Coach. Verfasser des ersten großen deutschsprachigen KI-Lexikons. Spezialisiert auf KI-Strategie, AI Act Compliance, Team-Schulungen und Management-Beratung für KMU und Handwerk in Wien."
+  // SEO FIX: Offizieller Titel in der Beschreibung
+  "description": "4-facher Buchautor, KI-Trainer und Executive Coach. Verfasser von: Das erste große deutschsprachige KI-Lexikon. Spezialisiert auf KI-Strategie, AI Act Compliance, Team-Schulungen und Management-Beratung für KMU und Handwerk in Wien."
 });
 ---
 
@@ -53,12 +55,12 @@ const schema = JSON.stringify({
     <div class="container mx-auto px-6 md:px-8 max-w-7xl text-center">
       
       <span class="inline-block mb-4 text-brand-red font-bold tracking-widest uppercase text-sm md:text-base">
-        Das ist der Weg
+        Vom Verfasser: Das erste große deutschsprachige KI-Lexikon
       </span>
 
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-brand-navy leading-tight mb-5">
-        KI sicher im Unternehmen einführen – <br class="hidden md:block">
-        für Führung und Team.
+        KI-Compliance & Produktivität: <br class="hidden md:block">
+        So führen Sie KI sicher und profitabel ein.
       </h1>
 
       <p class="text-base md:text-lg text-slate-800 mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
@@ -69,14 +71,14 @@ const schema = JSON.stringify({
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
         <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-brand-red text-white font-bold rounded shadow-lg hover:bg-red-700 transition-all text-center">
-          Erstgespräch buchen
+          Kostenlosen KI-Strategie-Check buchen
         </a>
         <a href="#leistungen" class="px-8 py-4 bg-white text-brand-navy border-2 border-brand-navy font-bold rounded hover:bg-slate-50 transition-colors text-center">
           Zu den Leistungen
         </a>
       </div>
 
-      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-w-900px; background-color: #fff;">
+      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-width: 900px; background-color: #fff;">
         <p class="text-base text-slate-800 leading-relaxed font-medium">
           Diese Webseite wurde im Rahmen meiner Diplomarbeit erstellt. Ich bin derzeit Privatperson und nicht unternehmerisch tätig – es werden keine kommerziellen Dienstleistungen angeboten. Blog und Downloads stehen kostenfrei zur Verfügung, Kontaktaufnahme ist jederzeit möglich. Die beschriebenen Leistungen werden nach Unternehmensgründung verfügbar sein – voraussichtlich ab März/April 2026.
         </p>
@@ -377,8 +379,9 @@ const schema = JSON.stringify({
                 </div>
              </div>
              <div class="mt-4 p-3 bg-brand-red/10 rounded-lg border border-brand-red/20 mb-6">
-                <p class="text-xs font-semibold text-brand-red mb-1">Optional: Red Button</p>
-                <p class="text-xs text-slate-700">WhatsApp-Zugang – Antwort in max. 3 Stunden, meistens innerhalb von 15 Minuten.</p>
+                <p class="text-sm text-slate-700">
+                    <strong>Nach dem Training:</strong> Du kannst KI-Verantwortliche steuern, Risiken bewerten und triffst eigene, fundierte Entscheidungen zur KI-Strategie.
+                </p>
              </div>
              <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Let's talk</a>
           </div>
@@ -549,19 +552,15 @@ const schema = JSON.stringify({
   </section>
 
   <script is:inline>
-    // Funktion zum Umschalten der Details und Setzen der korrekten A11Y-Attribute
     function toggleDetails(button) {
-      // 1. Hole die ID des Details-Elements aus dem data-target Attribut
       const id = button.getAttribute('data-target');
       const element = document.getElementById(id);
       
       if (!element) return;
       
-      // 2. Status der aktuellen Expansion ermitteln
+      const allButtons = document.querySelectorAll('button[data-target]');
       const isCurrentlyExpanded = button.getAttribute('aria-expanded') === 'true';
 
-      // 3. Alle anderen Details schließen und Buttons zurücksetzen
-      const allButtons = document.querySelectorAll('button[data-target]');
       allButtons.forEach(btn => {
         const targetId = btn.getAttribute('data-target');
         const targetElement = document.getElementById(targetId);
@@ -569,13 +568,11 @@ const schema = JSON.stringify({
         if (targetElement && targetElement.id !== id) {
           targetElement.classList.add('hidden');
           btn.setAttribute('aria-expanded', 'false');
-          // Visuelle Anpassung des Pfeils (optional, aber gut für UX)
           const arrow = btn.querySelector('span:last-child');
           if (arrow) arrow.style.transform = 'rotate(0deg)';
         }
       });
       
-      // 4. Aktuelles Element umschalten
       if (!isCurrentlyExpanded) {
         element.classList.remove('hidden');
         button.setAttribute('aria-expanded', 'true');
@@ -589,4 +586,5 @@ const schema = JSON.stringify({
       }
     }
   </script>
+
 </BaseLayout>
