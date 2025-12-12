@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { QuizMode } from '../types';
 import type { Question } from '../types';
-import { Clock, CheckCircle, XCircle, ArrowRight, Lock } from 'lucide-react';
-import RegistrationModal from './RegistrationModal';
+import { Clock, CheckCircle, XCircle, ArrowRight } from 'lucide-react';
 
 interface QuizSessionProps {
   mode: QuizMode;
@@ -19,16 +18,11 @@ const QuizSession: React.FC<QuizSessionProps> = ({ mode, questions, onComplete, 
   const [answers, setAnswers] = useState<any[]>([]);
   const [timeLeft, setTimeLeft] = useState(45);
   
-  const [showGate, setShowGate] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
-  const FREE_QUESTION_LIMIT = 3; 
-
   const isChallenge = mode === QuizMode.CHALLENGE || mode === QuizMode.AIACT_CHALLENGE;
-  const isTraining = mode === QuizMode.TRAINING || mode === QuizMode.AIACT_LEARNING;
   const isStatus = mode === QuizMode.STATUS;
 
   useEffect(() => {
-    if (!isChallenge || isAnswered || showGate) return;
+    if (!isChallenge || isAnswered) return;
 
     setTimeLeft(45);
     const timer = setInterval(() => {
@@ -43,7 +37,7 @@ const QuizSession: React.FC<QuizSessionProps> = ({ mode, questions, onComplete, 
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [currentIndex, isChallenge, isAnswered, showGate]);
+  }, [currentIndex, isChallenge, isAnswered]);
 
   const handleTimeOut = () => {
     if (isAnswered) return;
@@ -79,10 +73,6 @@ const QuizSession: React.FC<QuizSessionProps> = ({ mode, questions, onComplete, 
   };
 
   const handleNext = () => {
-    if ((isTraining) && !isRegistered && currentIndex === (FREE_QUESTION_LIMIT - 1)) {
-      setShowGate(true);
-      return;
-    }
     proceedToNextQuestion();
   };
 
@@ -96,27 +86,15 @@ const QuizSession: React.FC<QuizSessionProps> = ({ mode, questions, onComplete, 
     }
   }
 
-  const handleRegisterSuccess = () => {
-    setIsRegistered(true);
-    setShowGate(false);
-    proceedToNextQuestion();
-  };
-
   const currentQuestion = questions[currentIndex];
   const progress = ((currentIndex + 1) / questions.length) * 100;
 
   if (!currentQuestion) return null;
+  const isLastQuestion = currentIndex === questions.length - 1;
 
   return (
     <>
-      {showGate && (
-        <RegistrationModal 
-          onRegister={handleRegisterSuccess}
-          onCancel={onExit}
-        />
-      )}
-
-      <div className={`w-full max-w-3xl mx-auto px-4 py-8 ${showGate ? 'blur-sm pointer-events-none' : ''} transition-all duration-300 animate-fade-in`}>
+      <div className={`w-full max-w-3xl mx-auto px-4 py-8 transition-all duration-300 animate-fade-in`}>
         {/* Header */}
         <div className="flex justify-between items-center mb-6 text-slate-300">
           <div className="flex items-center gap-3">
@@ -205,22 +183,15 @@ const QuizSession: React.FC<QuizSessionProps> = ({ mode, questions, onComplete, 
               onClick={handleNext}
               className="w-full bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:translate-y-[-2px] flex items-center justify-center gap-3 uppercase tracking-wider text-sm"
             >
-              {(isTraining) && !isRegistered && currentIndex === (FREE_QUESTION_LIMIT - 1) ? (
-                 <>
-                   <span>Kostenlos Freischalten</span>
-                   <Lock className="w-4 h-4" />
-                 </>
-              ) : (
-                 <>
-                   <span>{currentIndex === questions.length - 1 ? 'Zur Auswertung' : 'Nächster Schritt'}</span>
-                   <ArrowRight className="w-4 h-4" />
-                 </>
-              )}
+               <>
+                 <span>{isLastQuestion ? 'Zur Auswertung' : 'Nächster Schritt'}</span>
+                 <ArrowRight className="w-4 h-4" />
+               </>
             </button>
           </div>
         )}
 
-        {/* Exit Button - Styled Red as requested */}
+        {/* Exit Button */}
         {!isAnswered && (
            <button 
              onClick={onExit}

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { QuizMode, FitnessLevel } from '../types';
 import { analyzeFitnessResult } from '../services/geminiService';
-import { Trophy, TrendingUp, Award, CalendarCheck, BookOpen, Home } from 'lucide-react';
+import { Trophy, TrendingUp, Award, CalendarCheck, BookOpen, Home, Download, ExternalLink } from 'lucide-react';
+
+// --- KONFIGURATION ---
+const BOOK_LANDING_PAGE = "https://www.davidmirga.com/downloads/ki-kompass"; 
+const TALLY_LINK = "https://tally.so/r/Y5PdoB";
 
 interface ResultsViewProps {
   score: number;
@@ -22,6 +26,17 @@ const ResultsView: React.FC<ResultsViewProps> = ({ score, total, mode, answers, 
       });
     }
   }, [mode, score, total, answers]);
+
+  const handleBookDownload = () => {
+    // Leitet auf die externe Landingpage weiter
+    window.open(BOOK_LANDING_PAGE, '_blank');
+  };
+
+  const handleConsultingClick = () => {
+    const levelName = analysis ? FitnessLevel[analysis.level] : 'Unbekannt';
+    const finalUrl = `${TALLY_LINK}?score=${score}&max=${total}&level=${levelName}`;
+    window.open(finalUrl, '_blank');
+  };
 
   const getStatusBadge = (level: FitnessLevel) => {
     const levels = {
@@ -46,16 +61,6 @@ const ResultsView: React.FC<ResultsViewProps> = ({ score, total, mode, answers, 
         </div>
       </div>
     );
-  };
-
-  const handleConsultingClick = () => {
-    const levelName = analysis ? FitnessLevel[analysis.level] : 'Unbekannt';
-    const tallyUrl = `https://tally.so/r/Y5PdoB?score=${score}&max=${total}&level=${levelName}`;
-    window.open(tallyUrl, '_blank');
-  };
-
-  const handleBookDownload = () => {
-    alert("Hier würde der Download des Buches 'Der ultimative KI-Kompass' starten.");
   };
 
   return (
@@ -146,12 +151,12 @@ const ResultsView: React.FC<ResultsViewProps> = ({ score, total, mode, answers, 
               >
                  <div className="flex items-center justify-between mb-4">
                   <div className="p-3 bg-white/5 rounded-lg text-slate-300 group-hover:text-white transition-colors">
-                    <BookOpen className="w-6 h-6" />
+                    <Download className="w-6 h-6" />
                   </div>
                 </div>
                 <h4 className="text-white font-bold text-lg mb-2">KI-Kompass Buch</h4>
                 <p className="text-slate-400 text-xs mb-4 flex-grow leading-relaxed">
-                  Lade dir das Standardwerk herunter und lies dich in Ruhe in die Themen Orchestrierung & AI Act ein.
+                  Hier geht's zum offiziellen Download-Bereich für das Standardwerk.
                 </p>
                 <div className="flex items-center text-slate-300 font-bold text-xs uppercase tracking-wider group-hover:text-white transition-colors mt-auto">
                   Zum Download <span>→</span>

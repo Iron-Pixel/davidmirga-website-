@@ -1,3 +1,4 @@
+
 import type { Question } from "../types";
 
 // =============================================================================
@@ -396,16 +397,143 @@ export const AIACT_QUESTIONS: Question[] = [
   }
 ];
 
-// --- 3. DUMMY / FALLBACK FÜR GENERATED ---
-// Diese werden nur genutzt, falls die API ausfällt.
+// =============================================================================
+// 3. EXPERT CHALLENGE (FALLBACK)
+// =============================================================================
+// Diese Fragen werden genutzt, wenn die KI-Generierung fehlschlägt oder offline ist.
+// Sie decken tiefes Expertenwissen ab (Prompting, Tech, Security).
+// =============================================================================
+
 export const CHALLENGE_QUESTIONS: Question[] = [
   {
-    id: 999,
-    category: "Fallback",
-    question: "Die KI-Verbindung ist unterbrochen. Was ist RAG?",
-    options: ["Retrieval Augmented Generation", "Red AI Green", "Random Access Geometry", "Robot AI Game"],
-    correctIndex: 0,
-    explanation: "Bitte Internetverbindung prüfen."
+    id: 1001,
+    category: "LLM Tech",
+    question: "Was ist der Hauptzweck des 'Temperature'-Parameters beim Generieren von Text?",
+    options: [
+      "Er regelt die Geschwindigkeit der API-Antwort.",
+      "Er steuert die 'Zufälligkeit' der Token-Auswahl (0 = deterministisch, 1+ = kreativ).",
+      "Er verhindert Überhitzung der GPU im Rechenzentrum.",
+      "Er bestimmt die Länge des Context Windows."
+    ],
+    correctIndex: 1,
+    explanation: "Hohe Temperature = mehr Kreativität/Halluzination. Niedrige Temperature = präzise, deterministische Antworten."
+  },
+  {
+    id: 1002,
+    category: "Architektur",
+    question: "Was ist die Kern-Innovation der Transformer-Architektur (Basis von GPT)?",
+    options: [
+      "Convolutional Neural Networks (CNNs).",
+      "Der 'Self-Attention' Mechanismus, der Beziehungen zwischen Wörtern unabhängig von der Distanz gewichtet.",
+      "Reinforcement Learning from Human Feedback (RLHF).",
+      "Backpropagation durch die Zeit (BPTT)."
+    ],
+    correctIndex: 1,
+    explanation: "Self-Attention erlaubt dem Modell, den Kontext eines jeden Wortes im Satz zu verstehen, egal wie weit die Wörter auseinander stehen."
+  },
+  {
+    id: 1003,
+    category: "Prompting",
+    question: "Was versteht man unter 'Chain-of-Thought' (CoT) Prompting?",
+    options: [
+      "Das Aneinanderketten von mehreren API-Calls.",
+      "Eine Technik, bei der das Modell aufgefordert wird, seinen Rechenweg 'Schritt für Schritt' zu erklären.",
+      "Das Kopieren von Prompts aus einer Bibliothek.",
+      "Eine Blockchain für KI-Prompts."
+    ],
+    correctIndex: 1,
+    explanation: "Durch CoT ('Let's think step by step') verbessert sich die logische Schlussfolgerungsfähigkeit von LLMs massiv."
+  },
+  {
+    id: 1004,
+    category: "RAG",
+    question: "Wofür steht RAG im Unternehmenskontext?",
+    options: [
+      "Red Amber Green (Status Reporting).",
+      "Retrieval Augmented Generation (Nutzung externer Firmendaten zur Antwortgenerierung).",
+      "Real-time Artificial Generation.",
+      "Robot Automated Governance."
+    ],
+    correctIndex: 1,
+    explanation: "RAG ist der Standard, um Halluzinationen zu reduzieren und dem Modell Zugriff auf aktuelles, internes Wissen zu geben, ohne es neu zu trainieren."
+  },
+  {
+    id: 1005,
+    category: "Security",
+    question: "Was ist eine 'Prompt Injection' Attacke?",
+    options: [
+      "Das Einschleusen von Schadcode in den Server.",
+      "Der Versuch, durch manipulierte Eingaben die Sicherheitsrichtlinien des Modells zu umgehen.",
+      "Eine SQL-Injection in die Vektordatenbank.",
+      "Das schnelle Eintippen von Prompts."
+    ],
+    correctIndex: 1,
+    explanation: "Prompt Injections (z.B. 'Ignore previous instructions') sind die größte Sicherheitslücke bei LLM-Anwendungen."
+  },
+  {
+    id: 1006,
+    category: "Training",
+    question: "Was ist der Unterschied zwischen 'Pre-Training' und 'Fine-Tuning'?",
+    options: [
+      "Es gibt keinen.",
+      "Pre-Training lehrt Sprache/Wissen (teuer); Fine-Tuning spezialisiert auf Aufgaben (günstiger).",
+      "Pre-Training macht der User, Fine-Tuning macht der Anbieter.",
+      "Fine-Tuning löscht das Wissen des Modells."
+    ],
+    correctIndex: 1,
+    explanation: "Pre-Training erzeugt das 'Foundation Model' mit Terabytes an Daten. Fine-Tuning (z.B. via RLHF) passt das Verhalten an."
+  },
+  {
+    id: 1007,
+    category: "Vektoren",
+    question: "Was sind 'Embeddings' in einer Vektordatenbank?",
+    options: [
+      "HTML-Code zum Einbetten von Videos.",
+      "Numerische Repräsentationen von Textbedeutung in einem hochdimensionalen Raum.",
+      "Verschlüsselte Passwörter.",
+      "Plugins für ChatGPT."
+    ],
+    correctIndex: 1,
+    explanation: "Embeddings verwandeln Text in Zahlenlisten. Texte mit ähnlicher Bedeutung haben mathematisch ähnliche Vektoren (geringe Distanz)."
+  },
+  {
+    id: 1008,
+    category: "Limitierungen",
+    question: "Was ist ein 'Context Window'?",
+    options: [
+      "Das Browserfenster der KI.",
+      "Die maximale Menge an Text (Tokens), die das Modell im Kurzzeitgedächtnis verarbeiten kann.",
+      "Ein Zeitfenster, in dem die KI antwortet.",
+      "Der sichtbare Bereich einer Grafikkarte."
+    ],
+    correctIndex: 1,
+    explanation: "Wenn das Context Window voll ist, 'vergisst' das Modell den Anfang des Gesprächs. Moderne Modelle haben bis zu 1 Mio Tokens."
+  },
+  {
+    id: 1009,
+    category: "Halluzination",
+    question: "Warum 'halluzinieren' LLMs?",
+    options: [
+      "Weil sie ein Bewusstsein haben.",
+      "Weil sie Wahrscheinlichkeitsmaschinen sind, die das nächste Wort raten, ohne Faktenprüfung.",
+      "Weil sie aus dem Internet lernen und das Internet lügt.",
+      "Das ist ein Software-Bug, der bald behoben wird."
+    ],
+    correctIndex: 1,
+    explanation: "LLMs haben kein Konzept von 'Wahrheit'. Sie optimieren auf plausibel klingende Sätze (Next Token Prediction)."
+  },
+  {
+    id: 1010,
+    category: "Agents",
+    question: "Was zeichnet einen 'KI-Agenten' gegenüber einem Chatbot aus?",
+    options: [
+      "Er ist teurer.",
+      "Er hat eine Stimme.",
+      "Er kann autonom Tools nutzen, Aktionen ausführen und Ziele verfolgen (Reasoning Loop).",
+      "Er läuft nur lokal."
+    ],
+    correctIndex: 2,
+    explanation: "Agenten (wie AutoGPT) können selbstständig Aufgaben in Schritte zerlegen und externe Software (Browser, API, Excel) bedienen."
   }
 ];
 
