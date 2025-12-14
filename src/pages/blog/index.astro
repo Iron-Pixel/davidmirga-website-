@@ -2,60 +2,76 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+// Alle Posts holen, Drafts filtern, nach Datum sortieren
 const posts = (await getCollection('blog'))
   .filter(post => !post.data.draft)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const categoryLabels = {
-  'ki-sicherheit': 'KI-Sicherheit',
-  'ki-praxis': 'KI-Praxis',
-  'ki-strategie': 'KI-Strategie',
-  'ki-wissen': 'KI-Wissen'
-};
+const pageTitle = "Blog & Insights";
+const description = "Praxiswissen zu KI, Sicherheit und Recruiting. Keine Theorie, sondern Anleitungen für den Alltag.";
 ---
 
-<BaseLayout pageTitle="Blog – David Mirga" description="Artikel über KI-Sicherheit, KI-Praxis und KI-Strategie für KMU in Österreich.">
-  
-  <!-- BLOG SECTION - Zentrierte Box -->
-  <section class="min-h-screen py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center items-start">
-    <div class="container max-w-3xl px-4 py-8 mx-auto">
-      
-      <!-- Weiße Box -->
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8">
-        
-        <h1 class="text-3xl md:text-4xl font-bold text-brand-navy mb-8 font-heading">
-          Blog
-        </h1>
-        
-        <div class="space-y-8">
-          {posts.map(post => (
-            <article class="border-b border-gray-200 pb-8 last:border-b-0">
-              
-              <span class="text-sm font-medium text-brand-red uppercase tracking-wide">
-                {categoryLabels[post.data.category]}
-              </span>
-              
-              <h2 class="text-xl md:text-2xl font-bold text-brand-navy mt-1 mb-2 font-heading">
-                <a href={`/blog/${post.slug}`} class="hover:text-brand-red transition-colors">
-                  {post.data.title}
-                </a>
-              </h2>
-              
-              <p class="text-gray-600 mb-2">
-                {post.data.description}
-              </p>
-              
-              <span class="text-sm text-gray-500">
-                {new Date(post.data.date).toLocaleDateString('de-AT')}
-              </span>
-              
-            </article>
-          ))}
-        </div>
-        
-      </div>
-      
+<BaseLayout pageTitle={pageTitle} description={description}>
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#0B1F3F] mb-4 font-['Manrope']">
+        {pageTitle}
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        {description}
+      </p>
     </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}/`} class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
+          
+          <div class="aspect-video w-full overflow-hidden bg-gray-100 relative">
+            {post.data.image ? (
+              <img 
+                src={post.data.image} 
+                alt={post.data.title} 
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            ) : (
+              // Fallback, falls kein Bild da ist
+              <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
+                <span class="text-sm">Kein Bild</span>
+              </div>
+            )}
+            
+            <div class="absolute top-3 left-3">
+              <span class="bg-white/95 backdrop-blur-sm text-[#DC2626] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
+                {post.data.category.replace('ki-', 'KI ')}
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="text-xs text-gray-500 mb-2">
+              {new Date(post.data.date).toLocaleDateString('de-AT', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </div>
+            
+            <h2 class="text-xl font-bold text-[#0B1F3F] mb-3 line-clamp-2 group-hover:text-[#DC2626] transition-colors font-['Manrope']">
+              {post.data.title}
+            </h2>
+            
+            <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">
+              {post.data.description}
+            </p>
+
+            <div class="text-[#DC2626] font-semibold text-sm flex items-center mt-auto">
+              Artikel lesen 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
   </section>
-  
 </BaseLayout>

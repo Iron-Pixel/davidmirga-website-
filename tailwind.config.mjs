@@ -28,5 +28,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  // HIER IST DIE ÄNDERUNG: Das Plugin aktivieren
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
