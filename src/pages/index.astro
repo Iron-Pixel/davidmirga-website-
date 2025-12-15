@@ -3,445 +3,375 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Das SEO Schema für Google (JSON-LD) - Stärkerer E-E-A-T-Faktor
 const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  // SEO FIX: Offizieller Titel im Haupt-Schema
-  "name": "David Mirga - Verfasser: Das erste große deutschsprachige KI-Lexikon, 4x Buchautor, KI Trainer & Executive Coach",
-  "image": "https://www.davidmirga.com/images/david-mirga-profil.png", // Bildpfad für Schema korrigiert
-  "url": "https://www.davidmirga.com",
-  "telephone": "", 
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Guriegelstraße 42-50",
-    "addressLocality": "Wien",
-    "postalCode": "1100",
-    "addressCountry": "AT"
-  },
-  // Autoritätshinweise (Links zu Magazinen/PR-Artikeln)
-  "sameAs": [
-    "https://www.linkedin.com/in/david-mirga-847336134/",
-    "https://www.instagram.com/david_mirga_/",
-    "https://x.com/davetherealrave",
-    "https://www.unternehmerjournal.de/david-stancin-und-david-mirga-von-addvengers-portrait/",
-    "https://gewinnermagazin.de/david-mirga-und-david-stancin-von-agentur-addvengers-interview/"
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.2082,
-    "longitude": 16.3738
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "17:00"
-  },
-  "priceRange": "$$$",
-  // SEO FIX: Offizieller Titel in der Beschreibung
-  "description": "4-facher Buchautor, KI-Trainer und Executive Coach. Verfasser von: Das erste große deutschsprachige KI-Lexikon. Spezialisiert auf KI-Strategie, AI Act Compliance, Team-Schulungen und Management-Beratung für KMU und Handwerk in Wien."
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  // SEO FIX: Offizieller Titel im Haupt-Schema
+  "name": "David Mirga - Verfasser: Das erste große deutschsprachige KI-Lexikon, 4x Buchautor, KI Trainer & Executive Coach",
+  "image": "https://www.davidmirga.com/images/david-mirga-profil.png", 
+  "url": "https://www.davidmirga.com",
+  "telephone": "", 
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Guriegelstraße 42-50",
+    "addressLocality": "Wien",
+    "postalCode": "1100",
+    "addressCountry": "AT"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/david-mirga-847336134/",
+    "https://www.instagram.com/david_mirga_/",
+    "https://x.com/davetherealrave",
+    "https://www.unternehmerjournal.de/david-stancin-und-david-mirga-von-addvengers-portrait/",
+    "https://gewinnermagazin.de/david-mirga-und-david-stancin-von-agentur-addvengers-interview/"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.2082,
+    "longitude": 16.3738
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$$",
+  "description": "4-facher Buchautor, KI-Trainer und Executive Coach. Verfasser von: Das erste große deutschsprachige KI-Lexikon. Spezialisiert auf KI-Strategie, AI Act Compliance, Team-Schulungen und Management-Beratung für KMU und Handwerk in Wien."
 });
 ---
 
 <BaseLayout pageTitle="Startseite">
-  <script type="application/ld+json" slot="head-schema" set:html={schema} />
+  <script type="application/ld+json" slot="head-schema" set:html={schema} />
 
-    <section class="pt-16 pb-20 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl text-center">
-      
-      <span class="inline-block mb-4 text-brand-red font-bold tracking-widest uppercase text-sm md:text-base">
-        Vom Verfasser: Das erste große deutschsprachige KI-Lexikon
-      </span>
+  <section class="pt-16 pb-20 bg-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl text-center">
+      
+      <span class="inline-block mb-4 text-brand-red font-bold tracking-widest uppercase text-sm md:text-base">
+        Vom Verfasser: Das erste große deutschsprachige KI-Lexikon
+      </span>
 
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-brand-navy leading-tight mb-5">
-        KI-Compliance & Produktivität: <br class="hidden md:block">
-        So führen Sie KI sicher und profitabel ein.
-      </h1>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-brand-navy leading-tight mb-5">
+        KI-Compliance & Produktivität: <br class="hidden md:block">
+        So führen Sie KI sicher und profitabel ein.
+      </h1>
 
-      <p class="text-base md:text-lg text-slate-800 mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
-        Ich unterstütze Unternehmen in Österreich dabei, KI rechtskonform und praxisnah einzuführen –
-        mit Trainings für Geschäftsführer und Mitarbeitende. Damit Ihre Teams KI verstehen,
-        anwenden können und die Unsicherheit verschwindet.
-      </p>
+      <p class="text-base md:text-lg text-slate-800 mb-8 max-w-3xl mx-auto leading-relaxed font-semibold text-center">Ich unterstütze Unternehmen in Österreich dabei, KI rechtskonform und praxisnah einzuführen – mit Trainings für Geschäftsführer und Mitarbeitende. Damit Ihre Teams KI verstehen, anwenden können und die Unsicherheit verschwindet.</p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-        <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-brand-red text-white font-bold rounded shadow-lg hover:bg-red-700 transition-all text-center">
-          Kostenlosen KI-Strategie-Check buchen
-        </a>
-        <a href="#leistungen" class="px-8 py-4 bg-white text-brand-navy border-2 border-brand-navy font-bold rounded hover:bg-slate-50 transition-colors text-center">
-          Zu den Leistungen
-        </a>
-      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-brand-red text-white font-bold rounded shadow-lg hover:bg-red-700 transition-all text-center">
+          Kostenlosen KI-Strategie-Check buchen
+        </a>
+        <a href="#leistungen" class="px-8 py-4 bg-white text-brand-navy border-2 border-brand-navy font-bold rounded hover:bg-slate-50 transition-colors text-center">
+          Zu den Leistungen
+        </a>
+      </div>
 
-      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-width: 900px; background-color: #fff;">
-        <p class="text-base text-slate-800 leading-relaxed font-medium">
-          Diese Webseite wurde im Rahmen meiner Diplomarbeit erstellt. Ich bin derzeit Privatperson und nicht unternehmerisch tätig – es werden keine kommerziellen Dienstleistungen angeboten. Blog und Downloads stehen kostenfrei zur Verfügung, Kontaktaufnahme ist jederzeit möglich. Die beschriebenen Leistungen werden nach Unternehmensgründung verfügbar sein – voraussichtlich ab März/April 2026.
-        </p>
-      </div>
+      <div style="border: 1px solid #ff0000; padding: 15px; margin: 0 auto; max-width: 900px; background-color: #fff;">
+        <p class="text-base text-slate-800 leading-relaxed font-medium text-left md:text-center">
+          Diese Webseite wurde im Rahmen meiner Diplomarbeit erstellt. Ich bin derzeit Privatperson und nicht unternehmerisch tätig – es werden keine kommerziellen Dienstleistungen angeboten. Blog und Downloads stehen kostenfrei zur Verfügung, Kontaktaufnahme ist jederzeit möglich. Die beschriebenen Leistungen werden nach Unternehmensgründung verfügbar sein – voraussichtlich ab März/April 2026.
+        </p>
+      </div>
 
-    </div>
-  </section>
+    </div>
+  </section>
 
-    <section class="py-16 bg-brand-light">
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
-      <div class="grid md:grid-cols-2 gap-5">
-        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">💡</div>
-          <h3 class="text-lg font-bold text-brand-navy mb-2">Wissen und verstehen, wie man KI einsetzt</h3>
-          <p class="text-slate-600 leading-relaxed text-sm">
-            Du und dein Team setzen KI gezielt ein – für Entlastung, bessere Abläufe und weniger Kosten.
-            Praxisnah, messbar, gewinnbringend.
-          </p>
-        </div>
-        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">⚙️</div>
-          <h3 class="text-lg font-bold text-brand-navy mb-2">Konsistenter Output braucht Klarheit!</h3>
-          <p class="text-slate-600 leading-relaxed text-sm">
-            Ihr optimiert die richtigen Arbeitsschritte mit den passenden Tools – statt Zeit und Geld mit Ausprobieren zu verlieren.
-          </p>
-        </div>
-        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">👥</div>
-          <h3 class="text-lg font-bold text-brand-navy mb-2">Schritt für Schritt wachsen</h3>
-          <p class="text-slate-600 leading-relaxed text-sm">
-            Niemand hat Angst vor KI. Dein Wachstum beginnt nicht mit der neuesten Technik –
-            sondern, indem du anfängst und mit den richtigen Fragen startest.
-          </p>
-        </div>
-        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">🛡️</div>
-          <h3 class="text-lg font-bold text-brand-navy mb-2">KI, Datenschutz & Compliance – ohne Risiko</h3>
-          <p class="text-slate-600 leading-relaxed text-sm">
-            Ihr seid KI-rechtskonform – samt AI Act & DSGVO. Keine Unsicherheiten, keine versteckten Risiken.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">💡</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Wissen und verstehen, wie man KI einsetzt</h3>
+          <p class="text-slate-600 leading-relaxed text-sm text-left">
+            Du und dein Team setzen KI gezielt ein – für Entlastung, bessere Abläufe und weniger Kosten.
+            Praxisnah, messbar, gewinnbringend.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">⚙️</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Konsistenter Output braucht Klarheit!</h3>
+          <p class="text-slate-600 leading-relaxed text-sm text-left">
+            Ihr optimiert die richtigen Arbeitsschritte mit den passenden Tools – statt Zeit und Geld mit Ausprobieren zu verlieren.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">👥</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Schritt für Schritt wachsen</h3>
+          <p class="text-slate-600 leading-relaxed text-sm text-left">
+            Niemand hat Angst vor KI. Dein Wachstum beginnt nicht mit der neuesten Technik –
+            sondern, indem du anfängst und mit den richtigen Fragen startest.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">KI, Datenschutz & Compliance – ohne Risiko</h3>
+          <p class="text-slate-600 leading-relaxed text-sm text-left">
+            Ihr seid KI-rechtskonform – samt AI Act & DSGVO. Keine Unsicherheiten, keine versteckten Risiken.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-16 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-3">
-          In 4 Schritten zu KI in deinem Unternehmen
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-         <div class="relative text-center">
-            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🧭</div>
-            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 1</span>
-            <h3 class="font-bold text-brand-navy mb-2">Analyse</h3>
-            <p class="text-sm text-slate-600">Wo stehst du? Was macht Sinn? Ziele definieren. Wer zieht mit, wer bremst?</p>
-         </div>
-         <div class="relative text-center">
-            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🎓</div>
-            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 2</span>
-            <h3 class="font-bold text-brand-navy mb-2">Schulung</h3>
-            <p class="text-sm text-slate-600">Dein Team bekommt den KI-Führerschein. Angst wird zu Kompetenz.</p>
-         </div>
-         <div class="relative text-center">
-            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">⚡</div>
-            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 3</span>
-            <h3 class="font-bold text-brand-navy mb-2">Praxis</h3>
-            <p class="text-sm text-slate-600">Erst klein testen, dann ausrollen. Wir bauen gemeinsam Workflows – live, konkret.</p>
-         </div>
-         <div class="relative text-center">
-            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🗺️</div>
-            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 4</span>
-            <h3 class="font-bold text-brand-navy mb-2">Begleitung</h3>
-            <p class="text-sm text-slate-600">KI-Fahrplan & Support – Schritt für Schritt skalieren.</p>
-         </div>
-      </div>
-    </div>
-  </section>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-3">
+          In 4 Schritten zu KI in deinem Unternehmen
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+         <div class="relative text-center">
+            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🧭</div>
+            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 1</span>
+            <h3 class="font-bold text-brand-navy mb-2">Analyse</h3>
+            <p class="text-sm text-slate-600">Wo stehst du? Was macht Sinn? Ziele definieren. Wer zieht mit, wer bremst?</p>
+         </div>
+         <div class="relative text-center">
+            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🎓</div>
+            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 2</span>
+            <h3 class="font-bold text-brand-navy mb-2">Schulung</h3>
+            <p class="text-sm text-slate-600">Dein Team bekommt den KI-Führerschein. Angst wird zu Kompetenz.</p>
+         </div>
+         <div class="relative text-center">
+            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">⚡</div>
+            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 3</span>
+            <h3 class="font-bold text-brand-navy mb-2">Praxis</h3>
+            <p class="text-sm text-slate-600">Erst klein testen, dann ausrollen. Wir bauen gemeinsam Workflows – live, konkret.</p>
+         </div>
+         <div class="relative text-center">
+            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto text-2xl">🗺️</div>
+            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">SCHRITT 4</span>
+            <h3 class="font-bold text-brand-navy mb-2">Begleitung</h3>
+            <p class="text-sm text-slate-600">KI-Fahrplan & Support – Schritt für Schritt skalieren.</p>
+         </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="leistungen" class="py-24 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
-      <div class="text-center mb-20">
-        <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Mein Angebot</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-black text-brand-navy mt-3 mb-6">
-          KI-Strategien vom Lexikon-Verfasser: So führen Sie KI rechtssicher und gewinnbringend ein.
-        </h2>
-        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Klarheit, Sicherheit und Ergebnisse, die im Alltag tragen – compliant nach AI Act & DSGVO.
-        </p>
-      </div>
+  <section id="leistungen" class="py-24 bg-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
+      <div class="text-center mb-20">
+        <span class="text-brand-red font-bold uppercase tracking-widest text-sm">Mein Angebot</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-black text-brand-navy mt-3 mb-6">
+          KI-Strategien vom Lexikon-Verfasser: So führen Sie KI rechtssicher und gewinnbringend ein.
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Klarheit, Sicherheit und Ergebnisse, die im Alltag tragen – compliant nach AI Act & DSGVO.
+        </p>
+      </div>
 
-      <div class="grid md:grid-cols-2 gap-6 mb-16">
-        
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="text-4xl flex-shrink-0">🧭</div>
-            <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">BERATUNG</span>
-              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">AI COMPASS VIENNA</h2>
-              <p class="text-sm text-brand-red font-semibold mb-3">Der strategische KI-Check für Geschäftsführung</p>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Klarheit in 60 Minuten: Wo stehst du mit KI? Was bringt dir wirklich etwas? Wo lauern Risiken? Du gehst mit konkreten Antworten und ersten Lösungen raus.
-              </p>
-            </div>
-          </div>
-          <button 
-            onclick="toggleDetails(this)" 
-            data-target="compass-details" 
-            aria-controls="compass-details" 
-            aria-expanded="false"
-            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
-          >
-            <span>Mehr erfahren</span> 
-            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
-          </button>
-          
-          <div id="compass-details" class="hidden mt-6 pt-6 border-t border-slate-200">
-             <div class="space-y-3 mb-6">
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Standort-Check</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Nutzen-Filter</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Risiko-Check</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Fahrplan</p>
-                </div>
-             </div>
-             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
-                <p class="text-sm text-slate-700">
-                    <strong>Nach dem Check:</strong> Du weißt, wo KI Sinn macht, welche Prozesse Priorität haben, welche Risiken du absichern musst – und du hast einen klaren Fahrplan mit ersten Quick Wins.
-                </p>
-             </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Kostenloses Erstgespräch</a>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="text-4xl flex-shrink-0">🎓</div>
-            <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">TRAINING</span>
-              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">KI-Führerschein</h2>
-              <p class="text-sm text-brand-red font-semibold mb-3">Team-Schulung mit AI Act & Compliance-Focus</p>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Der AI Act verpflichtet Unternehmen zur KI-Kompetenz ihrer Mitarbeiter. Hier bekommt dein Team die Schulung, die rechtlich gefordert ist – und lernt den sicheren, produktiven Umgang mit KI.
-              </p>
-            </div>
-          </div>
-          <button 
-            onclick="toggleDetails(this)" 
-            data-target="training-details" 
-            aria-controls="training-details" 
-            aria-expanded="false"
-            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
-          >
-            <span>Mehr erfahren</span> 
-            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
-          </button>
-
-          <div id="training-details" class="hidden mt-6 pt-6 border-t border-slate-200">
-             <div class="space-y-3 mb-6">
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ AI Act-konforme Schulung</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Prompting, das funktioniert</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Bias & Halluzinationen erkennen</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ DSGVO & Governance</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Zertifikat "KI-Führerschein"</p>
-                </div>
-             </div>
-             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
-                <p class="text-sm text-slate-700">
-                    <strong>Nach der Schulung:</strong> Dein Team kann KI produktiv einsetzen, erkennt Halluzinationen und Bias, und weiß, wie man compliant arbeitet – und du erfüllst die AI Act-Pflicht.
-                </p>
-             </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Schulung anfragen</a>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="text-4xl flex-shrink-0">⚡</div>
-            <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-2">WOCHENENDE</span>
-              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">Wochenend-Intensiv</h2>
-              <p class="text-sm text-brand-red font-semibold mb-3">Kleine Gruppen (max. 6) – Samstag oder Sonntag</p>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Fokus ohne Ablenkung: Ein Tag, intensive Praxis, fertige Workflows. Am Montag läuft's.
-              </p>
-            </div>
-          </div>
-          <button 
-            onclick="toggleDetails(this)" 
-            data-target="weekend-details" 
-            aria-controls="weekend-details" 
-            aria-expanded="false"
-            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
-          >
-            <span>Mehr erfahren</span> 
-            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
-          </button>
-
-          <div id="weekend-details" class="hidden mt-6 pt-6 border-t border-slate-200">
-             <div class="space-y-3 mb-6">
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Max. 6 Teilnehmer</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Deine Use-Cases</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Sofort einsetzbar</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Samstag oder Sonntag</p>
-                </div>
-             </div>
-             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
-                <p class="text-sm text-slate-700">
-                    <strong>Nach dem Workshop:</strong> Du hast fertige Workflows für deine echten Aufgaben, sparst ab Montag Zeit und weißt genau, wie du KI in deinem Alltag einsetzt.
-                </p>
-             </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Termin anfragen</a>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="text-4xl flex-shrink-0">💎</div>
-            <div class="flex-1">
-              <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-2">1:1</span>
-              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">Executive Coaching</h2>
-              <p class="text-sm text-brand-red font-semibold mb-3">1:1 für Geschäftsführer & Manager – wenn das Telefon schweigt</p>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Ein halber Tag. Deine Fragen. Keine bleibt offen. Auch am Wochenende.
-              </p>
-            </div>
-          </div>
-          <button 
-            onclick="toggleDetails(this)" 
-            data-target="executive-details" 
-            aria-controls="executive-details" 
-            aria-expanded="false"
-            class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2"
-          >
-            <span>Mehr erfahren</span> 
-            <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
-          </button>
-
-          <div id="executive-details" class="hidden mt-6 pt-6 border-t border-slate-200">
-             <p class="text-sm text-slate-700 mb-4 font-medium">Nach diesem exklusiven Training, das wir auf dich und deine Situation abstimmen:</p>
-             <div class="space-y-3 mb-6">
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Du sprichst mit KI-Verantwortlichen so, dass auch umgesetzt werden kann</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Du beurteilst KI selbst</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Du verstehst jetzt Zusammenhänge</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Du weißt, wo du bei AI Act, DSGVO und Governance nachsehen musst</p>
-                </div>
-                <div class="bg-brand-light p-3 rounded-lg">
-                    <p class="font-semibold text-brand-navy text-sm mb-1">✓ Du musst niemandem mehr risikoreich vertrauen</p>
-                </div>
-             </div>
-             <div class="mt-4 p-3 bg-brand-red/10 rounded-lg border border-brand-red/20 mb-6">
-                <p class="text-sm text-slate-700">
-                    <strong>Nach dem Training:</strong> Du kannst KI-Verantwortliche steuern, Risiken bewerten und triffst eigene, fundierte Entscheidungen zur KI-Strategie.
-                </p>
-             </div>
-             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Let's talk</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="bg-gradient-to-r from-brand-navy to-brand-navy/90 rounded-xl shadow-lg p-6 md:p-8 mb-12 text-white">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl flex-shrink-0">🎁</div>
-          <div class="flex-1">
-            <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-3">EXKLUSIVER BONUS FÜR ALLE TEILNEHMER</span>
-            <h2 class="text-xl md:text-2xl font-heading font-bold mb-3">Wir begleiten dich nicht nur einen Tag – sondern ein ganzes Jahr.</h2>
-            <p class="text-white/80 mb-6">12 Monate kostenloser Zugang:</p>
-            <div class="grid md:grid-cols-2 gap-4 mt-6">
-               <div class="bg-white/10 p-3 rounded-lg">
-                  <p class="font-semibold text-sm mb-1">📁 Download-Bereich</p>
-                  <p class="text-xs text-white/70">Alle aktuellen Bücher, PDFs, Vorlagen und Videos</p>
-               </div>
-               <div class="bg-white/10 p-3 rounded-lg">
-                  <p class="font-semibold text-sm mb-1">📰 KI-Kompass Business Newsletter</p>
-                  <p class="text-xs text-white/70">2-3x im Monat – spart dir Stunden, liefert nur das Wichtigste</p>
-               </div>
-               <div class="bg-white/10 p-3 rounded-lg">
-                  <p class="font-semibold text-sm mb-1">🎥 1x monatlich Live-Update-Call</p>
-                  <p class="text-xs text-white/70">Was ist neu, welches Tool lohnt sich, deine Fragen</p>
-               </div>
-               <div class="bg-white/10 p-3 rounded-lg">
-                  <p class="font-semibold text-sm mb-1">💬 Optional: WhatsApp-Support</p>
-                  <p class="text-xs text-white/70">Schnelle Antworten auf Anfrage</p>
-               </div>
-            </div>
-            <p class="mt-6 text-white/90 italic">Du bist nicht allein nach dem Kurs. Wir bleiben dran.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 md:p-8 shadow-sm">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl flex-shrink-0">🗺️</div>
-          <div class="flex-1">
-            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">DAS KOMPLETTPAKET</span>
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy mb-3">KI-Fahrplan für dein Unternehmen</h2>
-            <p class="text-brand-red font-semibold mb-4">Ich begleite euch auf eurer Reise, KI gesund im Unternehmen einzugliedern. Ein Schritt nach dem anderen.</p>
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Du willst KI einführen – aber richtig. Nicht alles auf einmal, nicht blind dem Hype nach, sondern mit Plan und Struktur. Der KI-Fahrplan bringt alles zusammen: Analyse, Schulung, Umsetzung und Begleitung.
-            </p>
-            <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-colors">
-              Klick hier für ein persönliches Gespräch
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-    <section class="py-16 bg-brand-light">
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
-      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 flex flex-col md:flex-row gap-12 items-center">
-        
-        <div class="flex-1 space-y-6">
-          <h2 class="text-3xl font-heading font-bold text-brand-navy">Nicht der typische Tech-Nerd.</h2>
-          
-                    <p class="text-slate-700 leading-relaxed text-lg">
-            Ich komme aus der Praxis, nicht aus dem Silicon Valley. Habe Unternehmen aufgebaut, Teams geführt und weiß, was es heißt, wenn <strong>jede Entscheidung Geld kostet</strong>.
-          </p>
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl flex-shrink-0">🧭</div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">BERATUNG</span>
+              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">AI COMPASS VIENNA</h2>
+              <p class="text-sm text-brand-red font-semibold mb-3">Der strategische KI-Check für Geschäftsführung</p>
+              <p class="text-sm text-slate-600 leading-relaxed text-left">
+                Klarheit in 60 Minuten: Wo stehst du mit KI? Was bringt dir wirklich etwas? Wo lauern Risiken? Du gehst mit konkreten Antworten und ersten Lösungen raus.
+              </p>
+            </div>
+          </div>
+          <button onclick="toggleDetails(this)" data-target="compass-details" aria-controls="compass-details" aria-expanded="false" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
+            <span>Mehr erfahren</span> <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
+          </button>
           
-                    <p class="text-slate-700 leading-relaxed text-lg">
-            Diplomierter KI-Manager. <strong>Autor von vier Fachbüchern</strong> – darunter <strong>Das erste große deutschsprachige KI-Lexikon</strong>. Seit zwei Jahren studiere ich, wie die erfolgreichsten Unternehmen weltweit KI profitabel implementieren.
-          </p>
+          <div id="compass-details" class="hidden mt-6 pt-6 border-t border-slate-200">
+             <div class="space-y-3 mb-6">
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Standort-Check</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Nutzen-Filter</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Risiko-Check</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Fahrplan</p></div>
+             </div>
+             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
+                <p class="text-sm text-slate-700 text-left">
+                    <strong>Nach dem Check:</strong> Du weißt, wo KI Sinn macht, welche Prozesse Priorität haben, welche Risiken du absichern musst – und du hast einen klaren Fahrplan mit ersten Quick Wins.
+                </p>
+             </div>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Kostenloses Erstgespräch</a>
+          </div>
+        </div>
 
-          <div class="pt-4">
-            <a href="/ueber-mich" class="inline-block px-8 py-4 bg-brand-navy text-white font-bold rounded hover:bg-brand-navy/90 transition-colors">
-              Aber hierher zu kommen war kein gerader Weg →
-            </a>
-          </div>
-        </div>
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl flex-shrink-0">🎓</div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">TRAINING</span>
+              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">KI-Führerschein</h2>
+              <p class="text-sm text-brand-red font-semibold mb-3">Team-Schulung mit AI Act & Compliance-Focus</p>
+              <p class="text-sm text-slate-600 leading-relaxed text-left">
+                Der AI Act verpflichtet Unternehmen zur KI-Kompetenz ihrer Mitarbeiter. Hier bekommt dein Team die Schulung, die rechtlich gefordert ist – und lernt den sicheren, produktiven Umgang mit KI.
+              </p>
+            </div>
+          </div>
+          <button onclick="toggleDetails(this)" data-target="training-details" aria-controls="training-details" aria-expanded="false" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
+            <span>Mehr erfahren</span> <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
+          </button>
+
+          <div id="training-details" class="hidden mt-6 pt-6 border-t border-slate-200">
+             <div class="space-y-3 mb-6">
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ AI Act-konforme Schulung</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Prompting, das funktioniert</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Bias & Halluzinationen erkennen</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ DSGVO & Governance</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Zertifikat "KI-Führerschein"</p></div>
+             </div>
+             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
+                <p class="text-sm text-slate-700 text-left">
+                    <strong>Nach der Schulung:</strong> Dein Team kann KI produktiv einsetzen, erkennt Halluzinationen und Bias, und weiß, wie man compliant arbeitet – und du erfüllst die AI Act-Pflicht.
+                </p>
+             </div>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg">Schulung anfragen</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl flex-shrink-0">⚡</div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-2">WOCHENENDE</span>
+              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">Wochenend-Intensiv</h2>
+              <p class="text-sm text-brand-red font-semibold mb-3">Kleine Gruppen (max. 6) – Samstag oder Sonntag</p>
+              <p class="text-sm text-slate-600 leading-relaxed text-left">
+                Fokus ohne Ablenkung: Ein Tag, intensive Praxis, fertige Workflows. Am Montag läuft's.
+              </p>
+            </div>
+          </div>
+          <button onclick="toggleDetails(this)" data-target="weekend-details" aria-controls="weekend-details" aria-expanded="false" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
+            <span>Mehr erfahren</span> <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
+          </button>
+
+          <div id="weekend-details" class="hidden mt-6 pt-6 border-t border-slate-200">
+             <div class="space-y-3 mb-6">
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Max. 6 Teilnehmer</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Deine Use-Cases</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Sofort einsetzbar</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Samstag oder Sonntag</p></div>
+             </div>
+             <div class="mt-4 p-3 bg-brand-navy/5 rounded-lg border-l-4 border-brand-navy mb-6">
+                <p class="text-sm text-slate-700 text-left">
+                    <strong>Nach dem Workshop:</strong> Du hast fertige Workflows für deine echten Aufgaben, sparst ab Montag Zeit und weißt genau, wie du KI in deinem Alltag einsetzt.
+                </p>
+             </div>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Termin anfragen</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all hover:shadow-xl group">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="text-4xl flex-shrink-0">💎</div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-2">1:1</span>
+              <h2 class="text-xl md:text-2xl font-heading font-bold text-brand-navy mb-2">Executive Coaching</h2>
+              <p class="text-sm text-brand-red font-semibold mb-3">1:1 für Geschäftsführer & Manager – wenn das Telefon schweigt</p>
+              <p class="text-sm text-slate-600 leading-relaxed text-left">
+                Ein halber Tag. Deine Fragen. Keine bleibt offen. Auch am Wochenende.
+              </p>
+            </div>
+          </div>
+          <button onclick="toggleDetails(this)" data-target="executive-details" aria-controls="executive-details" aria-expanded="false" class="mt-4 text-brand-navy font-bold text-sm hover:text-brand-red transition-colors flex items-center gap-2">
+            <span>Mehr erfahren</span> <span class="text-lg transform transition-transform" style="transform: rotate(0deg);">↓</span>
+          </button>
+
+          <div id="executive-details" class="hidden mt-6 pt-6 border-t border-slate-200">
+             <p class="text-sm text-slate-700 mb-4 font-medium text-left">Nach diesem exklusiven Training, das wir auf dich und deine Situation abstimmen:</p>
+             <div class="space-y-3 mb-6">
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Du sprichst mit KI-Verantwortlichen so, dass auch umgesetzt werden kann</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Du beurteilst KI selbst</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Du verstehst jetzt Zusammenhänge</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Du weißt, wo du bei AI Act, DSGVO und Governance nachsehen musst</p></div>
+                <div class="bg-brand-light p-3 rounded-lg"><p class="font-semibold text-brand-navy text-sm mb-1">✓ Du musst niemandem mehr risikoreich vertrauen</p></div>
+             </div>
+             <div class="mt-4 p-3 bg-brand-red/10 rounded-lg border border-brand-red/20 mb-6">
+                <p class="text-sm text-slate-700 text-left">
+                    <strong>Nach dem Training:</strong> Du kannst KI-Verantwortliche steuern, Risiken bewerten und triffst eigene, fundierte Entscheidungen zur KI-Strategie.
+                </p>
+             </div>
+             <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-red text-white text-sm font-bold rounded-lg">Let's talk</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bg-gradient-to-r from-brand-navy to-brand-navy/90 rounded-xl shadow-lg p-6 md:p-8 mb-12 text-white">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl flex-shrink-0">🎁</div>
+          <div class="flex-1">
+            <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full mb-3">EXKLUSIVER BONUS FÜR ALLE TEILNEHMER</span>
+            <h2 class="text-xl md:text-2xl font-heading font-bold mb-3">Wir begleiten dich nicht nur einen Tag – sondern ein ganzes Jahr.</h2>
+            <p class="text-white/80 mb-6 text-left">12 Monate kostenloser Zugang:</p>
+            <div class="grid md:grid-cols-2 gap-4 mt-6">
+               <div class="bg-white/10 p-3 rounded-lg">
+                  <p class="font-semibold text-sm mb-1">📁 Download-Bereich</p>
+                  <p class="text-xs text-white/70 text-left">Alle aktuellen Bücher, PDFs, Vorlagen und Videos</p>
+               </div>
+               <div class="bg-white/10 p-3 rounded-lg">
+                  <p class="font-semibold text-sm mb-1">📰 KI-Kompass Business Newsletter</p>
+                  <p class="text-xs text-white/70 text-left">2-3x im Monat – spart dir Stunden, liefert nur das Wichtigste</p>
+               </div>
+               <div class="bg-white/10 p-3 rounded-lg">
+                  <p class="font-semibold text-sm mb-1">🎥 1x monatlich Live-Update-Call</p>
+                  <p class="text-xs text-white/70 text-left">Was ist neu, welches Tool lohnt sich, deine Fragen</p>
+               </div>
+               <div class="bg-white/10 p-3 rounded-lg">
+                  <p class="font-semibold text-sm mb-1">💬 Optional: WhatsApp-Support</p>
+                  <p class="text-xs text-white/70 text-left">Schnelle Antworten auf Anfrage</p>
+               </div>
+            </div>
+            <p class="mt-6 text-white/90 italic">Du bist nicht allein nach dem Kurs. Wir bleiben dran.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl flex-shrink-0">🗺️</div>
+          <div class="flex-1">
+            <span class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-full mb-3">DAS KOMPLETTPAKET</span>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy mb-3">KI-Fahrplan für dein Unternehmen</h2>
+            <p class="text-brand-red font-semibold mb-4 text-left">Ich begleite euch auf eurer Reise, KI gesund im Unternehmen einzugliedern. Ein Schritt nach dem anderen.</p>
+            <p class="text-slate-600 leading-relaxed mb-6 text-left">
+              Du willst KI einführen – aber richtig. Nicht alles auf einmal, nicht blind dem Hype nach, sondern mit Plan und Struktur. Der KI-Fahrplan bringt alles zusammen: Analyse, Schulung, Umsetzung und Begleitung.
+            </p>
+            <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-colors">
+              Klick hier für ein persönliches Gespräch
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 flex flex-col md:flex-row gap-12 items-center">
+        
+        <div class="flex-1 space-y-6">
+          <h2 class="text-3xl font-heading font-bold text-brand-navy">Nicht der typische Tech-Nerd.</h2>
+          
+          <p class="text-slate-700 leading-relaxed text-lg text-left">
+            Ich komme aus der Praxis, nicht aus dem Silicon Valley. Habe Unternehmen aufgebaut, Teams geführt und weiß, was es heißt, wenn <strong>jede Entscheidung Geld kostet</strong>.
+          </p>
+          
+          <p class="text-slate-700 leading-relaxed text-lg text-left">
+            Diplomierter KI-Manager. <strong>Autor von vier Fachbüchern</strong> – darunter <strong>Das erste große deutschsprachige KI-Lexikon</strong>. Seit zwei Jahren studiere ich, wie die erfolgreichsten Unternehmen weltweit KI profitabel implementieren.
+          </p>
+
+          <div class="pt-4">
+            <a href="/ueber-mich" class="inline-block px-8 py-4 bg-brand-navy text-white font-bold rounded hover:bg-brand-navy/90 transition-colors">
+              Aber hierher zu kommen war kein gerader Weg →
+            </a>
+          </div>
+        </div>
 
         <div class="md:w-1/3 w-full flex justify-center">
             <img 
@@ -452,134 +382,134 @@ const schema = JSON.stringify({
                 class="rounded-xl shadow-2xl object-cover w-full h-auto max-w-xs md:max-w-none"
             />
         </div>
-      </div>
-    </div>
-  </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-24 bg-brand-navy relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+  <section class="py-24 bg-brand-navy relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl text-center relative z-10">
-      <span class="inline-block py-1 px-3 rounded bg-brand-red/20 text-brand-red border border-brand-red/50 text-xs font-bold tracking-widest uppercase mb-6">
-        Beta Access
-      </span>
-      
-      <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-6 leading-tight">
-        Frisch aus dem <br /> KI Entwickler Labor
-      </h2>
-      
-      <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-3xl mx-auto leading-normal">
-        "Das ist kein Quiz. <strong class="text-white font-bold">Das ist eine Diagnose.</strong>"
-      </p>
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl text-center relative z-10">
+      <span class="inline-block py-1 px-3 rounded bg-brand-red/20 text-brand-red border border-brand-red/50 text-xs font-bold tracking-widest uppercase mb-6">
+        Beta Access
+      </span>
+      
+      <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-6 leading-tight">
+        Frisch aus dem <br /> KI Entwickler Labor
+      </h2>
+      
+      <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-3xl mx-auto leading-normal">
+        "Das ist kein Quiz. <strong class="text-white font-bold">Das ist eine Diagnose.</strong>"
+      </p>
 
-      <p class="text-lg md:text-xl text-white font-bold mb-6 tracking-wide">
-        Lerne KI – Teste dich regelmäßig – Finde heraus, wo du stehst.
-      </p>
+      <p class="text-lg md:text-xl text-white font-bold mb-6 tracking-wide">
+        Lerne KI – Teste dich regelmäßig – Finde heraus, wo du stehst.
+      </p>
 
-      <p class="text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
-        Egal, ob du nur kurz deinen Status quo checken willst oder tief eintauchen möchtest: 
-        Du bist herzlich eingeladen, regelmäßig wiederzukommen. 
-        Im <strong class="text-slate-200">Lernmodus</strong> erfährst du alles über den AI Act und 5 weitere Themen rund um KI – 
-        und kannst dein Wissen immer wieder in <strong class="text-slate-200">Prüfungen</strong> testen.
-      </p>
+      <p class="text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
+        Egal, ob du nur kurz deinen Status quo checken willst oder tief eintauchen möchtest: 
+        Du bist herzlich eingeladen, regelmäßig wiederzukommen. 
+        Im <strong class="text-slate-200">Lernmodus</strong> erfährst du alles über den AI Act und 5 weitere Themen rund um KI – 
+        und kannst dein Wissen immer wieder in <strong class="text-slate-200">Prüfungen</strong> testen.
+      </p>
 
-      <a href="/ki-check" class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-brand-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105">
-        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-brand-red rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
-        <span class="relative flex items-center gap-2">
-          Analyse jetzt starten
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </span>
-      </a>
-      
-    </div>
-  </section>
+      <a href="/ki-check" class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-brand-navy font-bold rounded-lg overflow-hidden transition-all hover:scale-105">
+        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-brand-red rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
+        <span class="relative flex items-center gap-2">
+          Analyse jetzt starten
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </span>
+      </a>
+      
+    </div>
+  </section>
 
-    <section class="py-20 bg-white border-t border-slate-100">
-    <div class="container mx-auto px-6 md:px-8 max-w-6xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
-          Jetzt ist nicht die Zeit, strategisch passiv zu bleiben.
-        </h2>
-        <p class="text-xl text-brand-red font-bold uppercase tracking-wide">
-          Informationen - Planung - Zielsetzung - Erfolg. <br class="md:hidden"> Das ist der Weg.
-        </p>
-      </div>
+  <section class="py-20 bg-white border-t border-slate-100">
+    <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
+          Jetzt ist nicht die Zeit, strategisch passiv zu bleiben.
+        </h2>
+        <p class="text-xl text-brand-red font-bold uppercase tracking-wide">
+          Informationen - Planung - Zielsetzung - Erfolg. <br class="md:hidden"> Das ist der Weg.
+        </p>
+      </div>
 
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">🕵️</div>
-          <h3 class="font-bold text-brand-navy text-xl mb-3">Schatten-IT</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Mitarbeiter nutzen ChatGPT & Co. heimlich auf privaten Accounts. Niemand weiß, welche Firmendaten abfließen.
-          </p>
-        </div>
-        <div class="flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">💣</div>
-          <h3 class="font-bold text-brand-navy text-xl mb-3">Datenlecks</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Ohne Richtlinien landen sensible Kundendaten auf US-Servern. Ein Verstoß gegen DSGVO und AI Act ist vorprogrammiert.
-          </p>
-        </div>
-        <div class="flex flex-col items-center text-center">
-          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">📉</div>
-          <h3 class="font-bold text-brand-navy text-xl mb-3">Wettbewerbs-Nachteil</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Während du noch diskutierst, hat der Mitbewerb KI bereits automatisiert. Zögern kostet täglich Geld.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">🕵️</div>
+          <h3 class="font-bold text-brand-navy text-xl mb-3">Schatten-IT</h3>
+          <p class="text-slate-600 leading-relaxed text-left">
+            Mitarbeiter nutzen ChatGPT & Co. heimlich auf privaten Accounts. Niemand weiß, welche Firmendaten abfließen.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">💣</div>
+          <h3 class="font-bold text-brand-navy text-xl mb-3">Datenlecks</h3>
+          <p class="text-slate-600 leading-relaxed text-left">
+            Ohne Richtlinien landen sensible Kundendaten auf US-Servern. Ein Verstoß gegen DSGVO und AI Act ist vorprogrammiert.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-4xl shadow-sm border border-red-100">📉</div>
+          <h3 class="font-bold text-brand-navy text-xl mb-3">Wettbewerbs-Nachteil</h3>
+          <p class="text-slate-600 leading-relaxed text-left">
+            Während du noch diskutierst, hat der Mitbewerb KI bereits automatisiert. Zögern kostet täglich Geld.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-20 bg-brand-navy text-center text-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-      <h2 class="text-3xl font-heading font-bold mb-6">
-        Bereit, KI im Unternehmen wirklich nutzbar zu machen?
-      </h2>
-      <p class="text-slate-300 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
-        Lass uns in einem kostenlosen Erstgespräch herausfinden, wo KI in deinem Betrieb den größten Mehrwert schafft.
-      </p>
-      <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-5 bg-brand-red text-white font-bold rounded shadow-lg hover:bg-red-700 hover:-translate-y-1 transition-all text-lg">
-        Kostenloses Erstgespräch buchen
-      </a>
-    </div>
-  </section>
+  <section class="py-20 bg-brand-navy text-center text-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
+      <h2 class="text-3xl font-heading font-bold mb-6">
+        Bereit, KI im Unternehmen wirklich nutzbar zu machen?
+      </h2>
+      <p class="text-slate-300 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
+        Lass uns in einem kostenlosen Erstgespräch herausfinden, wo KI in deinem Betrieb den größten Mehrwert schafft.
+      </p>
+      <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-5 bg-brand-red text-white font-bold rounded shadow-lg hover:bg-red-700 hover:-translate-y-1 transition-all text-lg">
+        Kostenloses Erstgespräch buchen
+      </a>
+    </div>
+  </section>
 
-    <script is:inline>
-    function toggleDetails(button) {
-      const id = button.getAttribute('data-target');
-      const element = document.getElementById(id);
-      
-      if (!element) return;
-      
-      const allButtons = document.querySelectorAll('button[data-target]');
-      const isCurrentlyExpanded = button.getAttribute('aria-expanded') === 'true';
+  <script is:inline>
+    function toggleDetails(button) {
+      const id = button.getAttribute('data-target');
+      const element = document.getElementById(id);
+      
+      if (!element) return;
+      
+      const allButtons = document.querySelectorAll('button[data-target]');
+      const isCurrentlyExpanded = button.getAttribute('aria-expanded') === 'true';
 
-      allButtons.forEach(btn => {
-        const targetId = btn.getAttribute('data-target');
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement && targetElement.id !== id) {
-          targetElement.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          const arrow = btn.querySelector('span:last-child');
-          if (arrow) arrow.style.transform = 'rotate(0deg)';
-        }
-      });
-      
-      if (!isCurrentlyExpanded) {
-        element.classList.remove('hidden');
-        button.setAttribute('aria-expanded', 'true');
-        const arrow = button.querySelector('span:last-child');
-        if (arrow) arrow.style.transform = 'rotate(90deg)';
-      } else {
-        element.classList.add('hidden');
-        button.setAttribute('aria-expanded', 'false');
-        const arrow = button.querySelector('span:last-child');
-        if (arrow) arrow.style.transform = 'rotate(0deg)';
-      }
-    }
-  </script>
+      allButtons.forEach(btn => {
+        const targetId = btn.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement && targetElement.id !== id) {
+          targetElement.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          const arrow = btn.querySelector('span:last-child');
+          if (arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      if (!isCurrentlyExpanded) {
+        element.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+        const arrow = button.querySelector('span:last-child');
+        if (arrow) arrow.style.transform = 'rotate(90deg)';
+      } else {
+        element.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+        const arrow = button.querySelector('span:last-child');
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
 
 </BaseLayout>
