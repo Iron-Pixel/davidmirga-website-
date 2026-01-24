@@ -4,7 +4,8 @@ description: "Studien zeigen: Viele Bewerber stehen KI im Recruiting skeptisch g
 date: 2025-12-14
 author: "David Mirga"
 category: "ki-praxis"
-image: "/images/blog/schatten-ki-shadow-ai.png"video: ""
+image: "/images/blog/ki-bewerbungsprozess-bewerber.jpg"
+video: ""
 deepDive: false
 draft: false
 linkedin: ""
