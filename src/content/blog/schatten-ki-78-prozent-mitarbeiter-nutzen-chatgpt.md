@@ -4,7 +4,7 @@ description: "98 % aller Unternehmen haben Shadow AI – oft ohne es zu wissen. 
 date: 2025-01-25
 author: "David Mirga"
 category: "ki-sicherheit"
-image: ""
+image: "/images/blog/schatten-ki-shadow-ai.jpg"
 video: ""
 deepDive: false
 draft: false
