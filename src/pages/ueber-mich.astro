@@ -4,110 +4,133 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout pageTitle="Über mich" description="Vom Maurer zum KI-Experten. David Mirga's Weg zur digitalen Praxis.">
 
-  <section class="min-h-screen py-8 bg-gradient-to-b from-brand-navy to-brand-navy/95 flex justify-center items-start">
-    <div class="container max-w-4xl px-4 py-8 mx-auto">
+  <section class="py-16 md:py-24 bg-brand-navy">
+    <div class="container max-w-4xl px-6 mx-auto text-center text-white">
 
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-4">
-          Nicht der typische <span class="text-brand-red">Tech-Nerd.</span>
-        </h1>
-        <p class="text-lg text-slate-600 leading-relaxed mb-4">
-          Ich komme nicht aus dem Silicon Valley. Ich habe Maurer gelernt und Jahre in der Baubranche gearbeitet – war aber schon in früher Jugend ein Computer-Nerd.
-          Über die Jahre wurde ich so zum KI-Brückenbauer.
-          Genau deshalb verstehe ich, dass KI am Ende des Tages nur eines tun muss:
-          <strong>Funktionieren. Ohne Ausreden.</strong>
-        </p>
-        <p class="text-base text-slate-600 leading-relaxed italic">
-          Manchmal muss man ganz unten ankommen, um zu verstehen, wohin man eigentlich will.
-        </p>
+      <p class="text-brand-red font-semibold tracking-widest uppercase text-sm mb-4">David Mirga · Wien</p>
+
+      <h1 class="text-4xl md:text-6xl font-heading font-black tracking-tight mb-6 leading-tight">
+        Nicht der typische<br/>
+        <span class="text-brand-red">Tech-Nerd.</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto mb-10">
+        Ich komme nicht aus dem Silicon Valley. Ich habe Maurer gelernt, Unternehmen aufgebaut und bin zum KI-Experten geworden —
+        weil ich verstanden habe, dass Technologie nur eines tun muss: <strong class="text-white font-semibold">Funktionieren. Ohne Ausreden.</strong>
+      </p>
+
+      <!-- Credential Pills -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white/90 backdrop-blur-sm">
+          📚 4 Fachbücher
+        </span>
+        <span class="px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white/90 backdrop-blur-sm">
+          🎓 20+ KI-Zertifizierungen
+        </span>
+        <span class="px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white/90 backdrop-blur-sm">
+          🔒 ISO 42001 Lead Auditor (2026)
+        </span>
+        <span class="px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-white/90 backdrop-blur-sm">
+          ✍️ Dipl. KI-Manager
+        </span>
       </div>
 
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+    </div>
+  </section>
 
-          <div class="w-full md:w-1/3 flex-shrink-0">
-            <div class="relative rounded-lg overflow-hidden shadow-lg border border-slate-100 aspect-[3/4]">
+  <section class="py-16 md:py-20 bg-brand-light">
+    <div class="container max-w-4xl px-6 mx-auto">
+
+      <!-- Bio + Foto -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-6">
+        <div class="flex flex-col md:flex-row">
+
+          <div class="w-full md:w-64 flex-shrink-0">
+            <div class="h-72 md:h-full w-full overflow-hidden">
               <img
                 src="/images/David Mirga, KI-Manager und Buchautor, im Business-Casual-Look mit verschränkten Armen.jpg"
-                alt="David Mirga, KI-Manager und Buchautor, im Business-Casual-Look mit verschränkten Armen"
+                alt="David Mirga, KI-Manager und Buchautor"
                 class="w-full h-full object-cover object-top"
               />
             </div>
           </div>
 
-          <div class="flex-1">
-            <p class="text-base text-slate-800 text-lg leading-relaxed mb-4">
+          <div class="flex-1 p-8 md:p-10 flex flex-col justify-center">
+            <p class="text-slate-800 text-lg leading-relaxed mb-5">
               Ich bin David Mirga. Diplomierter KI-Manager aus Wien, Autor von vier Fachbüchern – darunter
-              <a href="https://kilexikon.com/" target="_blank" rel="noopener noreferrer" class="text-brand-red font-bold hover:underline">
-                Das erste große deutschsprachige KI-Lexikon
+              <a href="https://kilexikon.com/" target="_blank" rel="noopener noreferrer" class="text-brand-red font-bold hover:underline underline-offset-2">
+                das erste große deutschsprachige KI-Lexikon
               </a>
-              – und jemand, der weiß, wie sich echte Arbeit anfühlt, weil ich sie jahrzehntelang gemacht habe.
+              – und jemand, der weiß, wie sich echte Arbeit anfühlt.
             </p>
-            <p class="text-base text-slate-800 text-lg leading-relaxed mb-4">
-              Wenn Sie jemanden suchen, der Ihnen in akademischen Schachtelsätzen erklärt, wie die Welt funktionieren sollte, sind Sie hier falsch. Wenn Sie aber jemanden suchen, der weiß, wie man Ärmel hochkrempelt, Probleme anpackt und echte Ergebnisse liefert, dann sollten wir reden.
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Wenn Sie jemanden suchen, der in akademischen Schachtelsätzen erklärt, wie die Welt funktionieren sollte, sind Sie hier falsch. Wenn Sie jemanden suchen, der Ärmel hochkrempelt und echte Ergebnisse liefert — dann sollten wir reden.
             </p>
-            <p class="text-base text-slate-800 text-lg leading-relaxed font-semibold">
-              Aber der Reihe nach.
+            <p class="font-semibold text-brand-navy italic text-lg border-l-4 border-brand-red pl-4">
+              „Manchmal muss man ganz unten ankommen, um zu verstehen, wohin man eigentlich will."
             </p>
           </div>
 
         </div>
       </div>
 
-      <!-- SOCIAL PROOF: Bücher -->
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <h2 class="text-xl font-heading font-bold text-brand-navy mb-6">
-          📚 Meine Bücher
-        </h2>
-        <div class="flex flex-col md:flex-row gap-6">
+      <!-- BÜCHER – Social Proof -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 mb-6">
+
+        <div class="flex items-center gap-3 mb-8">
+          <div class="h-px flex-1 bg-slate-100"></div>
+          <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Veröffentlichungen</h2>
+          <div class="h-px flex-1 bg-slate-100"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
           <!-- Buch 1: KI-Lexikon -->
           <a
             href="https://kilexikon.com/"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 group flex flex-col sm:flex-row gap-4 p-4 border border-slate-200 rounded-xl hover:border-brand-red hover:shadow-md transition-all"
+            class="group flex gap-5 p-5 border border-slate-200 rounded-xl hover:border-brand-red/50 hover:shadow-md transition-all duration-200"
           >
-            <div class="flex-shrink-0 w-full sm:w-28">
+            <div class="flex-shrink-0 w-20">
               <img
                 src="/images/cover-lexikon.jpg"
-                alt="Das große deutschsprachige KI-Lexikon von David Mirga"
-                class="w-full sm:w-28 rounded-lg shadow-md object-cover"
+                alt="Das große deutschsprachige KI-Lexikon"
+                class="w-20 rounded-lg shadow-md object-cover ring-1 ring-slate-200"
               />
             </div>
-            <div class="flex-1">
-              <span class="inline-block px-2 py-0.5 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
+            <div class="flex-1 min-w-0">
+              <span class="inline-block px-2 py-0.5 bg-green-50 text-green-700 text-xs font-bold rounded-full mb-2">
                 Bereits erhältlich
               </span>
-              <h3 class="font-heading font-bold text-brand-navy text-base group-hover:text-brand-red transition-colors mb-1">
+              <h3 class="font-heading font-bold text-brand-navy text-sm leading-snug group-hover:text-brand-red transition-colors mb-1">
                 Das große deutschsprachige KI-Lexikon
               </h3>
-              <p class="text-sm text-slate-600 leading-snug mb-2">
-                Über 5.000 Begriffe. Das erste umfassende KI-Nachschlagewerk auf Deutsch – für alle, die KI wirklich verstehen wollen.
+              <p class="text-xs text-slate-500 leading-snug mb-2">
+                5.000+ Begriffe · Das erste umfassende KI-Nachschlagewerk auf Deutsch.
               </p>
-              <span class="text-brand-red text-sm font-semibold group-hover:underline">
+              <span class="text-brand-red text-xs font-semibold group-hover:underline underline-offset-2">
                 kilexikon.com →
               </span>
             </div>
           </a>
 
           <!-- Buch 2: KI Datenschutz & Compliance -->
-          <div class="flex-1 flex flex-col sm:flex-row gap-4 p-4 border border-slate-200 rounded-xl bg-slate-50">
-            <div class="flex-shrink-0 w-full sm:w-28 flex items-center justify-center bg-brand-navy/10 rounded-lg min-h-[112px]">
-              <div class="text-center p-3">
-                <div class="text-3xl mb-1">🔒</div>
-                <div class="text-xs font-bold text-brand-navy">In Kürze</div>
+          <div class="flex gap-5 p-5 border border-slate-200 rounded-xl bg-slate-50/50">
+            <div class="flex-shrink-0 w-20 h-[108px] bg-brand-navy/5 rounded-lg flex items-center justify-center ring-1 ring-slate-200">
+              <div class="text-center">
+                <div class="text-2xl">🔒</div>
               </div>
             </div>
-            <div class="flex-1">
-              <span class="inline-block px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full mb-2">
-                Erscheint März 2026
+            <div class="flex-1 min-w-0">
+              <span class="inline-block px-2 py-0.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-2">
+                März 2026
               </span>
-              <h3 class="font-heading font-bold text-brand-navy text-base mb-1">
+              <h3 class="font-heading font-bold text-brand-navy text-sm leading-snug mb-1">
                 KI, Datenschutz & Compliance
               </h3>
-              <p class="text-sm text-slate-600 leading-snug">
-                Der Praxisleitfaden für rechtssicheren KI-Einsatz in Unternehmen. Klar, konkret, ohne Juristendeutsch.
+              <p class="text-xs text-slate-500 leading-snug">
+                Praxisleitfaden für rechtssicheren KI-Einsatz · Klar, ohne Juristendeutsch.
               </p>
             </div>
           </div>
@@ -115,221 +138,247 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <div class="flex items-start gap-4 mb-4">
-          <div class="text-4xl md:text-5xl flex-shrink-0">🧱</div>
-          <div>
-            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
-              2008 - 2012
-            </span>
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
-              Phase 1: Das Fundament
-            </h2>
-            <h3 class="text-lg font-bold text-brand-red mb-3">Wo ich herkomme</h3>
+      <!-- HELDENREISE -->
+      <div class="mb-6">
+
+        <div class="flex items-center gap-3 mb-8">
+          <div class="h-px flex-1 bg-slate-200"></div>
+          <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Meine Geschichte</h2>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <!-- Phase 1 -->
+        <div class="relative pl-0 md:pl-6 mb-6">
+          <div class="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-slate-200 rounded-full"></div>
+          <div class="hidden md:block absolute left-[-4px] top-8 w-2.5 h-2.5 rounded-full bg-brand-red ring-4 ring-white ring-offset-0 shadow-sm"></div>
+
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 border-l-4 border-l-brand-red md:border-l-0">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="text-3xl flex-shrink-0 mt-1">🧱</div>
+              <div>
+                <span class="inline-block px-3 py-1 bg-brand-navy/5 text-brand-navy text-xs font-bold rounded-full mb-2 tracking-wide">
+                  2008 – 2012
+                </span>
+                <h3 class="text-2xl font-heading font-black text-brand-navy tracking-tight">Phase 1: Das Fundament</h3>
+                <p class="text-brand-red font-semibold text-sm mt-0.5">Wo ich herkomme</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              <p>
+                Ich wurde in der Tschechoslowakei geboren. Mit zwei Monaten kam ich mit meiner Mutter nach Österreich. Armut und häusliche Gewalt sind mir nicht fremd.
+              </p>
+              <p>
+                Aber ich war schon als Kind anders. In der Grundschule verkaufte ich Äpfel in der Pause, um mir mein Schulessen zu finanzieren. Mit 16 eröffnete ich meinen ersten Imbissstand. Mein Geschäftssinn war schon da – nur fehlte mir jemand, der ihn förderte.
+              </p>
+              <p>
+                Nach der Schule lernte ich Maurer. Leider hatte ich nie das große Talent für diesen Beruf – aber Bauleitung lag mir dafür schon eher. Die Ausbildung hat mir trotzdem mehr beigebracht als jedes Seminar: Dass man ein Fundament setzt, bevor man hochzieht. Dass Qualität Zeit braucht. Und dass man nicht aufhört, nur weil es anstrengend wird.
+              </p>
+              <p>
+                Später wechselte ich in die Sicherheitsbranche – Objektschutz und Personenschutz. Parallel dazu entdeckte ich meine wahre Leidenschaft: Technologie. Schon 2005 – Jahre bevor Social Media zum Mainstream wurde – promotete ich Künstler auf Plattformen wie MySpace und später YouTube. Ich half Musikern, Millionen von Klicks zu erzielen, als die meisten noch nicht mal wussten, was ein "virales Video" ist. Ab 2014 machte ich auch Social Media Marketing für Gastronomen in Wien.
+              </p>
+              <p class="font-semibold text-brand-navy border-l-2 border-brand-red pl-4">
+                Was ich aus dieser Zeit mitgenommen habe: Ein Fundament, das nicht wackelt. Ich bin kein Theoretiker aus dem Elfenbeinturm.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
-          <p>
-            Ich wurde in der Tschechoslowakei geboren. Mit zwei Monaten kam ich mit meiner Mutter nach Österreich. Armut und häusliche Gewalt sind mir nicht fremd.
-          </p>
-          <p>
-            Aber ich war schon als Kind anders. In der Grundschule verkaufte ich Äpfel in der Pause, um mir mein Schulessen zu finanzieren. Mit 16 eröffnete ich meinen ersten Imbissstand. Mein Geschäftssinn war schon da – nur fehlte mir jemand, der ihn förderte.
-          </p>
-          <p>
-            Nach der Schule lernte ich Maurer. Leider hatte ich nie das große Talent für diesen Beruf – aber Bauleitung lag mir dafür schon eher. Die Ausbildung hat mir trotzdem mehr beigebracht als jedes Seminar: Dass man ein Fundament setzt, bevor man hochzieht. Dass Qualität Zeit braucht. Und dass man nicht aufhört, nur weil es anstrengend wird.
-          </p>
-          <p>
-            Später wechselte ich in die Sicherheitsbranche – Objektschutz und Personenschutz. Parallel dazu entdeckte ich meine wahre Leidenschaft: Technologie. Schon 2005 – Jahre bevor Social Media zum Mainstream wurde – promotete ich Künstler auf Plattformen wie MySpace und später YouTube. Ich half Musikern, Millionen von Klicks zu erzielen, als die meisten noch nicht mal wussten, was ein "virales Video" ist. Ab 2014 machte ich auch Social Media Marketing für Gastronomen in Wien. Diese frühe Faszination für digitale Möglichkeiten hat mich nie losgelassen – so wie heute KI.
-          </p>
-          <p class="font-semibold">
-            Was ich aus dieser Zeit mitgenommen habe: Ein Fundament, das nicht wackelt. Ich weiß, wie es ist, um 5 Uhr morgens auf der Baustelle zu stehen. Ich weiß, wie es ist, Technologie zu nutzen, wenn andere noch skeptisch sind. Ich bin kein Theoretiker aus dem Elfenbeinturm.
-          </p>
+        <!-- Phase 2 -->
+        <div class="relative pl-0 md:pl-6 mb-6">
+          <div class="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-slate-200 rounded-full"></div>
+          <div class="hidden md:block absolute left-[-4px] top-8 w-2.5 h-2.5 rounded-full bg-brand-red ring-4 ring-white shadow-sm"></div>
+
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 border-l-4 border-l-brand-red md:border-l-0">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="text-3xl flex-shrink-0 mt-1">💼</div>
+              <div>
+                <span class="inline-block px-3 py-1 bg-brand-navy/5 text-brand-navy text-xs font-bold rounded-full mb-2 tracking-wide">
+                  2013 – 2020
+                </span>
+                <h3 class="text-2xl font-heading font-black text-brand-navy tracking-tight">Phase 2: Der Aufstieg</h3>
+                <p class="text-brand-red font-semibold text-sm mt-0.5">Wie ich Unternehmer wurde</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              <p>
+                2008 gründete ich mit meinem Bruder eine Baufirma. Alle Aufträge holte ich über das Internet – damals war das revolutionär. Ich verstand früh: Wer digital sichtbar ist, gewinnt.
+              </p>
+              <p>
+                Dann kam der Vertrieb. Ab 2011 war ich selbstständiger Unternehmer für Vodafone – Hard Sales, Kaltakquise, Außendienst. Mit einem kleinen Team habe ich gelernt, was Verkaufen wirklich bedeutet: Ablehnung aushalten. Einwände entkräften. Und dranbleiben, wenn andere aufgeben.
+              </p>
+              <p>
+                Dann kam ein Wendepunkt, mit dem ich nicht gerechnet hatte. Mein bester Freund Ergün bat mich, ihm in seinem Restaurant als Barkeeper auszuhelfen. Er sah etwas in mir, das ich selbst noch nicht sah. Ich fing an, arbeitete mich hoch, wurde Barchef.
+              </p>
+              <p class="italic text-slate-500">
+                Drei Jahre später starb Ergün an einem Hirntumor. Er hat mir gezeigt, dass manchmal jemand anderes erkennen muss, was in dir steckt. Dafür bin ich ihm bis heute dankbar.
+              </p>
+              <p>
+                Als Corona kam und das Lokal schloss, war für mich klar: Jetzt ist der Moment. 2020 gründete ich die Agentur "Addvengers" – Social Recruiting für die Automobilbranche. Innerhalb von zwei Jahren bauten wir auf 5-stellige Monatsumsätze aus.
+              </p>
+              <div class="bg-brand-navy/5 rounded-xl p-4 flex items-center gap-4">
+                <div class="text-3xl">📊</div>
+                <div>
+                  <p class="font-bold text-brand-navy text-lg">91 % Einstellungsquote. In unter 28 Tagen.</p>
+                  <p class="text-sm text-slate-500">Für nahezu alle namhaften Automarken-Händler in Österreich.</p>
+                </div>
+              </div>
+              <p>
+                Während wir Erfolge feierten, sah ich bereits die nächste Welle kommen. Der Recruiting-Markt war ein „Red Ocean" geworden. KI war die Zukunft. Ich war bereit für den nächsten Schritt.
+              </p>
+              <p class="font-semibold text-brand-navy border-l-2 border-brand-red pl-4">
+                Dann kam der Bruch.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- Phase 3 -->
+        <div class="relative pl-0 md:pl-6 mb-6">
+          <div class="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-slate-200 rounded-full"></div>
+          <div class="hidden md:block absolute left-[-4px] top-8 w-2.5 h-2.5 rounded-full bg-brand-red ring-4 ring-white shadow-sm"></div>
+
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 border-l-4 border-l-brand-red md:border-l-0">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="text-3xl flex-shrink-0 mt-1">⚡</div>
+              <div>
+                <span class="inline-block px-3 py-1 bg-brand-navy/5 text-brand-navy text-xs font-bold rounded-full mb-2 tracking-wide">
+                  2023
+                </span>
+                <h3 class="text-2xl font-heading font-black text-brand-navy tracking-tight">Phase 3: Der Bruch</h3>
+                <p class="text-brand-red font-semibold text-sm mt-0.5">Was mich zu Boden warf – und warum ich wieder aufgestanden bin</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-slate-700 leading-relaxed">
+              <p>
+                2023 wurde ich aus dem Unternehmen gedrängt, das ich selbst mitaufgebaut habe. Von einem Tag auf den anderen stand ich mit fast nichts da. Jahre der Arbeit, des Verzichts, der investierten Nächte – weg. Zeitgleich kam der körperliche Knockout: Eine schwere Verletzung. Offener Fuß. 18 Monate Schmerzen, die mich an manchen Tagen nicht aufstehen ließen.
+              </p>
+              <p>
+                Ich könnte jetzt jammern. Könnte Schuldzuweisungen machen. Könnte mich als Opfer darstellen.
+              </p>
+              <p class="font-bold text-brand-navy text-lg">Aber das ist nicht mein Stil.</p>
+              <p>
+                Die Wahrheit ist: Diese Zeit hat mir die Fesseln gelöst. Sie hat mir gezeigt, dass ich nie wieder von einem Partner abhängig sein will. Und dass die Technologie, die ich schon 2021 kommen sah, jetzt mein Rettungsanker werden würde.
+              </p>
+              <p>
+                In den 18 Monaten meiner Zwangspause habe ich mehr gelernt als in den Jahren davor zusammen: Über 20 internationale KI-Zertifizierungen. Tägliches Testen aktueller Tools. Und ich habe geschrieben – vier Bücher, darunter das erste deutsche KI-Lexikon mit über 5.000 Begriffen.
+              </p>
+              <div class="bg-brand-red/5 border border-brand-red/20 rounded-xl p-5">
+                <p class="font-bold text-brand-red text-center text-lg">
+                  „Nicht das Hinfallen definiert dich. Sondern das Aufstehen."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="relative pl-0 md:pl-6">
+          <div class="hidden md:block absolute left-[-4px] top-8 w-2.5 h-2.5 rounded-full bg-brand-navy ring-4 ring-white shadow-sm"></div>
+
+          <div class="bg-brand-navy text-white rounded-2xl shadow-sm p-8 md:p-10 border-l-4 border-l-brand-red md:border-l-0">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="text-3xl flex-shrink-0 mt-1">🤖</div>
+              <div>
+                <span class="inline-block px-3 py-1 bg-white/10 text-white/80 text-xs font-bold rounded-full mb-2 tracking-wide border border-white/20">
+                  Heute
+                </span>
+                <h3 class="text-2xl font-heading font-black text-white tracking-tight">Phase 4: Die Zukunft</h3>
+                <p class="text-brand-red font-semibold text-sm mt-0.5">Wo ich gerade stehe</p>
+              </div>
+            </div>
+
+            <div class="space-y-5 text-white/80 leading-relaxed">
+              <p class="text-white font-semibold text-lg">Heute stehe ich wieder auf zwei Beinen.</p>
+              <p>
+                Ich nutze diese Zeit gezielt: Ich lerne, schreibe und bereite mich vor. Im April 2026 lege ich meine Prüfung als <strong class="text-white">ISO 42001 Lead Auditor</strong> ab – dem internationalen Standard für KI-Managementsysteme. Wer KI wirklich ernst nimmt, braucht mehr als gute Absichten. Er braucht Struktur, Verantwortung und das richtige Fundament.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <p class="text-white font-bold mb-1">📖 Nächstes Buch</p>
+                  <p class="text-white/70 text-sm leading-snug">
+                    <strong class="text-white">"KI, Datenschutz & Compliance"</strong> — Praxisleitfaden für rechtssicheren KI-Einsatz. Erscheint März 2026.
+                  </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <p class="text-white font-bold mb-1">🎙️ Podcast & LinkedIn</p>
+                  <p class="text-white/70 text-sm leading-snug">
+                    Praxisnahe KI-Einblicke, abseits des Hypes — wöchentlich auf LinkedIn und bald im eigenen Podcast-Format.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-brand-red font-bold text-lg pt-2">
+                Meine Überzeugung: KI ersetzt keine Menschen. Sie macht sie leistungsfähiger.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <div class="flex items-start gap-4 mb-4">
-          <div class="text-4xl md:text-5xl flex-shrink-0">💼</div>
-          <div>
-            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
-              2013 - 2020
-            </span>
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
-              Phase 2: Der Aufstieg
-            </h2>
-            <h3 class="text-lg font-bold text-brand-red mb-3">Wie ich Unternehmer wurde</h3>
-          </div>
+      <!-- WAS MICH AUSMACHT -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 mb-6">
+
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-px flex-1 bg-slate-100"></div>
+          <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Wer ich bin</h2>
+          <div class="h-px flex-1 bg-slate-100"></div>
         </div>
 
-        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
-          <p>
-            2008 gründete ich mit meinem Bruder eine Baufirma. Alle Aufträge holte ich über das Internet – damals war das revolutionär. Ich verstand früh: Wer digital sichtbar ist, gewinnt.
-          </p>
-          <p>
-            Dann kam der Vertrieb. Ab 2011 war ich selbstständiger Unternehmer für Vodafone – Hard Sales, Kaltakquise, Außendienst. Mit einem kleinen Team habe ich gelernt, was Verkaufen wirklich bedeutet: Ablehnung aushalten. Einwände entkräften. Und dranbleiben, wenn andere aufgeben.
-          </p>
-          <p>
-            Dann kam ein Wendepunkt, mit dem ich nicht gerechnet hatte. Mein bester Freund Ergün bat mich, ihm in seinem Restaurant als Barkeeper auszuhelfen. Ich hatte null Ahnung. Aber er sah etwas in mir, das ich selbst noch nicht sah. Ich fing an, arbeitete mich hoch, wurde Barchef. Zum ersten Mal öffnete ich mich für eine Arbeit, die mir wirklich Freude machte.
-          </p>
-          <p class="italic">
-            Drei Jahre später starb Ergün an einem Hirntumor. Er hat mir gezeigt, dass manchmal jemand anderes erkennen muss, was in dir steckt. Dafür bin ich ihm bis heute dankbar.
-          </p>
-          <p>
-            Als Corona kam und das Lokal schloss, war für mich klar: Jetzt ist der Moment. Ich hatte schon vorher angefangen, mich im Bereich Online-Marketing weiterzubilden. Jetzt ging ich all-in.
-          </p>
-          <p>
-            2020 gründete ich mit einem Partner die Agentur "Addvengers" – Social Recruiting und Performance Marketing. Anfangs für Autohäuser, Handwerksbetriebe und Gastronomen, doch wir spezialisierten uns schnell auf die Automobilbranche. Innerhalb von zwei Jahren bauten wir das Unternehmen auf 5-stellige Monatsumsätze aus. Jeden Euro Gewinn steckte ich in Bildung und Wachstum.
-          </p>
-          <p>
-            Vielleicht kennen Sie das: Sie suchen seit Monaten einen Mitarbeiter, schalten Anzeigen, aber es meldet sich niemand Brauchbares. Genau da haben wir angesetzt – und geliefert. Wir haben für nahezu alle namhaften Automarken-Händler erfolgreich Mitarbeiter rekrutiert. <strong>91% Einstellungsquote. In unter 28 Tagen.</strong> Zwei Jahre lang konnte ich fast jede Mechatroniker-Stelle besetzen, die wir übernahmen.
-          </p>
-          <p>
-            Aber während wir Erfolge feierten, sah ich bereits die nächste Welle kommen. Der Recruiting-Markt war uns längst zu einem "Red Ocean" geworden – ein Haifischbecken, in dem immer mehr Agenturen um dieselben Kunden kämpften. Ich beschäftigte mich schon 2021 mit KI-Themen, vor allem Richtung Content und Creation, und erkannte: Hier liegt die Zukunft. Mir war klar – unsere Kunden werden neben Recruiting auch Hilfe mit KI-Themen brauchen. Mein Plan war, die Agentur genau dorthin weiterzuentwickeln. Neues Territorium, echte Probleme lösen. Ein digitaler Pionier, wie schon damals mit Social Media.
-          </p>
-          <p class="font-semibold">
-            Ich war bereit für den nächsten Schritt. Dann kam der Bruch.
-          </p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <div class="flex items-start gap-4 mb-4">
-          <div class="text-4xl md:text-5xl flex-shrink-0">⚡</div>
-          <div>
-            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
-              2023
-            </span>
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
-              Phase 3: Der Bruch
-            </h2>
-            <h3 class="text-lg font-bold text-brand-red mb-3">Was mich zu Boden warf – und warum ich wieder aufgestanden bin</h3>
-          </div>
-        </div>
-
-        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
-          <p>
-            2023 wurde ich aus dem Unternehmen gedrängt, das ich selbst mitaufgebaut habe. Von einem Tag auf den anderen stand ich mit fast nichts da. Jahre der Arbeit, des Verzichts, der investierten Nächte – weg. Zeitgleich kam der körperliche Knockout: Eine schwere Verletzung. Offener Fuß. 18 Monate Schmerzen, die mich an manchen Tagen nicht aufstehen ließen.
-          </p>
-          <p>
-            Ich könnte jetzt jammern. Könnte Schuldzuweisungen machen. Könnte mich als Opfer darstellen.
-          </p>
-          <p class="font-semibold">
-            Aber das ist nicht mein Stil.
-          </p>
-          <p>
-            Die Wahrheit ist: Diese Zeit hat mir die Fesseln gelöst. Sie hat mir gezeigt, dass ich nie wieder von einem Partner abhängig sein will. Dass ich mein nächstes Kapitel alleine schreiben werde. Und dass die Technologie, die ich schon 2021 kommen sah, jetzt mein Rettungsanker werden würde.
-          </p>
-          <p class="font-semibold">
-            Ich wandte mich vollständig der KI zu.
-          </p>
-          <p>
-            Nicht als Hobby. Nicht als Spielerei. Sondern als Neustart.
-          </p>
-          <p>
-            In den 18 Monaten meiner Zwangspause habe ich mehr gelernt als in den Jahren davor zusammen: Über 20 internationale KI-Zertifizierungen. Tägliches Testen aktueller Tools. Das Studium globaler KI-Strategien von CEOs und führenden Unternehmen weltweit. Und ich habe geschrieben – vier Bücher, darunter das erste deutsche KI-Lexikon mit über 5.000 Begriffen.
-          </p>
-          <p class="font-semibold text-brand-red">
-            Das war mein Rocky-Moment. Nicht das Hinfallen definiert dich. Sondern das Aufstehen.
-          </p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <div class="flex items-start gap-4 mb-4">
-          <div class="text-4xl md:text-5xl flex-shrink-0">🤖</div>
-          <div>
-            <span class="inline-block px-3 py-1 bg-brand-light text-brand-navy text-xs font-bold rounded-full mb-2">
-              Heute
-            </span>
-            <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy">
-              Phase 4: Die Zukunft
-            </h2>
-            <h3 class="text-lg font-bold text-brand-red mb-3">Wo ich gerade stehe</h3>
-          </div>
-        </div>
-
-        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
-          <p class="font-semibold">
-            Heute stehe ich wieder auf zwei Beinen.
-          </p>
-
-          <p>
-            Ich nutze diese Zeit gezielt: Ich lerne, schreibe und bereite mich vor. Im April 2026 lege ich meine Prüfung als <strong>ISO 42001 Lead Auditor</strong> ab – dem internationalen Standard für KI-Managementsysteme. Wer KI wirklich ernst nimmt, braucht mehr als gute Absichten. Er braucht Struktur, Verantwortung und das richtige Fundament.
-          </p>
-
-          <div class="bg-brand-light p-4 rounded-lg">
-            <h4 class="font-bold text-brand-navy mb-2">📖 Nächstes Buch:</h4>
-            <p>
-              Im März 2026 erscheint mein Praxisleitfaden <strong>"KI, Datenschutz & Compliance"</strong> – klar, konkret und ohne Juristendeutsch. Für alle, die KI rechtssicher einsetzen wollen.
-            </p>
-          </div>
-
-          <div class="bg-brand-light p-4 rounded-lg">
-            <h4 class="font-bold text-brand-navy mb-2">🎙️ Podcast & LinkedIn:</h4>
-            <p>
-              Ich baue gerade mein Podcast-Format auf und teile auf LinkedIn wöchentlich praxisnahe Einblicke zu KI, Compliance und digitaler Zukunft – meist abseits des Hypes. Nicht um laut zu sein, sondern um zu zeigen, was wirklich funktioniert.
-            </p>
-          </div>
-
-          <p class="font-semibold text-brand-red text-lg">
-            Meine Überzeugung: KI ersetzt keine Menschen. Sie macht sie leistungsfähiger. Der Mensch mit KI – das ist die Zukunft.
-          </p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-8">
-        <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy mb-4">
-          Was mich ausmacht
-        </h2>
-
-        <div class="space-y-4 text-slate-800 text-lg leading-relaxed">
+        <div class="space-y-4 text-slate-700 leading-relaxed">
           <p>
             Ich bin kein 20-jähriger Tech-Nerd, der im Hoodie erklärt, wie die Zukunft funktioniert. Ich bin jemand, der weiß, wie es sich anfühlt, morgens um fünf auf der Baustelle zu stehen. Der weiß, was es heißt, ein Team durch schwierige Zeiten zu führen. Der verstanden hat, dass Technologie nur dann etwas wert ist, wenn sie echte Probleme löst.
           </p>
           <p>
             Ich spreche Klartext. Tacheles, ohne Bullshit-Bingo. Und ich weiß, was auf dem Spiel steht – nicht nur für Effizienz, sondern auch für Rechtssicherheit.
           </p>
-          <p class="font-semibold">
+          <p class="font-semibold text-brand-navy border-l-2 border-brand-red pl-4">
             Ich habe bewiesen – mir selbst und anderen – dass man auch nach dem härtesten Rückschlag wieder aufstehen kann. Stärker als vorher.
           </p>
         </div>
       </div>
 
-      <div class="bg-gradient-to-r from-brand-navy to-brand-navy/90 rounded-xl p-6 md:p-8 text-white">
-        <h2 class="text-2xl font-heading font-bold mb-4">
-          Lass uns vernetzen
-        </h2>
-        <p class="mb-4 leading-relaxed">
-          Ich bin gerade in einer Phase des Lernens und Aufbauens – kein aktives Angebot, kein Verkaufsgespräch. Aber wenn du dich für KI, Compliance oder die Zukunft der Arbeit interessierst: Ich freue mich über den Austausch.
-        </p>
-        <p class="mb-6 italic text-white/90">
-          "Der Kern meines Schaffens ist es, den Menschen die Angst davor zu nehmen, von KI ersetzt zu werden."
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://www.linkedin.com/in/david-mirga-847336134/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-[#0077B5] text-white font-bold rounded-lg hover:bg-[#005885] transition-colors"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-            LinkedIn vernetzen
-          </a>
-          <a
-            href="https://kilexikon.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 transition-colors border border-white/30"
-          >
-            📚 KI-Lexikon ansehen
-          </a>
+      <!-- CTA -->
+      <div class="bg-brand-navy rounded-2xl p-8 md:p-10 text-white">
+
+        <div class="max-w-xl">
+          <h2 class="text-2xl md:text-3xl font-heading font-black tracking-tight mb-3">
+            Lass uns vernetzen.
+          </h2>
+          <p class="text-white/70 leading-relaxed mb-2">
+            Ich bin gerade in einer Phase des Lernens und Aufbauens. Kein aktives Angebot, kein Verkaufsgespräch —
+            aber wenn dich KI, Compliance oder die Zukunft der Arbeit interessiert: Ich freue mich über den Austausch.
+          </p>
+          <p class="text-white/50 text-sm italic mb-8">
+            "Der Kern meines Schaffens ist es, den Menschen die Angst davor zu nehmen, von KI ersetzt zu werden."
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://tally.so/r/Y5PdoB"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-red text-white font-bold rounded-xl hover:bg-red-700 transition-colors text-sm"
+            >
+              Gespräch buchen
+            </a>
+            <a
+              href="https://www.linkedin.com/in/david-mirga-847336134/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-white font-bold rounded-xl hover:bg-white/10 transition-colors border border-white/25 text-sm"
+            >
+              <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
         </div>
-        <p class="mt-4 text-sm text-white/70">
-          Kein Sales-Pitch. Nur echter Austausch.
-        </p>
+
       </div>
 
     </div>
