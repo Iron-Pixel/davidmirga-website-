@@ -83,6 +83,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
       <nav class="hidden md:flex gap-6 font-medium text-brand-navy items-center">
         <a href="/ueber-mich" class="hover:text-brand-red transition-colors">Über mich</a>
 
+        <a href="/angebote" class="hover:text-brand-red transition-colors">Angebote</a>
+
         <a href="/ki-check" class="text-brand-red hover:text-red-700 font-bold transition-colors flex items-center gap-1">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           KI-Check
@@ -107,6 +109,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-4 absolute w-full shadow-lg">
       <div class="px-6 flex flex-col gap-4">
         <a href="/ueber-mich" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Über mich</a>
+
+        <a href="/angebote" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Angebote</a>
 
         <a href="/ki-check" class="py-2 text-brand-red hover:text-red-700 font-bold transition-colors flex items-center gap-2">
            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>

@@ -30,7 +30,7 @@ const schema = JSON.stringify({
   <script type="application/ld+json" slot="head-schema" set:html={schema} />
 
   <!-- HERO -->
-  <section class="pt-20 pb-24 bg-brand-navy relative overflow-hidden">
+  <section class="pt-12 pb-10 bg-brand-navy relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
@@ -46,7 +46,7 @@ const schema = JSON.stringify({
       </h1>
 
       <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
-        Ich schreibe, lerne und erkläre — damit KI nicht nur in Powerpoints existiert, sondern wirklich funktioniert.
+        Ich schreibe Bücher und Artikel über KI. Ich lerne täglich AI Act und ISO 42001. Und ich erkläre — so, dass KI nicht nur in Powerpoints existiert, sondern wirklich ankommt.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -69,70 +69,135 @@ const schema = JSON.stringify({
     </div>
   </section>
 
-  <!-- BÜCHER – Social Proof -->
+  <!-- BUCH – KI-Kompass als Geschenk -->
   <section class="py-20 bg-brand-light">
     <div class="container mx-auto px-6 md:px-8 max-w-4xl">
 
-      <div class="text-center mb-12">
-        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Veröffentlichungen</p>
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight">
-          Wissen auf Papier.
-        </h2>
-      </div>
+      <!-- KI-Kompass HERO – Hauptbuch -->
+      <div class="bg-brand-navy rounded-2xl overflow-hidden shadow-xl mb-6">
+        <div class="flex flex-col md:flex-row">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- Buch 1: KI-Lexikon -->
-        <a
-          href="https://kilexikon.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-200 overflow-hidden flex flex-col sm:flex-row"
-        >
-          <div class="sm:w-36 flex-shrink-0 bg-brand-navy/5">
-            <img
-              src="/images/cover-lexikon.jpg"
-              alt="Das große deutschsprachige KI-Lexikon von David Mirga"
-              class="w-full sm:w-36 h-48 sm:h-full object-cover"
-            />
-          </div>
-          <div class="p-6 flex flex-col justify-center">
-            <span class="inline-block px-2 py-0.5 bg-green-50 text-green-700 text-xs font-bold rounded-full mb-3 w-fit">
-              Bereits erhältlich
+          <!-- Linke Seite: Buchinfo -->
+          <div class="flex-1 p-8 md:p-12">
+            <span class="inline-block px-3 py-1 bg-brand-red text-white text-xs font-black rounded-full mb-5 tracking-widest uppercase">
+              🎁 Mein Geschenk an dich
             </span>
-            <h3 class="font-heading font-black text-brand-navy text-lg leading-snug group-hover:text-brand-red transition-colors mb-2">
-              Das große deutschsprachige KI-Lexikon
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed mb-3">
-              5.000+ Begriffe. Das erste umfassende KI-Nachschlagewerk auf Deutsch — für alle, die KI wirklich verstehen wollen.
+            <h2 class="text-3xl md:text-4xl font-heading font-black text-white leading-tight tracking-tight mb-3">
+              Der ultimative<br/>KI-Kompass
+            </h2>
+            <p class="text-white/60 text-sm font-medium mb-1 tracking-wide">
+              Extra verständlich — für alle Altersklassen
             </p>
-            <span class="text-brand-red text-sm font-bold group-hover:underline underline-offset-2">
-              kilexikon.com →
-            </span>
-          </div>
-        </a>
+            <p class="text-white/40 text-xs mb-8">
+              598 Seiten · 1 Jahr Arbeit · Gratis für deine Zukunft
+            </p>
 
-        <!-- Buch 2: KI Datenschutz & Compliance -->
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col sm:flex-row">
-          <div class="sm:w-36 flex-shrink-0 bg-brand-navy/5 flex items-center justify-center min-h-[120px]">
-            <div class="text-center p-4">
-              <div class="text-4xl mb-1">🔒</div>
-              <p class="text-xs font-bold text-brand-navy/50">2026</p>
+            <!-- Stats -->
+            <div class="flex gap-6 mb-8">
+              <div>
+                <p class="text-white font-black text-2xl">598</p>
+                <p class="text-white/50 text-xs">Seiten</p>
+              </div>
+              <div class="w-px bg-white/10"></div>
+              <div>
+                <p class="text-white font-black text-2xl">⭐ 5,0</p>
+                <p class="text-white/50 text-xs">auf Amazon</p>
+              </div>
+              <div class="w-px bg-white/10"></div>
+              <div>
+                <p class="text-white font-black text-2xl">€ 0</p>
+                <p class="text-white/50 text-xs">E-Book gratis</p>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/downloads/ki-kompass"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-red text-white font-black rounded-xl hover:bg-red-700 transition-colors text-sm"
+              >
+                📥 Jetzt gratis downloaden
+              </a>
+              <a
+                href="https://amzn.eu/d/2xBuoOO"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-colors border border-white/20 text-sm"
+              >
+                Auf Amazon kaufen
+              </a>
             </div>
           </div>
-          <div class="p-6 flex flex-col justify-center">
-            <span class="inline-block px-2 py-0.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-3 w-fit">
-              Erscheint 2026
-            </span>
-            <h3 class="font-heading font-black text-brand-navy text-lg leading-snug mb-2">
-              KI, Datenschutz & Compliance
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">
-              Der Praxisleitfaden für rechtssicheren KI-Einsatz in Unternehmen. Klar, konkret, ohne Juristendeutsch.
-            </p>
-          </div>
-        </div>
 
+          <!-- Rechte Seite: visuelles Element -->
+          <div class="hidden md:flex w-64 flex-shrink-0 bg-white/5 items-center justify-center p-8">
+            <div class="text-center">
+              <div class="text-8xl mb-4">📘</div>
+              <p class="text-white/30 text-xs font-bold tracking-widest uppercase">David Mirga</p>
+              <p class="text-white/20 text-xs mt-1">4× Buchautor</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- KI-Lexikon — volle Zeile -->
+      <a
+        href="https://kilexikon.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-200 overflow-hidden flex flex-col sm:flex-row gap-0 mb-4"
+      >
+        <div class="flex-shrink-0 sm:w-20 flex items-center justify-center p-5 sm:py-6 bg-slate-50">
+          <img
+            src="/images/cover-lexikon.jpg"
+            alt="Das große deutschsprachige KI-Lexikon"
+            class="w-16 h-20 object-cover rounded-lg shadow-sm"
+          />
+        </div>
+        <div class="flex flex-col justify-center px-6 py-5 flex-1">
+          <span class="inline-block px-2 py-0.5 bg-green-50 text-green-700 text-xs font-bold rounded-full mb-2 w-fit">
+            Bereits erhältlich
+          </span>
+          <h3 class="font-heading font-bold text-brand-navy text-base group-hover:text-brand-red transition-colors leading-snug mb-1">
+            Das große deutschsprachige KI-Lexikon
+          </h3>
+          <p class="text-sm text-slate-500 mb-3">Das erste umfassende KI-Nachschlagewerk auf Deutsch — 5.000+ Begriffe, klar erklärt.</p>
+          <span class="text-brand-red text-sm font-bold">kilexikon.com →</span>
+        </div>
+        <div class="hidden sm:flex flex-shrink-0 items-center pr-6">
+          <svg class="w-5 h-5 text-slate-300 group-hover:text-brand-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Compliance Notiz -->
+      <div class="bg-white rounded-xl border border-slate-100 shadow-sm flex gap-4 p-4 items-center">
+        <div class="flex-shrink-0 w-14 h-14 bg-slate-50 rounded-lg border border-slate-100 flex items-center justify-center">
+          <span class="text-2xl">🔒</span>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-0.5">In Arbeit</p>
+          <h3 class="font-heading font-bold text-brand-navy text-sm leading-snug mb-0.5">
+            KI, Datenschutz & Compliance
+          </h3>
+          <p class="text-xs text-slate-400">Erscheint 2026 — nach der ISO-42001-Prüfung</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AS SEEN IN -->
+  <section class="py-8 bg-white border-y border-slate-100">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
+        <p class="text-xs font-bold tracking-widest uppercase text-slate-300 flex-shrink-0">Bekannt aus</p>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <a href="https://gewinnermagazin.de/david-mirga-und-david-stancin-von-agentur-addvengers-interview/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-600 transition-colors font-bold text-sm tracking-wide">GEWINNERmagazin</a>
+          <a href="https://www.unternehmerjournal.de/david-stancin-und-david-mirga-von-addvengers-portrait/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-600 transition-colors font-bold text-sm tracking-wide">UnternehmerJournal</a>
+          <span class="text-slate-400 font-bold text-sm tracking-wide">OnlineMarketingMagazin</span>
+        </div>
       </div>
     </div>
   </section>
@@ -172,6 +237,87 @@ const schema = JSON.stringify({
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ANGEBOTE -->
+  <section class="py-20 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
+
+      <div class="text-center mb-10">
+        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Womit ich helfen kann</p>
+        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight">
+          Klare Angebote. Echte Ergebnisse.
+        </h2>
+        <p class="text-slate-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
+          Kein Bullshit, kein vages "Kontaktieren Sie mich". Hier steht was ich mache, wie lange es dauert und was es kostet.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+
+        <!-- Angebot 1 -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col">
+          <div class="text-3xl mb-4">🧠</div>
+          <div class="flex-1">
+            <h3 class="font-heading font-bold text-brand-navy text-lg mb-1 leading-tight">KI-Basics Team-Training</h3>
+            <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-3">1 Tag · 6–8 Stunden</p>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Dein Team lernt KI-Tools praxisnah kennen — ChatGPT, Prompting, Automation. Sofort anwendbar, kein Tech-Vorwissen nötig.
+            </p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+            <span class="text-2xl font-black text-brand-navy">1.500 €</span>
+            <a href="/angebote" class="text-brand-red text-sm font-bold hover:underline">Details →</a>
+          </div>
+        </div>
+
+        <!-- Angebot 2 -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col">
+          <div class="text-3xl mb-4">⚖️</div>
+          <div class="flex-1">
+            <h3 class="font-heading font-bold text-brand-navy text-lg mb-1 leading-tight">EU AI Act Compliance Workshop</h3>
+            <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-3">0,5 Tag · 3–4 Stunden</p>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Was bedeutet der AI Act für dein Unternehmen? Compliance-Checkliste, Risiko-Assessment — verständlich, ohne Juristendeutsch.
+            </p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+            <span class="text-2xl font-black text-brand-navy">900 €</span>
+            <a href="/angebote" class="text-brand-red text-sm font-bold hover:underline">Details →</a>
+          </div>
+        </div>
+
+        <!-- Angebot 3 -->
+        <div class="bg-brand-navy rounded-2xl border border-brand-navy shadow-sm p-6 flex flex-col">
+          <div class="text-3xl mb-4">🔒</div>
+          <div class="flex-1">
+            <span class="inline-block px-2 py-0.5 bg-brand-red text-white text-xs font-bold rounded-full mb-3">Ab April 2026</span>
+            <h3 class="font-heading font-bold text-white text-lg mb-1 leading-tight">ISO 42001 Implementierung</h3>
+            <p class="text-xs text-white/40 font-bold uppercase tracking-wide mb-3">Projektbasiert · 2–6 Monate</p>
+            <p class="text-sm text-white/70 leading-relaxed mb-4">
+              Aufbau eines zertifizierbaren KI-Managementsystems nach ISO 42001. Dokumentation, Prozesse, Audit-Vorbereitung.
+            </p>
+          </div>
+          <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+            <span class="text-2xl font-black text-white">ab 5.000 €</span>
+            <a href="/angebote" class="text-brand-red text-sm font-bold hover:underline">Details →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <a
+          href="https://tally.so/r/Y5PdoB"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors text-sm"
+        >
+          Unverbindlich anfragen
+        </a>
+      </div>
+
     </div>
   </section>
 
