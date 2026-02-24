@@ -249,10 +249,44 @@ const schema = JSON.stringify({
     </div>
   </section>
 
-  <!-- ANGEBOTE -->
+  <!-- KANN ICH HELFEN -->
   <section class="py-20 bg-brand-light">
     <div class="container mx-auto px-6 md:px-8 max-w-4xl">
 
+      <div class="bg-brand-navy rounded-2xl p-10 md:p-14 text-center ring-1 ring-white/5 shadow-2xl">
+
+        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-4">Womit ich helfen kann</p>
+        <h2 class="text-3xl md:text-4xl font-heading font-black text-white tracking-tight mb-4 leading-tight">
+          Hast du eine KI-Herausforderung?
+        </h2>
+        <p class="text-white/60 leading-relaxed max-w-xl mx-auto mb-8">
+          Ob KI einführen, Mitarbeiter schulen oder KI-Agenten aufbauen — sag mir was dich beschäftigt. Ich höre zu und wir schauen gemeinsam was machbar ist.
+        </p>
+
+        <div class="flex flex-wrap gap-3 justify-center mb-10">
+          <span class="px-4 py-2 bg-white/8 text-white/80 rounded-full text-sm font-medium border border-white/10">KI einführen</span>
+          <span class="px-4 py-2 bg-white/8 text-white/80 rounded-full text-sm font-medium border border-white/10">Mitarbeiter schulen</span>
+          <span class="px-4 py-2 bg-white/8 text-white/80 rounded-full text-sm font-medium border border-white/10">KI-Agenten</span>
+          <span class="px-4 py-2 bg-white/8 text-white/80 rounded-full text-sm font-medium border border-white/10">AI Act & Compliance</span>
+        </div>
+
+        <a
+          href="https://tally.so/r/Y5PdoB"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-brand-red text-white font-bold rounded-xl hover:bg-red-700 transition-all shadow-lg shadow-brand-red/20"
+        >
+          Gespräch buchen
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ANGEBOTE – ausgeblendet bis Firmenstruktur steht, dann wieder einsetzen
+  <section class="py-20 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
       <div class="text-center mb-10">
         <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Womit ich helfen kann</p>
         <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight">
@@ -262,81 +296,20 @@ const schema = JSON.stringify({
           Kein Bullshit, kein vages "Kontaktieren Sie mich". Hier steht was ich mache, wie lange es dauert und was es kostet.
         </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-
-        <!-- Angebot 1 -->
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-300 p-6 flex flex-col group">
-          <div class="w-11 h-11 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-5 group-hover:bg-brand-red/8 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-navy group-hover:text-brand-red transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          </div>
-          <div class="flex-1">
-            <h3 class="font-heading font-bold text-brand-navy text-base mb-1 leading-tight">KI-Basics Team-Training</h3>
-            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">1 Tag · 6–8 Stunden</p>
-            <p class="text-sm text-slate-500 leading-relaxed mb-4">
-              Dein Team lernt KI-Tools praxisnah — ChatGPT, Prompting, Automation. Sofort anwendbar, kein Vorwissen nötig.
-            </p>
-          </div>
-          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
-            <span class="text-xl font-black text-brand-navy tracking-tight">1.500 €</span>
-            <a href="/angebote" class="text-brand-red text-xs font-bold hover:underline tracking-wide uppercase">Details →</a>
-          </div>
-        </div>
-
-        <!-- Angebot 2 -->
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-300 p-6 flex flex-col group">
-          <div class="w-11 h-11 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-5 group-hover:bg-brand-red/8 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-navy group-hover:text-brand-red transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div class="flex-1">
-            <h3 class="font-heading font-bold text-brand-navy text-base mb-1 leading-tight">EU AI Act Compliance Workshop</h3>
-            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">½ Tag · 3–4 Stunden</p>
-            <p class="text-sm text-slate-500 leading-relaxed mb-4">
-              Was der AI Act für dein Unternehmen bedeutet — Compliance-Checkliste, Risiko-Assessment, kein Juristendeutsch.
-            </p>
-          </div>
-          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
-            <span class="text-xl font-black text-brand-navy tracking-tight">900 €</span>
-            <a href="/angebote" class="text-brand-red text-xs font-bold hover:underline tracking-wide uppercase">Details →</a>
-          </div>
-        </div>
-
-        <!-- Angebot 3 -->
-        <div class="bg-brand-navy rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col ring-1 ring-white/5 group">
-          <div class="flex items-start justify-between mb-5">
-            <div class="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center">
-              <svg class="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            </div>
-            <span class="px-2.5 py-1 bg-brand-red text-white text-xs font-bold rounded-full tracking-wide">Ab April 2026</span>
-          </div>
-          <div class="flex-1">
-            <h3 class="font-heading font-bold text-white text-base mb-1 leading-tight">ISO 42001 Implementierung</h3>
-            <p class="text-xs text-white/30 font-semibold uppercase tracking-widest mb-3">Projektbasiert · 2–6 Monate</p>
-            <p class="text-sm text-white/60 leading-relaxed mb-4">
-              Aufbau eines zertifizierbaren KI-Managementsystems. Dokumentation, Prozesse, Audit-Vorbereitung.
-            </p>
-          </div>
-          <div class="border-t border-white/10 pt-4 flex items-center justify-between">
-            <span class="text-xl font-black text-white tracking-tight">ab 5.000 €</span>
-            <a href="/angebote" class="text-brand-red text-xs font-bold hover:underline tracking-wide uppercase">Details →</a>
-          </div>
-        </div>
-
+        Angebot 1: KI-Basics Team-Training · 1 Tag · 1.500 €
+        Angebot 2: EU AI Act Compliance Workshop · ½ Tag · 900 €
+        Angebot 3: ISO 42001 Implementierung · ab April 2026 · ab 5.000 €
       </div>
-
       <div class="text-center">
-        <a
-          href="https://tally.so/r/Y5PdoB"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors text-sm"
-        >
+        <a href="https://tally.so/r/Y5PdoB" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors text-sm">
           Unverbindlich anfragen
         </a>
       </div>
-
     </div>
   </section>
+  -->
 
   <!-- KI-CHECK -->
   <section class="py-24 bg-brand-navy relative overflow-hidden">
