@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  pageTitle="Presse"
+  description="David Mirga in den Medien — Presseerwähnungen, Interviews und Medien-Coverage."
+>
+
+  <!-- HERO -->
+  <section class="pt-16 pb-12 bg-brand-navy">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl text-center">
+      <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Medien</p>
+      <h1 class="text-4xl md:text-5xl font-heading font-black text-white tracking-tight mb-4">
+        Presse
+      </h1>
+      <p class="text-white/70 text-lg max-w-xl mx-auto">
+        Interviews, Portraits und Erwähnungen in deutschsprachigen Medien.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRESSEERWÄHNUNGEN -->
+  <section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
+
+      <div class="space-y-5">
+
+        <!-- Gewinnermagazin -->
+        <a
+          href="https://gewinnermagazin.de/david-mirga-und-david-stancin-von-agentur-addvengers-interview/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-200 flex flex-col sm:flex-row gap-0 overflow-hidden"
+        >
+          <div class="flex-shrink-0 sm:w-24 flex items-center justify-center p-6 bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-100">
+            <span class="font-black text-slate-300 text-xs tracking-widest uppercase text-center leading-tight">Gewinner<br/>Magazin</span>
+          </div>
+          <div class="flex flex-col justify-center px-7 py-6 flex-1">
+            <span class="inline-block px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-2 w-fit">Interview</span>
+            <h2 class="font-heading font-bold text-brand-navy text-base group-hover:text-brand-red transition-colors leading-snug mb-1">
+              Interview im Gewinnermagazin
+            </h2>
+            <p class="text-sm text-slate-500">Portrait und Gespräch über unternehmerische Entwicklung und digitale Transformation.</p>
+          </div>
+          <div class="hidden sm:flex flex-shrink-0 items-center pr-6">
+            <svg class="w-5 h-5 text-slate-300 group-hover:text-brand-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Unternehmerjournal -->
+        <a
+          href="https://www.unternehmerjournal.de/david-stancin-und-david-mirga-von-addvengers-portrait/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-200 flex flex-col sm:flex-row gap-0 overflow-hidden"
+        >
+          <div class="flex-shrink-0 sm:w-24 flex items-center justify-center p-6 bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-100">
+            <span class="font-black text-slate-300 text-xs tracking-widest uppercase text-center leading-tight">Unternehmer<br/>Journal</span>
+          </div>
+          <div class="flex flex-col justify-center px-7 py-6 flex-1">
+            <span class="inline-block px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-2 w-fit">Portrait</span>
+            <h2 class="font-heading font-bold text-brand-navy text-base group-hover:text-brand-red transition-colors leading-snug mb-1">
+              Portrait im Unternehmerjournal
+            </h2>
+            <p class="text-sm text-slate-500">Unternehmerprofil mit Einblick in Werdegang, Ansatz und unternehmerische Haltung.</p>
+          </div>
+          <div class="hidden sm:flex flex-shrink-0 items-center pr-6">
+            <svg class="w-5 h-5 text-slate-300 group-hover:text-brand-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Online Marketing Magazin -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row gap-0 overflow-hidden">
+          <div class="flex-shrink-0 sm:w-24 flex items-center justify-center p-6 bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-100">
+            <span class="font-black text-slate-300 text-xs tracking-widest uppercase text-center leading-tight">Online<br/>Marketing<br/>Magazin</span>
+          </div>
+          <div class="flex flex-col justify-center px-7 py-6 flex-1">
+            <span class="inline-block px-2 py-0.5 bg-slate-100 text-slate-500 text-xs font-bold rounded-full mb-2 w-fit">Erwähnung</span>
+            <h2 class="font-heading font-bold text-brand-navy text-base leading-snug mb-1">
+              Erwähnung im Online Marketing Magazin
+            </h2>
+            <p class="text-sm text-slate-500">Medienpräsenz im deutschsprachigen Online-Marketing-Umfeld.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pressekontakt -->
+      <div class="mt-12 bg-brand-navy rounded-2xl p-8 md:p-10 text-center ring-1 ring-white/5">
+        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Presseanfragen</p>
+        <h2 class="text-2xl md:text-3xl font-heading font-black text-white tracking-tight mb-3">
+          Interview oder Gastbeitrag?
+        </h2>
+        <p class="text-white/70 max-w-md mx-auto mb-7 leading-relaxed">
+          Für Medienanfragen, Interviews oder Gastbeiträge zu den Themen KI, Digitalisierung und ISO 42001 — melde dich direkt.
+        </p>
+        <a
+          href="https://tally.so/r/Y5PdoB"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-red text-white font-bold rounded-xl hover:bg-red-700 transition-all shadow-lg shadow-brand-red/20"
+        >
+          Anfrage stellen
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
