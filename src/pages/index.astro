@@ -82,9 +82,6 @@ const schema = JSON.stringify({
 
           <!-- Linke Seite: Buchinfo -->
           <div class="flex-1 p-8 md:p-12">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-red/90 text-white text-xs font-black rounded-full mb-4 tracking-widest uppercase">
-              Gratis E-Book
-            </span>
             <p class="text-xl md:text-2xl font-heading font-bold text-brand-red mb-1">
               Mein bestes Buch.
             </p>
@@ -95,7 +92,7 @@ const schema = JSON.stringify({
               598-Seiten E-Book — extra verständlich für alle
             </p>
             <p class="text-white/30 text-xs mb-8 tracking-wide">
-              1 Jahr Arbeit · Normalpreis 29 € · Heute kostenlos
+              1 Jahr Arbeit · Auf Amazon um 27,69 € erhältlich — Mein Geschenk an dich.
             </p>
 
             <!-- Stats -->
@@ -114,8 +111,8 @@ const schema = JSON.stringify({
               </div>
               <div class="w-px bg-white/10"></div>
               <div>
-                <p class="text-white font-black text-3xl tracking-tight">€ 0</p>
-                <p class="text-white/40 text-xs uppercase tracking-widest mt-0.5">E-Book</p>
+                <p class="text-white font-black text-3xl tracking-tight">27,69 €</p>
+                <p class="text-white/40 text-xs uppercase tracking-widest mt-0.5">Normalpreis</p>
               </div>
             </div>
 
@@ -126,7 +123,7 @@ const schema = JSON.stringify({
                 class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-red text-white font-black rounded-xl hover:bg-red-700 transition-all duration-200 text-sm shadow-lg shadow-brand-red/20"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                Jetzt gratis downloaden
+                Als Geschenk herunterladen
               </a>
               <a
                 href="https://amzn.eu/d/2xBuoOO"
@@ -134,23 +131,18 @@ const schema = JSON.stringify({
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/8 text-white font-bold rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/15 text-sm"
               >
-                Auf Amazon kaufen
+                Auf Amazon bestellen · 27,69 €
               </a>
             </div>
           </div>
 
           <!-- Rechte Seite: Buchcover -->
-          <div class="flex items-center justify-center p-8 md:p-10 border-t border-white/5 md:border-t-0 md:border-l md:w-56 md:flex-shrink-0">
-            <div class="relative">
-              <img
-                src="/ki-kompass.jpg"
-                alt="Der ultimative KI-Kompass – Gratis E-Book von David Mirga, 598 Seiten"
-                class="w-36 md:w-44 rounded-lg shadow-2xl"
-              />
-              <div class="absolute -top-3 -right-3 w-12 h-12 bg-amber-400 rounded-full flex flex-col items-center justify-center shadow-lg rotate-12">
-                <p class="text-red-900 font-black text-[9px] leading-tight text-center">100%<br/>GRATIS</p>
-              </div>
-            </div>
+          <div class="flex items-center justify-center p-6 md:p-10 border-t border-white/5 md:border-t-0 md:border-l md:w-72 md:flex-shrink-0">
+            <img
+              src="/ki-kompass.jpg"
+              alt="Der ultimative KI-Kompass – E-Book von David Mirga, 598 Seiten"
+              class="w-44 md:w-60 rounded-lg shadow-2xl"
+            />
           </div>
 
         </div>
