@@ -1,0 +1,55 @@
+---
+// Bettet die KI Presse News von caie.at ein (Dave 25.11.2026). Das Original bleibt beim Verein CAIE auf caie.at,
+// hier wird es nur gezeigt: keine Kopie, kein doppelter Inhalt, jede Woche automatisch aktuell.
+// variant "titel" = Mini-Titelseite (Startseite), "zeitung" = ganze Ausgabe mit Archiv (/ki-presse-news).
+interface Props {
+  variant: 'titel' | 'zeitung';
+  title: string;
+}
+
+const { variant, title } = Astro.props;
+const ORIGIN = import.meta.env.PUBLIC_CAIE_ORIGIN || 'https://www.caie.at';
+const src = `${ORIGIN}/de/ki-woche/einbetten/${variant === 'titel' ? 'titel' : ''}`;
+---
+
+<iframe
+  data-kiwoche={variant}
+  src={src}
+  title={title}
+  loading={variant === 'titel' ? 'eager' : 'lazy'}
+  scrolling="no"
+  class:list={['kpe', `kpe-${variant}`]}
+></iframe>
+
+<script is:inline define:vars={{ ORIGIN }}>
+  if (!window.__kiPresseWired) {
+    window.__kiPresseWired = true;
+    window.addEventListener('message', function (e) {
+      if (e.origin !== ORIGIN) return;
+      var d = e.data || {};
+      document.querySelectorAll('iframe[data-kiwoche]').forEach(function (f) {
+        if (f.contentWindow !== e.source) return;
+        if (d.type === 'kiwoche-height' && d.h > 0) {
+          var y = window.scrollY;
+          f.style.height = d.h + 'px';
+          // Nur zurücksetzen, wenn der Browser wirklich gesprungen ist (unterbricht sonst ein sanftes Scrollen).
+          if (window.scrollY !== y) window.scrollTo({ top: y, left: window.scrollX, behavior: 'instant' });
+        } else if (d.type === 'kiwoche-scroll' && typeof d.y === 'number') {
+          window.scrollTo({ top: f.getBoundingClientRect().top + window.scrollY + d.y - 90, behavior: 'smooth' });
+        } else if (d.type === 'kiwoche-loaded') {
+          // Wechsel auf eine andere Ausgabe im Archiv: zum Anfang der Zeitung springen.
+          if (f.__kwLoaded && f.dataset.kiwoche === 'zeitung') {
+            window.scrollTo({ top: f.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+          }
+          f.__kwLoaded = true;
+        }
+      });
+    });
+  }
+</script>
+
+<style>
+  .kpe { display: block; width: 100%; border: 0; background: transparent; overflow: hidden; }
+  .kpe-titel { height: 340px; }
+  .kpe-zeitung { height: 1400px; }
+</style>

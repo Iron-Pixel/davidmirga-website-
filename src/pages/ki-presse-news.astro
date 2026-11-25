@@ -1,0 +1,75 @@
+---
+// KI Presse News auf davidmirga.com (Dave 25.11.2026): Original beim Verein CAIE, hier eingebettet, mit allen Ausgaben.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import KiPresseEmbed from '../components/KiPresseEmbed.astro';
+---
+
+<BaseLayout
+  pageTitle="KI Presse News"
+  description="Die KI Presse News: jede Woche die wichtigsten KI-Nachrichten für Unternehmen und ihre Mitarbeiter, verständlich erklärt und mit Originalquellen. Konzept und Redaktion: David Mirga."
+>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-brand-navy pt-16 pb-28 md:pb-32">
+    <div class="absolute -top-40 -right-32 w-[560px] h-[560px] bg-[#E9C7B1]/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 -left-24 w-[420px] h-[420px] bg-red-500/5 rounded-full blur-[100px] translate-y-1/2 pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 md:px-8 max-w-6xl relative z-10">
+      <p class="text-[#E9C7B1] font-semibold tracking-[0.2em] uppercase text-sm mb-5">Wöchentlicher Newsletter</p>
+      <h1 class="text-5xl md:text-7xl font-heading font-black text-white tracking-tight leading-[0.95] mb-6">
+        KI Presse News
+      </h1>
+      <p class="text-xl md:text-2xl text-white/75 leading-relaxed max-w-3xl mb-10">
+        Die wichtigsten KI-Nachrichten der Woche für Unternehmen und ihre Mitarbeiter.
+        Verständlich erklärt, jede Meldung mit Originalquelle.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-4 text-white/80 text-base">
+        <span class="flex items-center gap-3">
+          <img src="/images/David-Mirga.jpg" alt="" class="w-11 h-11 rounded-full object-cover object-top ring-2 ring-white/20" />
+          <span><span class="text-white/55">Konzept und Redaktion</span><br/><strong class="text-white">David Mirga</strong></span>
+        </span>
+        <span class="hidden sm:block w-px h-10 bg-white/15"></span>
+        <span><span class="text-white/55">Herausgegeben vom Verein</span><br/><strong class="text-white">Center for AI and Ethics (Europe), Wien</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DREI VERSPRECHEN -->
+  <section class="relative z-20 -mt-16 md:-mt-20">
+    <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+      <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-navy/10 border border-slate-100 p-6">
+          <p class="text-brand-red font-bold text-sm tracking-widest uppercase mb-2">Geprüft</p>
+          <p class="text-brand-navy text-lg leading-snug">Jede Meldung steht mit ihrer <strong>Originalquelle</strong>: Hersteller, Behörde, Gericht oder Studie.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-navy/10 border border-slate-100 p-6">
+          <p class="text-brand-red font-bold text-sm tracking-widest uppercase mb-2">Verständlich</p>
+          <p class="text-brand-navy text-lg leading-snug">Für Chefs <strong>und</strong> Mitarbeiter, ohne Fachchinesisch.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-navy/10 border border-slate-100 p-6">
+          <p class="text-brand-red font-bold text-sm tracking-widest uppercase mb-2">Jede Woche</p>
+          <p class="text-brand-navy text-lg leading-snug">Österreich, Deutschland, Schweiz und die KI-Welt. Alle Ausgaben bleiben hier lesbar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIE ZEITUNG -->
+  <section class="py-14 md:py-20 bg-brand-light">
+    <div class="container mx-auto px-3 md:px-8 max-w-6xl">
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-6 px-3 md:px-0">
+        <h2 class="text-2xl md:text-3xl font-heading font-black text-brand-navy">Aktuelle Ausgabe</h2>
+        <a href="#kpe-zeitung" class="text-brand-navy/70 text-base">Ältere Ausgaben stehen unter der Zeitung ↓</a>
+      </div>
+      <div id="kpe-zeitung" class="bg-white rounded-2xl shadow-2xl shadow-brand-navy/10 ring-1 ring-slate-200/70 overflow-hidden">
+        <KiPresseEmbed variant="zeitung" title="KI Presse News – aktuelle Ausgabe mit Archiv" />
+      </div>
+      <p class="text-slate-600 text-base mt-6 px-3 md:px-0">
+        Die KI Presse News erscheint auf <a href="https://caie.at/de/ki-woche" target="_blank" rel="noopener" class="text-brand-navy font-semibold border-b border-brand-red/40 hover:border-brand-red">caie.at</a>.
+        Sie wird mit Unterstützung von KI erstellt und mehrfach geprüft; maßgeblich sind die verlinkten Originalquellen.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
