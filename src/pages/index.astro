@@ -78,7 +78,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
 
 <BaseLayout
   pageTitle="KI leicht verständlich machen. Zeigen, was wirklich funktioniert."
-  description="David Mirga aus Wien: Was KI kann, was nicht, und was das für dich heißt. Autor von drei KI-Büchern und des ersten großen deutschsprachigen KI-Lexikons mit über 5.000 Begriffen. KI-Grundkurs gratis, ohne Anmeldung."
+  description="David Mirga aus Wien: KI leicht verständlich machen, zeigen, was möglich ist und was wirklich funktioniert, und wie auch alle im Team mitziehen können. Autor von drei KI-Büchern und des ersten großen deutschsprachigen KI-Lexikons mit über 5.000 Begriffen. KI-Grundkurs kostenlos, ohne Anmeldung."
 >
   <script type="application/ld+json" slot="head-schema" set:html={schema} />
 
@@ -108,12 +108,12 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
             <div class="flex flex-col sm:flex-row gap-4 sm:items-start mb-12">
               <div class="flex flex-col items-center sm:items-start gap-2">
                 <a href={KURS_URL} target="_blank" rel="noopener" class="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-3 px-8 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
-                  Grundkurs starten, gratis <span aria-hidden="true">→</span>
+                  Grundkurs kostenlos starten <span aria-hidden="true">→</span>
                 </a>
                 <span class="text-base text-[#0F1A1B]/55 sm:pl-1">beim Verein Center for AI and Ethics, Wien</span>
               </div>
               <a href="/downloads/ki-kompass" class="whitespace-nowrap inline-flex justify-center items-center px-7 py-4 bg-[#F2F2F0] text-[#0F1A1B] text-lg font-semibold rounded-xl hover:bg-[#E8E8E5] transition-colors">
-                KI-Kompass gratis lesen
+                KI-Kompass lesen
               </a>
             </div>
 
@@ -285,7 +285,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
         <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-9 py-4 border border-[#F7F4EE]/30 text-[#F7F4EE] text-lg font-semibold rounded-full hover:border-[#E3A07C] hover:text-[#E3A07C] transition-colors">Auf LinkedIn</a>
       </div>
       <p class="mt-14 text-[#F7F4EE]/65 text-lg">
-        Lieber erst selbst probieren? <a href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 decoration-[#E3A07C] hover:text-[#E3A07C]">Grundkurs starten, gratis</a>
+        Lieber erst selbst probieren? <a href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 decoration-[#E3A07C] hover:text-[#E3A07C]">Grundkurs kostenlos starten</a>
       </p>
       <p class="mt-6 text-[#F7F4EE]/45 text-sm">Zuletzt aktualisiert: {AKTUALISIERT}</p>
     </div>
