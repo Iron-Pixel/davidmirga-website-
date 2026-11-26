@@ -8,6 +8,11 @@ const LINKEDIN = 'https://www.linkedin.com/in/david-mirga-847336134/';
 const INSTAGRAM = 'https://www.instagram.com/davidmirga_ki_mit_ruhepuls/';
 const AKTUALISIERT = '26. November 2026';
 
+// Gesperrt bis zum Vorstandsbeschluss KI-Sprechstunde (UMBAU-PLAN.md, "Sperre").
+// Nach dem Beschluss: ZEIGE_CAIE_SATZ = true. Der Satz steht dann nicht im ausgelieferten Quelltext, solange false.
+const ZEIGE_CAIE_SATZ = false;
+const CAIE_SATZ = 'Im Rahmen des Vereins Center for AI and Ethics (caie.at) ist es mein Ziel, ehrenamtlich KI den Menschen und Betrieben in Österreich näherzubringen und bei Herausforderungen, vor allem am Anfang, mit Tipps und Ratschlägen zu helfen.';
+
 const faq = [
   {
     q: 'Ist das wirklich alles gratis?',
@@ -98,9 +103,9 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
               Darf’s ein bisschen<br/>Hilfe sein?
             </h1>
 
-            <p class="text-xl md:text-[1.35rem] leading-relaxed text-[#1F3B3A] mb-8 [text-wrap:pretty]">
-              Im Rahmen des Vereins Center for AI and Ethics (caie.at) ist es mein Ziel, ehrenamtlich KI den Menschen und Betrieben in Österreich näherzubringen und bei Herausforderungen, vor allem am Anfang, mit Tipps und Ratschlägen zu helfen.
-            </p>
+            {ZEIGE_CAIE_SATZ && (
+              <p class="text-xl md:text-[1.35rem] leading-relaxed text-[#1F3B3A] mb-8 [text-wrap:pretty]">{CAIE_SATZ}</p>
+            )}
 
             <div class="flex flex-col sm:flex-row gap-4 mb-10">
               <a href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
