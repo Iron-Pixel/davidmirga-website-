@@ -26,7 +26,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         heading: ['Manrope', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
