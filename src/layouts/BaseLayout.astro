@@ -62,7 +62,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <link 
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" 
     rel="stylesheet"
     media="print" 
     onload="this.media='all'"
@@ -72,25 +72,22 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 </head>
 <body class="bg-brand-light text-slate-700 antialiased flex flex-col min-h-full font-sans">
   
-  <header class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm transition-all">
+  <header class="fixed w-full z-50 top-0 bg-[#F7F4EE]/90 backdrop-blur-md border-b border-[#132B2C]/10 transition-all">
     <div class="max-w-7xl mx-auto h-20 flex items-center justify-between px-6 md:px-8">
-      
-      <div class="flex items-center gap-3 md:gap-4">
-        <a href="/" class="text-xl md:text-2xl font-heading font-black tracking-tight flex items-center gap-1">
-          <span class="text-brand-red">DAVID</span>
-          <span class="text-brand-navy">MIRGA</span>
+
+      <div class="flex items-center gap-3 md:gap-5">
+        <a href="/" class="font-serif text-2xl md:text-[1.7rem] text-brand-navy tracking-tight">
+          David Mirga
         </a>
-        <a href="/abonnieren" class="inline-flex items-center gap-1.5 px-3 py-2 md:px-4 md:py-2 bg-brand-red text-white text-xs md:text-sm font-bold rounded hover:bg-brand-redDark transition-colors whitespace-nowrap">
-          <span class="text-base md:text-lg leading-none">+</span>
-          <span>Abonnieren</span>
+        <a href="/abonnieren" class="hidden sm:inline-flex items-center px-3.5 py-1.5 border border-brand-navy/25 text-brand-navy text-sm font-medium rounded-full hover:border-brand-red hover:text-brand-red transition-colors whitespace-nowrap">
+          Abonnieren
         </a>
       </div>
-      
-      <nav class="hidden md:flex gap-6 font-medium text-brand-navy items-center">
+
+      <nav class="hidden md:flex gap-7 font-medium text-brand-navy/80 items-center text-[15px]">
         <a href="/ueber-mich" class="hover:text-brand-red transition-colors">Über mich</a>
 
-        <a href="/ki-check" class="text-brand-red hover:text-red-700 font-bold transition-colors flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <a href="/ki-check" class="hover:text-brand-red transition-colors">
           KI-Check
         </a>
 
@@ -102,8 +99,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 
         <a href="/downloads/ki-kompass" class="hover:text-brand-red transition-colors">Downloads</a>
 
-        <a href="mailto:mail.davidmirga@gmail.com" class="px-5 py-2 bg-brand-red text-white rounded hover:bg-brand-redDark transition-colors font-bold ml-2">
-          Lass uns reden
+        <a href="mailto:mail.davidmirga@gmail.com" class="px-5 py-2.5 bg-brand-navy text-[#F7F4EE] rounded-full hover:bg-brand-red transition-colors font-semibold ml-1">
+          Schreib mir
         </a>
       </nav>
       

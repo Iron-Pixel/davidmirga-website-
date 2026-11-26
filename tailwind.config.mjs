@@ -1,4 +1,4 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   // WICHTIG: Die Pfade wurden erweitert, damit Tailwind ALLE verwendeten
   // Klassen findet und den ungenutzten Code (Purge) entfernt.
@@ -25,7 +25,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Manrope', 'sans-serif'], 
+        heading: ['Manrope', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
       },
     },
   },
