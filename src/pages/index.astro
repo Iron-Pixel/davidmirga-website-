@@ -2,446 +2,320 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import KiPresseEmbed from '../components/KiPresseEmbed.astro';
 
+// Bauplan v2 (26.11.2026), siehe ENTWURF-STARTSEITE.md
+const KURS_URL = 'https://www.caie.at/kurs';
+const LINKEDIN = 'https://www.linkedin.com/in/david-mirga-847336134/';
+const INSTAGRAM = 'https://www.instagram.com/davidmirga_ki_mit_ruhepuls/';
+const AKTUALISIERT = '26. November 2026';
+
+const faq = [
+  {
+    q: 'Ist das wirklich alles gratis?',
+    a: 'Ja. Der Grundkurs, der KI-Kompass und das KI-Lexikon online kosten nichts. Du musst dich nirgends anmelden.',
+  },
+  {
+    q: 'Brauche ich Vorwissen?',
+    a: 'Nein. Wenn du eine E-Mail schreiben kannst, kannst du anfangen. Der Grundkurs beginnt ganz am Anfang.',
+  },
+  {
+    q: 'Was hast du davon?',
+    a: 'Ich will, dass mehr Menschen KI verstehen und selbst nutzen. Und bei jeder Frage, die mir jemand stellt, lerne ich selbst dazu.',
+  },
+  {
+    q: 'Wer steckt hinter dem Grundkurs und den KI Presse News?',
+    a: 'Beides habe ich geschrieben. Bereitgestellt werden sie vom Verein Center for AI and Ethics (CAIE) in Wien, in dem ich ehrenamtlich im Vorstand bin.',
+  },
+];
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "David Mirga",
-  "jobTitle": "Diplomierter KI-Manager & Buchautor",
-  "image": "https://www.davidmirga.com/images/david-mirga-profil.png",
-  "url": "https://www.davidmirga.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Wien",
-    "addressCountry": "AT"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/david-mirga-847336134/",
-    "https://www.instagram.com/david_mirga_/",
-    "https://x.com/davetherealrave",
-    "https://kilexikon.com/"
-  ],
-  "description": "Diplomierter KI-Manager und Autor von vier Fachbüchern – darunter das erste große deutschsprachige KI-Lexikon. Aus Wien."
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.davidmirga.com/#person",
+      "name": "David Mirga",
+      "jobTitle": "Diplomierter Strategischer KI-Manager und KI-Buchautor",
+      "image": "https://www.davidmirga.com/images/david-mirga-profil.png",
+      "url": "https://www.davidmirga.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Wien", "addressCountry": "AT" },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Diplom Strategischer KI-Manager",
+        "recognizedBy": { "@type": "Organization", "name": "BFI Wien" }
+      },
+      "memberOf": { "@type": "Organization", "name": "Center for AI and Ethics (CAIE)", "url": "https://www.caie.at" },
+      "knowsAbout": ["Künstliche Intelligenz", "KI-Grundbildung", "KI im Arbeitsalltag", "KI im Betrieb einführen", "Generative KI", "Prompting"],
+      "sameAs": [
+        LINKEDIN,
+        INSTAGRAM,
+        "https://www.instagram.com/david_mirga_/",
+        "https://x.com/davetherealrave",
+        "https://kilexikon.com/"
+      ],
+      "description": "David Mirga aus Wien erklärt KI so, dass sie im Alltag funktioniert. Autor von drei KI-Büchern, darunter das erste große deutschsprachige KI-Lexikon mit über 5.000 Begriffen, und Autor eines kostenlosen KI-Grundkurses."
+    },
+    {
+      "@type": "Book",
+      "name": "Das große KI-Lexikon: 5000 Begriffe der Künstlichen Intelligenz",
+      "isbn": "979-8286092918",
+      "datePublished": "2025-06-04",
+      "inLanguage": "de",
+      "author": { "@id": "https://www.davidmirga.com/#person" }
+    },
+    {
+      "@type": "Book",
+      "name": "Der ultimative KI-Kompass",
+      "inLanguage": "de",
+      "author": { "@id": "https://www.davidmirga.com/#person" }
+    },
+    {
+      "@type": "Book",
+      "name": "KI endlich einfach erklärt",
+      "inLanguage": "de",
+      "author": { "@id": "https://www.davidmirga.com/#person" }
+    },
+    {
+      "@type": "Book",
+      "name": "Digitales Recruiting kinderleicht",
+      "isbn": "978-3-7598-2368-7",
+      "inLanguage": "de",
+      "author": { "@id": "https://www.davidmirga.com/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
 });
+
+const kennst = [
+  { t: 'Alle reden von KI, und du fragst dich, ob dein Job bleibt?', link: KURS_URL, l: 'Im Grundkurs anfangen' },
+  { t: 'Du sitzt vor ChatGPT und weißt nicht, was du eintippen sollst?', link: KURS_URL, l: 'Die erste Übung machen' },
+  { t: 'Dein Team nutzt längst KI, und keiner redet darüber?', link: '/ki-check', l: 'Wo steht dein Betrieb?' },
+  { t: 'Jeden Tag ein neues Wunder-Tool, und du weißt nicht, was davon stimmt?', link: '/ki-presse-news', l: 'Die Woche in Ruhe lesen' },
+  { t: 'Du kennst die Tools, aber in deinem Team kommt KI nicht an?', link: '/ueber-mich', l: 'Wie ich darüber denke' },
+];
 ---
 
 <BaseLayout
-  pageTitle="Startseite"
-  description="David Mirga – Diplomierter KI-Manager, Autor von 4 Fachbüchern und Verfasser des ersten großen deutschsprachigen KI-Lexikons. Aus Wien."
+  pageTitle="Was KI kann. Was nicht. Und was das für dich heißt."
+  description="David Mirga aus Wien: Was KI kann, was nicht, und was das für dich heißt. Autor von drei KI-Büchern und des ersten großen deutschsprachigen KI-Lexikons mit über 5.000 Begriffen. KI-Grundkurs gratis, ohne Anmeldung."
 >
   <script type="application/ld+json" slot="head-schema" set:html={schema} />
 
-  <!-- HERO -->
-  <section class="pt-12 pb-10 bg-brand-navy relative overflow-hidden">
+  <!-- 1 · KOPF -->
+  <section class="pt-12 pb-14 bg-brand-navy relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
     <div class="container mx-auto px-6 md:px-8 max-w-6xl relative z-10">
-      <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-14">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
 
-        <!-- Text -->
-        <div class="flex-1 text-center lg:text-left lg:pt-4">
-          <div class="flex items-center justify-center lg:justify-start gap-4 mb-6">
-            <img
-              src="/images/David-Mirga.jpg"
-              alt="David Mirga – KI-Manager und Buchautor aus Wien"
-              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover object-top shadow-xl ring-2 ring-white/20 flex-shrink-0"
-            />
-            <div class="text-left">
-              <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-1">
-                David Mirga · Wien
-              </p>
-              <p class="text-white/75 text-sm tracking-wide">
-                3-facher KI-Buchautor · Diplom. KI-Manager · Schriftführer im Verein CAIE
-              </p>
-            </div>
-          </div>
+        <div class="flex-1 text-center lg:text-left">
+          <p class="text-[#E9C7B1] font-semibold tracking-widest uppercase text-sm mb-5">David Mirga · Wien</p>
 
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-tight tracking-tight mb-6">
-            KI verständlich.<br/>
-            <span class="text-brand-red">Ohne Angst.</span>
+            Was KI kann. Was nicht.<br/>
+            <span class="text-brand-red">Und was das für dich heißt.</span>
           </h1>
 
-          <p class="text-xl text-white/85 leading-relaxed max-w-xl mb-4">
-            Ich helfe Menschen weiter, bis sie es selbst können. Heute mit KI.
-          </p>
-          <p class="text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-            Ich habe Maurer gelernt, auf Baustellen gearbeitet und Firmen aufgebaut. Heute schreibe ich Bücher über KI und erkläre sie so, dass sie im Alltag ankommt.
+          <p class="text-xl text-white/85 leading-relaxed max-w-2xl mb-5 mx-auto lg:mx-0">
+            Ob du KI zum ersten Mal öffnest oder schon jeden Tag damit arbeitest: Entscheidend ist, dass sie im Alltag wirklich funktioniert. Für dich, dein Team und deinen Betrieb.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a
-              href="mailto:mail.davidmirga@gmail.com"
-              class="px-8 py-4 bg-brand-red text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all text-center"
-            >
+          <p class="text-base text-white/70 leading-relaxed max-w-2xl mb-9 mx-auto lg:mx-0">
+            Autor von drei KI-Büchern · Das erste große deutschsprachige KI-Lexikon mit über 5.000 Begriffen · Diplomierter KI-Manager
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+            <a href={KURS_URL} target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all text-center">
+              Grundkurs starten, gratis
+            </a>
+            <a href="/downloads/ki-kompass" class="w-full sm:w-auto px-7 py-4 bg-white/10 text-white border border-white/25 font-bold rounded-lg hover:bg-white/20 transition-colors text-center">
+              KI-Kompass gratis lesen
+            </a>
+            <a href="#kontakt" class="text-white/80 font-semibold underline underline-offset-4 hover:text-white px-2 py-2">
               Schreib mir
             </a>
-            <a
-              href="/ueber-mich"
-              class="px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-colors text-center"
-            >
-              Meine Geschichte →
-            </a>
           </div>
         </div>
 
-        <!-- KI Presse News: aktuelle Titelseite von caie.at, wechselt jede Woche automatisch (Dave 25.11.2026) -->
-        <aside class="w-full max-w-md lg:w-[420px] flex-shrink-0" aria-label="KI Presse News – aktuelle Ausgabe">
-          <p class="flex items-center justify-between text-base mb-3">
-            <span class="text-[#E9C7B1] font-semibold tracking-[0.12em] md:tracking-[0.18em] uppercase whitespace-nowrap">Mein Newsletter</span>
-            <span class="flex items-center gap-2 text-white/70 whitespace-nowrap"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>aktuelle Ausgabe</span>
-          </p>
-          <div class="relative rotate-[1.2deg] hover:rotate-0 transition-transform duration-300">
-            <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#C5A48E]/40 rounded-sm"></div>
-            <div class="relative shadow-2xl shadow-black/40 ring-1 ring-black/10 rounded-sm overflow-hidden">
-              <KiPresseEmbed variant="titel" title="KI Presse News – Titelseite der aktuellen Ausgabe" />
-            </div>
-            <a href="/ki-presse-news" class="absolute inset-0 z-10" aria-label="KI Presse News lesen"></a>
-          </div>
-          <a
-            href="/ki-presse-news"
-            class="mt-6 flex items-center justify-between w-full px-6 py-4 bg-white text-brand-navy font-bold rounded-lg shadow-lg hover:bg-[#F7F3EA] transition-colors"
-          >
-            Ausgabe lesen
-            <span class="text-brand-red">→</span>
-          </a>
-          <p class="mt-3 text-white/60 text-base text-center">Jede Woche, mit Originalquellen. Erscheint beim Verein CAIE.</p>
-        </aside>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDIBILITY BAR -->
-  <section class="py-6 bg-brand-navy border-t border-white/5">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14">
-        <div class="text-center">
-          <p class="text-white font-black text-lg tracking-tight leading-none">Dipl. KI-Manager</p>
-          <p class="text-white/70 text-sm uppercase tracking-wider mt-1">KI seit 2022</p>
-        </div>
-        <div class="w-px h-6 bg-white/10 hidden sm:block"></div>
-        <div class="text-center">
-          <p class="text-white font-black text-sm tracking-tight leading-none">Erstes KI-Lexikon</p>
-          <p class="text-white/70 text-sm uppercase tracking-wider mt-1">auf Deutsch · 5.000+ Begriffe</p>
-        </div>
-        <div class="w-px h-6 bg-white/10 hidden sm:block"></div>
-        <div class="text-center">
-          <p class="text-white font-black text-2xl tracking-tight leading-none">4</p>
-          <p class="text-white/70 text-sm uppercase tracking-wider mt-1">Fachbücher</p>
-        </div>
-        <div class="w-px h-6 bg-white/10 hidden sm:block"></div>
-        <div class="text-center">
-          <p class="text-white font-black text-2xl tracking-tight leading-none">20+</p>
-          <p class="text-white/70 text-sm uppercase tracking-wider mt-1">KI-Weiterbildungen</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSION / WOFÜR ICH STEHE -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-
-      <div class="text-center mb-10">
-        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Meine Mission</p>
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight mb-4">
-          Die Angst vor KI nehmen.
-        </h2>
-        <p class="text-slate-700 max-w-xl mx-auto leading-relaxed">
-          Seit 2022 arbeite ich daran, Menschen zu befähigen KI selbstständig zu nutzen — nicht abhängig von Beratern zu werden. Ich gebe praktische Tools und Workflows an die Hand, die wirklich funktionieren.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-        <div class="bg-brand-light rounded-2xl p-8 border border-slate-100">
-          <h3 class="font-heading font-black text-brand-navy text-base mb-5 tracking-tight">Dafür stehe ich</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="text-brand-red font-black mt-0.5 flex-shrink-0">✓</span>
-              <div>
-                <p class="font-bold text-brand-navy text-sm">Befähigung statt Abhängigkeit</p>
-                <p class="text-sm text-slate-600 mt-0.5">Du lernst es selbst — nicht für immer auf Berater angewiesen sein.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-brand-red font-black mt-0.5 flex-shrink-0">✓</span>
-              <div>
-                <p class="font-bold text-brand-navy text-sm">Praxis statt Theorie</p>
-                <p class="text-sm text-slate-600 mt-0.5">Was ich zeige, habe ich selbst getestet und im Einsatz.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-brand-red font-black mt-0.5 flex-shrink-0">✓</span>
-              <div>
-                <p class="font-bold text-brand-navy text-sm">Funktioniert statt "müsste eigentlich"</p>
-                <p class="text-sm text-slate-600 mt-0.5">Kein Konzept das in der Schublade landet.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-brand-red font-black mt-0.5 flex-shrink-0">✓</span>
-              <div>
-                <p class="font-bold text-brand-navy text-sm">Verständlich statt Fach-Jargon</p>
-                <p class="text-sm text-slate-600 mt-0.5">KI erklärt so, dass du es verstehst — und selbst machen kannst.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 border border-slate-200">
-          <h3 class="font-heading font-black text-brand-navy text-base mb-5 tracking-tight">Dagegen stehe ich</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="text-slate-400 font-black mt-0.5 flex-shrink-0">✗</span>
-              <div>
-                <p class="font-bold text-slate-600 text-sm line-through decoration-slate-400">Angstmacherei</p>
-                <p class="text-sm text-slate-500 mt-0.5">"KI ersetzt euch!" — Nein. Sie macht euch besser.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-slate-400 font-black mt-0.5 flex-shrink-0">✗</span>
-              <div>
-                <p class="font-bold text-slate-600 text-sm line-through decoration-slate-400">Hilflosigkeit</p>
-                <p class="text-sm text-slate-500 mt-0.5">"Ihr versteht das eh nicht" — Jeder kann das lernen.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-slate-400 font-black mt-0.5 flex-shrink-0">✗</span>
-              <div>
-                <p class="font-bold text-slate-600 text-sm line-through decoration-slate-400">Berater die reden statt umsetzen</p>
-                <p class="text-sm text-slate-500 mt-0.5">25 Jahre Business-Praxis, nicht Elfenbeinturm.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-slate-400 font-black mt-0.5 flex-shrink-0">✗</span>
-              <div>
-                <p class="font-bold text-slate-600 text-sm line-through decoration-slate-400">200-Seiten-Konzepte</p>
-                <p class="text-sm text-slate-500 mt-0.5">Die in der Schublade landen und nichts verändern.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BUCH – KI-Kompass als Geschenk -->
-  <section class="py-20 bg-brand-light">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-
-      <!-- KI-Kompass HERO – Hauptbuch -->
-      <div class="bg-brand-navy rounded-2xl overflow-hidden shadow-2xl mb-6 ring-1 ring-white/5">
-        <div class="flex flex-col md:flex-row">
-
-          <!-- Linke Seite: Buchinfo -->
-          <div class="flex-1 p-8 md:p-12">
-            <p class="text-xl md:text-2xl font-heading font-bold text-brand-red mb-1">
-              Mein bestes Buch.
-            </p>
-            <h2 class="text-3xl md:text-4xl font-heading font-black text-white leading-tight tracking-tight mb-3">
-              Der ultimative<br/>KI-Kompass
-            </h2>
-            <p class="text-white/60 text-sm font-medium mb-1 tracking-wide">
-              598-Seiten E-Book — extra verständlich für alle
-            </p>
-            <p class="text-white/30 text-xs mb-8 tracking-wide">
-              1 Jahr Arbeit · Auf Amazon erhältlich — Mein Geschenk an dich.
-            </p>
-
-            <!-- Stats -->
-            <div class="flex gap-8 mb-8">
-              <div>
-                <p class="text-white font-black text-3xl tracking-tight">598</p>
-                <p class="text-white/40 text-xs uppercase tracking-widest mt-0.5">Seiten</p>
-              </div>
-              <div class="w-px bg-white/10"></div>
-              <div>
-                <div class="flex items-center gap-1 mb-0.5">
-                  <p class="text-white font-black text-3xl tracking-tight">5,0</p>
-                  <svg class="w-5 h-5 text-amber-400 mb-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                </div>
-                <p class="text-white/40 text-xs uppercase tracking-widest">Amazon</p>
-              </div>
-            </div>
-
-            <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/downloads/ki-kompass"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-red text-white font-black rounded-xl hover:bg-red-700 transition-all duration-200 text-sm shadow-lg shadow-brand-red/20"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                Als Geschenk herunterladen
-              </a>
-              <a
-                href="https://amzn.eu/d/2xBuoOO"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/8 text-white font-bold rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/15 text-sm"
-              >
-                Auf Amazon ansehen
-              </a>
-            </div>
-          </div>
-
-          <!-- Rechte Seite: Buchcover -->
-          <div class="flex items-center justify-center p-6 md:p-10 border-t border-white/5 md:border-t-0 md:border-l md:w-72 md:flex-shrink-0">
-            <img
-              src="/ki-kompass.jpg"
-              alt="Der ultimative KI-Kompass – E-Book von David Mirga, 598 Seiten"
-              class="w-44 md:w-60 rounded-lg shadow-2xl"
-            />
-          </div>
-
-        </div>
-      </div>
-
-      <!-- KI-Lexikon — volle Zeile -->
-      <a
-        href="https://kilexikon.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-200 overflow-hidden flex flex-col sm:flex-row gap-0 mb-4"
-      >
-        <div class="flex-shrink-0 sm:w-20 flex items-center justify-center p-5 sm:py-6 bg-slate-50">
-          <img
-            src="/images/cover-lexikon.jpg"
-            alt="Das große deutschsprachige KI-Lexikon"
-            class="w-16 h-20 object-cover rounded-lg shadow-sm"
-          />
-        </div>
-        <div class="flex flex-col justify-center px-6 py-5 flex-1">
-          <span class="inline-block px-2 py-0.5 bg-green-50 text-green-700 text-xs font-bold rounded-full mb-2 w-fit">
-            Bereits erhältlich
-          </span>
-          <h3 class="font-heading font-bold text-brand-navy text-base group-hover:text-brand-red transition-colors leading-snug mb-1">
-            Das große deutschsprachige KI-Lexikon
-          </h3>
-          <p class="text-sm text-slate-500 mb-3">Das erste umfassende KI-Nachschlagewerk auf Deutsch — 5.000+ Begriffe, klar erklärt.</p>
-          <span class="text-brand-red text-sm font-bold">kilexikon.com →</span>
-        </div>
-        <div class="hidden sm:flex flex-shrink-0 items-center pr-6">
-          <svg class="w-5 h-5 text-slate-300 group-hover:text-brand-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- BIO TEASER -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-      <div class="bg-brand-light rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center border border-slate-100">
-
-        <div class="md:w-56 flex-shrink-0 flex justify-center">
+        <div class="flex-shrink-0">
           <img
             src="/images/david-mirga-profil.png"
-            alt="David Mirga - KI-Manager und Buchautor"
-            width="220"
-            height="220"
-            class="rounded-2xl shadow-lg object-cover object-top w-44 h-44 md:w-56 md:h-56 ring-4 ring-white"
+            alt="David Mirga, KI-Buchautor aus Wien"
+            width="360" height="360"
+            class="w-44 h-44 md:w-72 md:h-72 lg:w-[360px] lg:h-[360px] rounded-3xl object-cover object-top shadow-2xl ring-4 ring-white/10"
           />
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Leiste: Zahlen -->
+  <section class="py-7 bg-brand-navy border-t border-white/10">
+    <div class="container mx-auto px-6 md:px-8 max-w-5xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><p class="text-white font-black text-3xl leading-none">4</p><p class="text-white/70 text-sm mt-2">Fachbücher, 3 davon über KI</p></div>
+        <div><p class="text-white font-black text-3xl leading-none">5.000+</p><p class="text-white/70 text-sm mt-2">Begriffe im KI-Lexikon</p></div>
+        <div><p class="text-white font-black text-3xl leading-none">39</p><p class="text-white/70 text-sm mt-2">Lektionen im Grundkurs</p></div>
+        <div><p class="text-white font-black text-3xl leading-none">20+</p><p class="text-white/70 text-sm mt-2">KI-Weiterbildungen gemacht</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · KENNST DU DAS? -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-5xl">
+      <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight text-center mb-12">Kennst du das?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {kennst.map((k) => (
+          <a href={k.link} target={k.link.startsWith('http') ? '_blank' : undefined} rel={k.link.startsWith('http') ? 'noopener' : undefined}
+             class="group block bg-brand-light rounded-2xl p-7 border border-slate-100 hover:border-brand-red/40 hover:shadow-md transition-all">
+            <p class="text-lg text-brand-navy font-semibold leading-snug mb-4">{k.t}</p>
+            <span class="text-brand-red font-bold text-base">{k.l} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · SELBST LERNEN -->
+  <section class="py-20 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-5xl">
+      <p class="text-brand-red font-semibold tracking-widest uppercase text-sm mb-3 text-center">Gratis</p>
+      <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight text-center mb-4">Selbst lernen, im eigenen Tempo.</h2>
+      <p class="text-lg text-slate-700 text-center max-w-2xl mx-auto mb-12">Ohne Anmeldung, ohne Kosten. Fang dort an, wo du gerade stehst.</p>
+
+      <div class="bg-brand-navy rounded-2xl p-8 md:p-12 mb-6 shadow-xl">
+        <p class="text-[#E9C7B1] font-semibold uppercase tracking-widest text-sm mb-3">KI-Grundkurs</p>
+        <h3 class="text-2xl md:text-3xl font-heading font-black text-white mb-4">KI sicher im Alltag nutzen</h3>
+        <p class="text-lg text-white/85 leading-relaxed max-w-2xl mb-3">
+          39 kurze Lektionen mit kleinen Wissens-Checks. Zum Beispiel: Du gibst der KI einen schwierigen Brief und lässt dir erklären, was von dir verlangt wird. Dann prüfst du selbst, ob Betrag und Frist stimmen.
+        </p>
+        <p class="text-base text-white/65 mb-8">Geschrieben von mir, bereitgestellt vom Verein Center for AI and Ethics (CAIE).</p>
+        <a href={KURS_URL} target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all">
+          Grundkurs starten, gratis
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/downloads/ki-kompass" class="group flex gap-6 items-center bg-white rounded-2xl p-6 border border-slate-100 hover:border-brand-red/40 hover:shadow-md transition-all">
+          <img src="/ki-kompass.jpg" alt="Buchcover Der ultimative KI-Kompass" class="w-24 rounded-lg shadow-md flex-shrink-0" />
+          <div>
+            <h3 class="font-heading font-bold text-brand-navy text-xl mb-2">Der ultimative KI-Kompass</h3>
+            <p class="text-base text-slate-600 mb-3">598 Seiten, verständlich für alle. Als Geschenk zum Herunterladen.</p>
+            <span class="text-brand-red font-bold">Gratis lesen →</span>
+          </div>
+        </a>
+        <a href="https://kilexikon.com/" target="_blank" rel="noopener" class="group flex gap-6 items-center bg-white rounded-2xl p-6 border border-slate-100 hover:border-brand-red/40 hover:shadow-md transition-all">
+          <img src="/images/cover-lexikon.jpg" alt="Buchcover Das große KI-Lexikon" class="w-24 rounded-lg shadow-md flex-shrink-0" />
+          <div>
+            <h3 class="font-heading font-bold text-brand-navy text-xl mb-2">Das große KI-Lexikon</h3>
+            <p class="text-base text-slate-600 mb-3">Das erste große deutschsprachige KI-Lexikon. Über 5.000 Begriffe, klar erklärt.</p>
+            <span class="text-brand-red font-bold">Begriff nachschlagen →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · ZUM VERTIEFEN -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-8 max-w-6xl">
+      <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight text-center mb-4">Zum Vertiefen.</h2>
+      <p class="text-lg text-slate-700 text-center max-w-2xl mx-auto mb-12">Für alle, die schon mit KI arbeiten und auf dem Laufenden bleiben wollen.</p>
+
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <div class="w-full max-w-md mx-auto lg:mx-0 lg:w-[400px] flex-shrink-0">
+          <p class="text-base font-semibold text-brand-navy mb-3">KI Presse News · Verein CAIE</p>
+          <div class="relative shadow-xl ring-1 ring-black/10 rounded-sm overflow-hidden">
+            <KiPresseEmbed variant="titel" title="KI Presse News – Titelseite der aktuellen Ausgabe" />
+            <a href="/ki-presse-news" class="absolute inset-0 z-10" aria-label="KI Presse News lesen"></a>
+          </div>
+        </div>
+
+        <div class="flex-1 space-y-6">
+          <div class="bg-brand-light rounded-2xl p-7 border border-slate-100">
+            <h3 class="font-heading font-bold text-brand-navy text-xl mb-2">KI Presse News</h3>
+            <p class="text-base text-slate-700 leading-relaxed mb-3">Jede Woche die wichtigsten KI-Nachrichten, kurz und mit Originalquellen. Im Verein Center for AI and Ethics bin ich im Vorstand und arbeite an den KI Presse News mit.</p>
+            <a href="/ki-presse-news" class="text-brand-red font-bold">Aktuelle Ausgabe lesen →</a>
+            <span class="text-slate-400 mx-2">·</span>
+            <a href="https://www.caie.at" target="_blank" rel="noopener" class="text-brand-red font-bold">Mehr über den Verein →</a>
+          </div>
+          <div class="bg-brand-light rounded-2xl p-7 border border-slate-100">
+            <h3 class="font-heading font-bold text-brand-navy text-xl mb-2">KI mit Ruhepuls</h3>
+            <p class="text-base text-slate-700 leading-relaxed mb-3">Jeden Werktag ein kurzer KI-Impuls auf LinkedIn und Instagram. Ohne Hype, ohne Fachchinesisch.</p>
+            <a href={LINKEDIN} target="_blank" rel="noopener" class="text-brand-red font-bold">LinkedIn →</a>
+            <span class="text-slate-400 mx-2">·</span>
+            <a href={INSTAGRAM} target="_blank" rel="noopener" class="text-brand-red font-bold">Instagram →</a>
+          </div>
+          <div class="bg-brand-light rounded-2xl p-7 border border-slate-100">
+            <h3 class="font-heading font-bold text-brand-navy text-xl mb-2">Blog</h3>
+            <p class="text-base text-slate-700 leading-relaxed mb-3">Längere Texte zu KI im Alltag und im Betrieb.</p>
+            <a href="/blog" class="text-brand-red font-bold">Zum Blog →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · ÜBER MICH, KURZ -->
+  <section class="py-20 bg-brand-light">
+    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
+      <div class="bg-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center border border-slate-100">
+        <img src="/images/David-Mirga.jpg" alt="David Mirga" width="200" height="200" class="rounded-2xl shadow-lg object-cover object-top w-40 h-40 md:w-48 md:h-48 flex-shrink-0" />
         <div class="flex-1 space-y-4">
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-brand-navy tracking-tight">
-            Nicht der typische Tech-Nerd.
-          </h2>
-          <p class="text-slate-700 leading-relaxed">
-            Ich komme nicht aus dem Silicon Valley. Ich habe Maurer gelernt, Unternehmen aufgebaut und bin über Umwege zur KI gekommen —
-            weil ich verstanden habe, dass Technologie nur dann etwas wert ist, wenn sie <strong>echte Probleme löst</strong>.
+          <h2 class="text-2xl md:text-3xl font-heading font-black text-brand-navy tracking-tight">Über mich</h2>
+          <p class="text-lg text-slate-700 leading-relaxed">
+            Ich komme nicht aus der Informatik. Ich habe Maurer gelernt, Unternehmen aufgebaut und bin über Umwege zur KI gekommen, weil ich verstanden habe, dass Technologie nur dann etwas wert ist, wenn sie echte Probleme löst.
           </p>
-          <p class="text-slate-600 leading-relaxed">
-            Diplomierter KI-Manager. Autor von vier Fachbüchern. Ich lerne, schreibe und teile — auf LinkedIn, bald auch im Podcast.
+          <p class="text-lg text-slate-700 leading-relaxed">
+            <strong>Was ich gerade lerne:</strong> Seit Ende November ISO 42001 und den EU AI Act. Man lernt bei KI nie aus. In drei bis fünf Monaten ändert sich extrem viel.
           </p>
-          <a
-            href="/ueber-mich"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors text-sm"
-          >
-            Die ganze Geschichte lesen →
+          <a href="/ueber-mich" class="inline-block px-6 py-3 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors">
+            Die ganze Geschichte →
           </a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- LINKEDIN / CONTENT -->
+  <!-- 6 · HÄUFIGE FRAGEN -->
   <section class="py-20 bg-white">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-
-      <div class="text-center mb-12">
-        <p class="text-brand-red font-semibold tracking-widest uppercase text-xs mb-3">Aktuell</p>
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight">
-          Was ich gerade mache.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-        <div class="bg-brand-light rounded-2xl p-6 border border-slate-100">
-          <div class="text-3xl mb-4" aria-hidden="true">📰</div>
-          <h3 class="font-heading font-bold text-brand-navy mb-2">KI Presse News</h3>
-          <p class="text-base text-slate-600 leading-relaxed">
-            Jede Woche die wichtigsten KI-Nachrichten, kurz und verständlich. Im Verein <a href="https://www.caie.at" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline">Center for AI and Ethics (CAIE)</a> bin ich Schriftführer und kümmere mich darum. <a href="/ki-presse-news" class="text-brand-red font-semibold hover:underline">Ausgabe lesen →</a>
-          </p>
-        </div>
-
-        <div class="bg-brand-light rounded-2xl p-6 border border-slate-100">
-          <div class="text-3xl mb-4" aria-hidden="true">🎙️</div>
-          <h3 class="font-heading font-bold text-brand-navy mb-2">Podcast & LinkedIn</h3>
-          <p class="text-base text-slate-600 leading-relaxed">
-            Ich baue mein Podcast-Format auf und teile auf <a href="https://www.linkedin.com/in/david-mirga-847336134/" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline">LinkedIn</a> wöchentlich Einblicke zu KI — ohne Hype, mit Substanz.
-          </p>
-        </div>
-
-        <div class="bg-brand-light rounded-2xl p-6 border border-slate-100">
-          <div class="text-3xl mb-4" aria-hidden="true">🧪</div>
-          <h3 class="font-heading font-bold text-brand-navy mb-2">KI-Tools testen</h3>
-          <p class="text-base text-slate-600 leading-relaxed">
-            Ich teste laufend neue Tools — für Content, Video, Audio, Marketing, Vertrieb und Unternehmensführung. Was wirklich funktioniert, teile ich. Was nicht, auch.
-          </p>
-        </div>
-
-        <a href="/ki-check" class="block bg-brand-light rounded-2xl p-6 border border-slate-100 hover:border-brand-red/30 hover:shadow-md transition-all">
-          <div class="text-3xl mb-4" aria-hidden="true">🧭</div>
-          <h3 class="font-heading font-bold text-brand-navy mb-2">KI-Reifegrad-Check</h3>
-          <p class="text-base text-slate-600 leading-relaxed">
-            Kostenlos und in wenigen Minuten: Wo stehen du und dein Betrieb bei KI? <span class="text-brand-red font-semibold">Zum Check →</span>
-          </p>
-        </a>
-
+    <div class="container mx-auto px-6 md:px-8 max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy tracking-tight text-center mb-10">Häufige Fragen</h2>
+      <div class="space-y-4">
+        {faq.map((f) => (
+          <details class="group bg-brand-light rounded-2xl p-6 border border-slate-100">
+            <summary class="cursor-pointer list-none flex justify-between items-center gap-4">
+              <h3 class="text-lg font-bold text-brand-navy">{f.q}</h3>
+              <span class="text-brand-red text-2xl font-bold group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-lg text-slate-700 leading-relaxed mt-4">{f.a}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="py-20 bg-brand-navy text-center text-white">
+  <!-- 7 · KONTAKT -->
+  <section id="kontakt" class="py-20 bg-brand-navy text-center text-white">
     <div class="container mx-auto px-6 md:px-8 max-w-2xl">
-      <h2 class="text-3xl md:text-4xl font-heading font-black mb-4 tracking-tight">
-        Lass uns reden.
-      </h2>
-      <p class="text-white/60 mb-10 leading-relaxed text-lg">
-        Kein Verkaufsgespräch. Kein Pitch. Nur ein ehrlicher Austausch über KI oder was auch immer dich gerade beschäftigt.
-      </p>
+      <h2 class="text-3xl md:text-4xl font-heading font-black mb-4 tracking-tight">Steckst du fest?</h2>
+      <p class="text-white/80 mb-10 leading-relaxed text-xl">Schreib mir. Ich antworte persönlich.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="mailto:mail.davidmirga@gmail.com"
-          class="px-8 py-4 bg-brand-red text-white font-bold rounded-xl shadow-lg hover:bg-red-700 transition-all"
-        >
-          Schreib mir
-        </a>
-        <a
-          href="https://www.linkedin.com/in/david-mirga-847336134/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-xl hover:bg-white/20 transition-colors"
-        >
-          LinkedIn folgen
-        </a>
+        <a href="mailto:mail.davidmirga@gmail.com" class="px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-xl shadow-lg hover:bg-red-700 transition-all">Schreib mir</a>
+        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white/10 text-white border border-white/20 text-lg font-bold rounded-xl hover:bg-white/20 transition-colors">Auf LinkedIn</a>
       </div>
+      <p class="mt-12 text-white/60 text-base">
+        Lieber erst selbst probieren? <a href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-white">Grundkurs starten, gratis</a>
+      </p>
+      <p class="mt-6 text-white/50 text-sm">Zuletzt aktualisiert: {AKTUALISIERT}</p>
     </div>
   </section>
 
