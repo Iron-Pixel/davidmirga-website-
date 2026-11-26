@@ -35,7 +35,7 @@ const schema = JSON.stringify({
       "@id": "https://www.davidmirga.com/#person",
       "name": "David Mirga",
       "jobTitle": "Diplomierter Strategischer KI-Manager und KI-Buchautor",
-      "image": "https://www.davidmirga.com/images/david-mirga-profil.png",
+      "image": "https://www.davidmirga.com/images/david-mirga-hemd.jpg",
       "url": "https://www.davidmirga.com",
       "address": { "@type": "PostalAddress", "addressLocality": "Wien", "addressCountry": "AT" },
       "hasCredential": {
@@ -97,7 +97,7 @@ const kennst = [
   { t: 'Du sitzt vor ChatGPT und weißt nicht, was du eintippen sollst?', link: KURS_URL, l: 'Die erste Übung machen' },
   { t: 'Dein Team nutzt längst KI, und keiner redet darüber?', link: '/ki-check', l: 'Wo steht dein Betrieb?' },
   { t: 'Jeden Tag ein neues Wunder-Tool, und du weißt nicht, was davon stimmt?', link: '/ki-presse-news', l: 'Die Woche in Ruhe lesen' },
-  { t: 'Du kennst die Tools, aber in deinem Team kommt KI nicht an?', link: '/ueber-mich', l: 'Wie ich darüber denke' },
+  { t: 'Du kennst die Tools, aber in deinem Team kommt KI nicht an?', link: '/blog', l: 'Gedanken dazu im Blog' },
 ];
 ---
 
@@ -119,7 +119,7 @@ const kennst = [
 
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-tight tracking-tight mb-6">
             Was KI kann. Was nicht.<br/>
-            <span class="text-brand-red">Und was das für dich heißt.</span>
+            <span class="text-[#DE8E64]">Und was das für dich heißt.</span>
           </h1>
 
           <p class="text-xl text-white/85 leading-relaxed max-w-2xl mb-5 mx-auto lg:mx-0">
@@ -131,7 +131,7 @@ const kennst = [
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-            <a href={KURS_URL} target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all text-center">
+            <a href={KURS_URL} target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-brand-redDark transition-all text-center">
               Grundkurs starten, gratis
             </a>
             <a href="/downloads/ki-kompass" class="w-full sm:w-auto px-7 py-4 bg-white/10 text-white border border-white/25 font-bold rounded-lg hover:bg-white/20 transition-colors text-center">
@@ -145,7 +145,7 @@ const kennst = [
 
         <div class="flex-shrink-0">
           <img
-            src="/images/david-mirga-profil.png"
+            src="/images/david-mirga-hemd.jpg"
             alt="David Mirga, KI-Buchautor aus Wien"
             width="360" height="360"
             class="w-44 h-44 md:w-72 md:h-72 lg:w-[360px] lg:h-[360px] rounded-3xl object-cover object-top shadow-2xl ring-4 ring-white/10"
@@ -198,7 +198,7 @@ const kennst = [
           39 kurze Lektionen mit kleinen Wissens-Checks. Zum Beispiel: Du gibst der KI einen schwierigen Brief und lässt dir erklären, was von dir verlangt wird. Dann prüfst du selbst, ob Betrag und Frist stimmen.
         </p>
         <p class="text-base text-white/65 mb-8">Geschrieben von mir, bereitgestellt vom Verein Center for AI and Ethics (CAIE).</p>
-        <a href={KURS_URL} target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all">
+        <a href={KURS_URL} target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-brand-redDark transition-all">
           Grundkurs starten, gratis
         </a>
       </div>
@@ -264,27 +264,6 @@ const kennst = [
     </div>
   </section>
 
-  <!-- 5 · ÜBER MICH, KURZ -->
-  <section class="py-20 bg-brand-light">
-    <div class="container mx-auto px-6 md:px-8 max-w-4xl">
-      <div class="bg-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center border border-slate-100">
-        <img src="/images/David-Mirga.jpg" alt="David Mirga" width="200" height="200" class="rounded-2xl shadow-lg object-cover object-top w-40 h-40 md:w-48 md:h-48 flex-shrink-0" />
-        <div class="flex-1 space-y-4">
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-brand-navy tracking-tight">Über mich</h2>
-          <p class="text-lg text-slate-700 leading-relaxed">
-            Ich komme nicht aus der Informatik. Ich habe Maurer gelernt, Unternehmen aufgebaut und bin über Umwege zur KI gekommen, weil ich verstanden habe, dass Technologie nur dann etwas wert ist, wenn sie echte Probleme löst.
-          </p>
-          <p class="text-lg text-slate-700 leading-relaxed">
-            <strong>Was ich gerade lerne:</strong> Seit Ende November ISO 42001 und den EU AI Act. Man lernt bei KI nie aus. In drei bis fünf Monaten ändert sich extrem viel.
-          </p>
-          <a href="/ueber-mich" class="inline-block px-6 py-3 bg-brand-navy text-white font-bold rounded-xl hover:bg-brand-navy/90 transition-colors">
-            Die ganze Geschichte →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 6 · HÄUFIGE FRAGEN -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6 md:px-8 max-w-3xl">
@@ -309,7 +288,7 @@ const kennst = [
       <h2 class="text-3xl md:text-4xl font-heading font-black mb-4 tracking-tight">Steckst du fest?</h2>
       <p class="text-white/80 mb-10 leading-relaxed text-xl">Schreib mir. Ich antworte persönlich.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:mail.davidmirga@gmail.com" class="px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-xl shadow-lg hover:bg-red-700 transition-all">Schreib mir</a>
+        <a href="mailto:mail.davidmirga@gmail.com" class="px-8 py-4 bg-brand-red text-white text-lg font-bold rounded-xl shadow-lg hover:bg-brand-redDark transition-all">Schreib mir</a>
         <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white/10 text-white border border-white/20 text-lg font-bold rounded-xl hover:bg-white/20 transition-colors">Auf LinkedIn</a>
       </div>
       <p class="mt-12 text-white/60 text-base">

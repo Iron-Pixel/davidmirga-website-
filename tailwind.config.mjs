@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
   // WICHTIG: Die Pfade wurden erweitert, damit Tailwind ALLE verwendeten
   // Klassen findet und den ungenutzten Code (Purge) entfernt.
@@ -12,14 +12,15 @@ export default {
     extend: {
       colors: {
         brand: {
-          navy: '#0B1F3F',
-          red: '#DC2626',
+          navy: '#132B2C',
+          red: '#B4562F',
+          redDark: '#94451F',
           white: '#FFFFFF',
-          light: '#F4F7F9',
+          light: '#F2EFE7',
         },
         action: {
-          DEFAULT: '#DC2626',
-          hover: '#B91C1C',
+          DEFAULT: '#B4562F',
+          hover: '#94451F',
         }
       },
       fontFamily: {
