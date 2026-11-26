@@ -98,18 +98,11 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
               Darf’s ein bisschen<br/>Hilfe sein?
             </h1>
 
-            <p class="text-xl md:text-[1.35rem] leading-relaxed text-[#1F3B3A] mb-6 [text-wrap:pretty]">
+            <p class="text-xl md:text-[1.35rem] leading-relaxed text-[#1F3B3A] mb-8 [text-wrap:pretty]">
               Im Rahmen des Vereins Center for AI and Ethics (caie.at) ist es mein Ziel, KI den Menschen und Betrieben in Österreich näherzubringen und bei Herausforderungen, vor allem am Anfang, mit Tipps und Ratschlägen zu helfen.
             </p>
 
-            <p class="text-base font-semibold text-brand-red mb-2">Meine Mission</p>
-            <p class="text-lg md:text-xl leading-relaxed text-[#6B7A78] mb-10">
-              KI leicht verständlich machen.<br/>
-              Zeigen, was möglich ist und was wirklich funktioniert.<br/>
-              Und wie auch alle im Team einfach mitziehen können.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
               <a href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
                 Grundkurs kostenlos starten <span aria-hidden="true">→</span>
               </a>
@@ -117,6 +110,13 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
                 KI-Kompass lesen
               </a>
             </div>
+
+            <p class="text-base font-semibold text-brand-red mb-2">Meine Mission</p>
+            <p class="text-lg md:text-xl leading-relaxed text-[#6B7A78]">
+              KI leicht verständlich machen.<br/>
+              Zeigen, was möglich ist und was wirklich funktioniert.<br/>
+              Und wie auch alle im Team einfach mitziehen können.
+            </p>
           </div>
 
           <div class="lg:col-span-5">
