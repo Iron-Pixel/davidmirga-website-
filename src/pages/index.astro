@@ -134,7 +134,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
 
         </div>
 
-        <div class="mt-12 md:mt-14 bg-[#F2EFE7] rounded-3xl px-6 md:px-12 py-10 md:py-12">
+        <div class="mt-12 md:mt-14 bg-[#F2EFE7] rounded-3xl px-6 md:px-14 py-10 md:py-12 md:w-fit md:mx-auto">
           <figure class="relative w-fit mx-auto pl-14 md:pl-20">
             <span aria-hidden="true" class="absolute left-0 -top-3 md:-top-4 font-serif text-[6.5rem] md:text-[8rem] leading-none text-brand-red/85 select-none">“</span>
             <blockquote class="text-2xl md:text-[1.75rem] leading-snug font-medium tracking-[-0.01em] text-[#132B2C] md:max-w-[37rem]">
@@ -150,28 +150,26 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
   <section class="border-y border-brand-navy/10 bg-white/60">
     <div class="container mx-auto px-6 md:px-10 max-w-6xl">
       <dl class="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-brand-navy/10">
-        <div class="py-8 px-4 text-center"><dt class="sr-only">Bücher</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">4</dd><p class="text-base text-brand-navy/65 mt-2">Fachbücher, drei über KI</p></div>
-        <div class="py-8 px-4 text-center"><dt class="sr-only">Lexikon</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">5.000+</dd><p class="text-base text-brand-navy/65 mt-2">Begriffe im KI-Lexikon</p></div>
-        <div class="py-8 px-4 text-center"><dt class="sr-only">Kurs</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">39</dd><p class="text-base text-brand-navy/65 mt-2">Lektionen im Grundkurs</p></div>
-        <div class="py-8 px-4 text-center"><dt class="sr-only">Weiterbildungen</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">20+</dd><p class="text-base text-brand-navy/65 mt-2">KI-Weiterbildungen gemacht</p></div>
+        <div class="py-8 px-4 text-center"><dt class="sr-only">Bücher</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">4</dd><p class="text-base text-[#6B7A78] mt-2">Fachbücher, drei über KI</p></div>
+        <div class="py-8 px-4 text-center"><dt class="sr-only">Lexikon</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">5.000+</dd><p class="text-base text-[#6B7A78] mt-2">Begriffe im KI-Lexikon</p></div>
+        <div class="py-8 px-4 text-center"><dt class="sr-only">Kurs</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">39</dd><p class="text-base text-[#6B7A78] mt-2">Lektionen im Grundkurs</p></div>
+        <div class="py-8 px-4 text-center"><dt class="sr-only">Weiterbildungen</dt><dd class="font-sans font-semibold tracking-[-0.03em] text-4xl md:text-5xl text-[#132B2C]">20+</dd><p class="text-base text-[#6B7A78] mt-2">KI-Weiterbildungen gemacht</p></div>
       </dl>
     </div>
   </section>
 
   <!-- 2 · KENNST DU DAS? -->
-  <section class="bg-brand-navy text-[#F7F4EE] py-24 md:py-32">
-    <div class="container mx-auto px-6 md:px-10 max-w-5xl">
-      <p class="flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-[#E3A07C] mb-6">
-        <span class="w-10 h-px bg-[#E3A07C]"></span> Kennst du das?
-      </p>
-      <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-[-0.01em] mb-14 max-w-3xl">
+  <section class="bg-[#245556] text-[#F7F4EE] py-16 md:py-20">
+    <div class="container mx-auto px-6 md:px-10 max-w-6xl">
+      <p class="text-base font-semibold text-[#E3A07C] mb-4">Kennst du das?</p>
+      <h2 class="font-sans font-semibold text-4xl md:text-5xl leading-[1.1] tracking-[-0.03em] mb-10 max-w-3xl">
         Die meisten Fragen zu KI beginnen nicht mit Technik, sondern mit einem Gefühl.
       </h2>
       <ol class="border-t border-white/15">
         {kennst.map((k, i) => (
           <li class="border-b border-white/15">
             <a href={k.link} {...ext(k.link)} class="group grid md:grid-cols-12 gap-3 md:gap-8 py-7 md:py-8 items-baseline">
-              <span class="md:col-span-1 font-serif text-xl text-[#E3A07C]">0{i + 1}</span>
+              <span class="md:col-span-1 font-sans font-semibold text-lg text-[#E3A07C]">0{i + 1}</span>
               <span class="md:col-span-7 text-xl md:text-2xl leading-snug text-[#F7F4EE]">{k.t}</span>
               <span class="md:col-span-4 md:text-right text-base font-semibold text-[#F7F4EE]/70 group-hover:text-[#E3A07C] transition-colors">{k.l} <span aria-hidden="true" class="inline-block group-hover:translate-x-1 transition-transform">→</span></span>
             </a>
@@ -182,27 +180,28 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
   </section>
 
   <!-- 3 · SELBST LERNEN -->
-  <section class="py-24 md:py-32">
+  <section class="py-16 md:py-20">
     <div class="container mx-auto px-6 md:px-10 max-w-6xl">
-      <div class="max-w-3xl mb-16">
-        <p class="flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-brand-red mb-6">
-          <span class="w-10 h-px bg-brand-red"></span> Gratis · ohne Anmeldung
-        </p>
-        <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-[-0.01em]">Selbst lernen, im eigenen Tempo.</h2>
+      <div class="max-w-3xl mb-10 md:mb-12">
+        <p class="text-base font-semibold text-brand-red mb-4">Bücher, Kurs und Lexikon</p>
+        <h2 class="font-sans font-semibold text-4xl md:text-5xl leading-[1.1] tracking-[-0.03em] text-[#245556]">Selbst lernen, im eigenen Tempo.</h2>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 pb-16 mb-16 border-b border-brand-navy/10">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 pb-12 mb-12 border-b border-brand-navy/10">
         <div class="lg:col-span-5">
-          <p class="text-sm font-semibold tracking-[0.2em] uppercase text-brand-navy/55 mb-3">KI-Grundkurs</p>
-          <h3 class="font-serif text-3xl md:text-4xl leading-tight mb-6">KI sicher im Alltag nutzen</h3>
-          <a href={KURS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white text-lg font-semibold rounded-full hover:bg-brand-redDark transition-colors">
+          <p class="text-base font-semibold text-[#6B7A78] mb-2">KI-Grundkurs</p>
+          <h3 class="font-sans font-semibold text-3xl md:text-4xl leading-tight tracking-[-0.025em] text-[#245556] mb-6">KI sicher im Alltag nutzen</h3>
+          <a href={KURS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
             Grundkurs starten <span aria-hidden="true">→</span>
           </a>
         </div>
-        <div class="lg:col-span-7 text-xl leading-relaxed text-brand-navy/80 space-y-5">
+        <div class="lg:col-span-7 text-xl leading-relaxed text-[#1F3B3A] space-y-5">
           <p>39 kurze Lektionen, jede mit einem kleinen Wissens-Check. Du lernst an Aufgaben aus dem echten Leben.</p>
-          <p class="border-l-2 border-brand-red pl-6 italic font-serif text-2xl text-brand-navy">Du gibst der KI einen schwierigen Brief und lässt dir erklären, was von dir verlangt wird. Dann prüfst du selbst, ob Betrag und Frist stimmen.</p>
-          <p class="text-base text-brand-navy/60">Geschrieben von mir, bereitgestellt vom Verein Center for AI and Ethics (CAIE).</p>
+          <figure class="relative pl-12 md:pl-14 !mt-8">
+            <span aria-hidden="true" class="absolute left-0 -top-3 font-serif text-[5rem] md:text-[6rem] leading-none text-brand-red/85 select-none">“</span>
+            <blockquote class="text-xl md:text-2xl leading-snug font-medium text-[#132B2C]">Du gibst der KI einen schwierigen Brief und lässt dir erklären, was von dir verlangt wird. Dann prüfst du selbst, ob Betrag und Frist stimmen.</blockquote>
+          </figure>
+          <p class="text-base text-[#6B7A78]">Geschrieben von mir, bereitgestellt vom Verein Center for AI and Ethics (CAIE).</p>
         </div>
       </div>
 
@@ -210,16 +209,16 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
         <a href="/downloads/ki-kompass" class="group flex gap-8 items-start">
           <img src="/ki-kompass.jpg" alt="Buchcover Der ultimative KI-Kompass" class="w-32 md:w-36 rounded shadow-[0_20px_40px_-15px_rgba(19,43,44,0.5)] group-hover:-translate-y-1 transition-transform flex-shrink-0" />
           <div>
-            <h3 class="font-serif text-2xl md:text-3xl leading-tight mb-3">Der ultimative KI-Kompass</h3>
-            <p class="text-lg text-brand-navy/70 mb-4">598 Seiten, verständlich für alle. Als Geschenk zum Herunterladen.</p>
-            <span class="text-brand-red font-semibold text-lg">Gratis lesen →</span>
+            <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] leading-tight tracking-[-0.02em] text-[#245556] mb-3">Der ultimative KI-Kompass</h3>
+            <p class="text-lg text-[#1F3B3A] mb-4">598 Seiten, verständlich für alle. Als Geschenk zum Herunterladen.</p>
+            <span class="text-brand-red font-semibold text-lg">Lesen →</span>
           </div>
         </a>
         <a href="https://kilexikon.com/" target="_blank" rel="noopener" class="group flex gap-8 items-start">
           <img src="/images/cover-lexikon.jpg" alt="Buchcover Das große KI-Lexikon" class="w-32 md:w-36 rounded shadow-[0_20px_40px_-15px_rgba(19,43,44,0.5)] group-hover:-translate-y-1 transition-transform flex-shrink-0" />
           <div>
-            <h3 class="font-serif text-2xl md:text-3xl leading-tight mb-3">Das große KI-Lexikon</h3>
-            <p class="text-lg text-brand-navy/70 mb-4">Das erste große deutschsprachige KI-Lexikon. Über 5.000 Begriffe, klar erklärt.</p>
+            <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] leading-tight tracking-[-0.02em] text-[#245556] mb-3">Das große KI-Lexikon</h3>
+            <p class="text-lg text-[#1F3B3A] mb-4">Das erste große deutschsprachige KI-Lexikon. Über 5.000 Begriffe, klar erklärt.</p>
             <span class="text-brand-red font-semibold text-lg">Begriff nachschlagen →</span>
           </div>
         </a>
@@ -228,18 +227,16 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
   </section>
 
   <!-- 4 · ZUM VERTIEFEN -->
-  <section class="py-24 md:py-32 bg-white/70 border-t border-brand-navy/10">
+  <section class="py-16 md:py-20 bg-white/70 border-t border-brand-navy/10">
     <div class="container mx-auto px-6 md:px-10 max-w-6xl">
-      <div class="max-w-3xl mb-16">
-        <p class="flex items-center gap-3 text-sm font-semibold tracking-[0.2em] uppercase text-brand-red mb-6">
-          <span class="w-10 h-px bg-brand-red"></span> Zum Vertiefen
-        </p>
-        <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-[-0.01em]">Für alle, die schon mit KI arbeiten.</h2>
+      <div class="max-w-3xl mb-10 md:mb-12">
+        <p class="text-base font-semibold text-brand-red mb-4">Zum Vertiefen</p>
+        <h2 class="font-sans font-semibold text-4xl md:text-5xl leading-[1.1] tracking-[-0.03em] text-[#245556]">Für alle, die schon mit KI arbeiten.</h2>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <div class="lg:col-span-5 max-w-md mx-auto lg:mx-0 w-full">
-          <div class="relative shadow-[0_30px_60px_-25px_rgba(19,43,44,0.5)] rounded-sm overflow-hidden">
+          <div class="relative shadow-[0_30px_60px_-30px_rgba(19,43,44,0.45)] rounded-2xl overflow-hidden ring-1 ring-[#132B2C]/10">
             <KiPresseEmbed variant="titel" title="KI Presse News – Titelseite der aktuellen Ausgabe" />
             <a href="/ki-presse-news" class="absolute inset-0 z-10" aria-label="KI Presse News lesen"></a>
           </div>
@@ -247,20 +244,20 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
 
         <div class="lg:col-span-7 divide-y divide-brand-navy/10 border-y border-brand-navy/10">
           <div class="py-8">
-            <h3 class="font-serif text-2xl md:text-3xl mb-3">KI Presse News</h3>
-            <p class="text-lg text-brand-navy/75 leading-relaxed mb-4">Jede Woche die wichtigsten KI-Nachrichten, kurz und mit Originalquellen. Herausgegeben vom Verein Center for AI and Ethics, in dem ich im Vorstand bin.</p>
+            <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">KI Presse News</h3>
+            <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Jede Woche die wichtigsten KI-Nachrichten, kurz und mit Originalquellen. Herausgegeben vom Verein Center for AI and Ethics, in dem ich im Vorstand bin.</p>
             <a href="/ki-presse-news" class="text-brand-red font-semibold text-lg">Aktuelle Ausgabe lesen →</a>
           </div>
           <div class="py-8">
-            <h3 class="font-serif text-2xl md:text-3xl mb-3">KI mit Ruhepuls</h3>
-            <p class="text-lg text-brand-navy/75 leading-relaxed mb-4">Jeden Werktag ein kurzer KI-Impuls. Ohne Hype, ohne Fachchinesisch.</p>
+            <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">KI mit Ruhepuls</h3>
+            <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Jeden Werktag ein kurzer KI-Impuls. Ohne Hype, ohne Fachchinesisch.</p>
             <a href={LINKEDIN} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">LinkedIn →</a>
-            <span class="text-brand-navy/30 mx-3">·</span>
+            <span class="text-[#6B7A78]/50 mx-3">·</span>
             <a href={INSTAGRAM} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">Instagram →</a>
           </div>
           <div class="py-8">
-            <h3 class="font-serif text-2xl md:text-3xl mb-3">Blog</h3>
-            <p class="text-lg text-brand-navy/75 leading-relaxed mb-4">Längere Texte zu KI im Alltag und im Betrieb.</p>
+            <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">Blog</h3>
+            <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Längere Texte zu KI im Alltag und im Betrieb.</p>
             <a href="/blog" class="text-brand-red font-semibold text-lg">Zum Blog →</a>
           </div>
         </div>
@@ -269,17 +266,17 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
   </section>
 
   <!-- 5 · HÄUFIGE FRAGEN -->
-  <section class="py-24 md:py-32 border-t border-brand-navy/10">
+  <section class="py-16 md:py-20 border-t border-brand-navy/10">
     <div class="container mx-auto px-6 md:px-10 max-w-4xl">
-      <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-[-0.01em] mb-12">Häufige Fragen</h2>
+      <h2 class="font-sans font-semibold text-4xl md:text-5xl leading-[1.1] tracking-[-0.03em] text-[#245556] mb-12">Häufige Fragen</h2>
       <div class="border-t border-brand-navy/15">
         {faq.map((f) => (
           <details class="group border-b border-brand-navy/15">
             <summary class="cursor-pointer list-none flex justify-between items-center gap-6 py-7">
-              <h3 class="text-xl md:text-2xl font-medium">{f.q}</h3>
+              <h3 class="text-xl md:text-2xl font-medium text-[#132B2C]">{f.q}</h3>
               <span class="w-10 h-10 flex-shrink-0 rounded-full border border-brand-navy/25 flex items-center justify-center text-brand-red text-2xl group-open:rotate-45 transition-transform">+</span>
             </summary>
-            <p class="text-lg md:text-xl text-brand-navy/75 leading-relaxed pb-8 max-w-3xl">{f.a}</p>
+            <p class="text-lg md:text-xl text-[#1F3B3A] leading-relaxed pb-8 max-w-3xl">{f.a}</p>
           </details>
         ))}
       </div>
@@ -287,18 +284,18 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
   </section>
 
   <!-- 6 · KONTAKT -->
-  <section id="kontakt" class="bg-brand-navy text-[#F7F4EE] py-24 md:py-32">
+  <section id="kontakt" class="bg-[#245556] text-[#F7F4EE] py-16 md:py-20">
     <div class="container mx-auto px-6 md:px-10 max-w-4xl text-center">
-      <h2 class="font-serif text-5xl md:text-6xl leading-tight tracking-[-0.02em] mb-6">Steckst du fest?</h2>
+      <h2 class="font-sans font-semibold text-5xl md:text-6xl leading-[1.05] tracking-[-0.035em] mb-6">Steckst du fest?</h2>
       <p class="text-xl md:text-2xl text-[#F7F4EE]/80 mb-12">Schreib mir. Ich antworte persönlich.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:mail.davidmirga@gmail.com" class="inline-flex justify-center items-center px-9 py-4 bg-[#F7F4EE] text-brand-navy text-lg font-semibold rounded-full hover:bg-[#E3A07C] transition-colors">Schreib mir</a>
-        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-9 py-4 border border-[#F7F4EE]/30 text-[#F7F4EE] text-lg font-semibold rounded-full hover:border-[#E3A07C] hover:text-[#E3A07C] transition-colors">Auf LinkedIn</a>
+        <a href="mailto:mail.davidmirga@gmail.com" class="inline-flex justify-center items-center px-9 py-4 bg-[#F7F4EE] text-[#245556] text-lg font-semibold rounded-xl hover:bg-[#E3A07C] transition-colors">Schreib mir</a>
+        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-9 py-4 border border-[#F7F4EE]/30 text-[#F7F4EE] text-lg font-semibold rounded-xl hover:border-[#E3A07C] hover:text-[#E3A07C] transition-colors">Auf LinkedIn</a>
       </div>
-      <p class="mt-14 text-[#F7F4EE]/65 text-lg">
+      <p class="mt-10 text-[#F7F4EE]/65 text-lg">
         Lieber erst selbst probieren? <a href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 decoration-[#E3A07C] hover:text-[#E3A07C]">Grundkurs kostenlos starten</a>
       </p>
-      <p class="mt-6 text-[#F7F4EE]/45 text-sm">Zuletzt aktualisiert: {AKTUALISIERT}</p>
+      <p class="mt-6 text-[#F7F4EE]/60 text-base">Zuletzt aktualisiert: {AKTUALISIERT}</p>
     </div>
   </section>
 
