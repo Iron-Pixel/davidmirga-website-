@@ -108,7 +108,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
             )}
 
             <div class="flex flex-col sm:flex-row gap-4 mb-10">
-              <a href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
+              <a data-umami-event="Grundkurs Kopf" href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
                 Grundkurs kostenlos starten <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -126,6 +126,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
               <button
                 type="button"
                 id="foto-oeffnen"
+                data-umami-event="Foto vergroessert"
                 class="shrink-0 rounded-full cursor-zoom-in focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-red/40 transition-transform hover:scale-105"
                 aria-label="Foto von David Mirga groß anzeigen"
               >
@@ -145,9 +146,9 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
               <div class="relative rounded-2xl overflow-hidden ring-1 ring-[#132B2C]/10 shadow-[0_30px_60px_-30px_rgba(19,43,44,0.5)]">
                 <KiPresseEmbed variant="titel" title="KI Presse News – Titelseite der aktuellen Ausgabe" />
               </div>
-              <a href="/ki-presse-news" class="absolute inset-0 z-10" aria-label="KI-Wochen-News lesen"></a>
+              <a data-umami-event="Zeitung Kopf (Bild)" href="/ki-presse-news" class="absolute inset-0 z-10" aria-label="KI-Wochen-News lesen"></a>
             </div>
-            <a href="/ki-presse-news" class="mt-5 inline-flex items-center gap-2 text-lg font-semibold text-brand-red hover:text-brand-redDark">
+            <a data-umami-event="Zeitung Kopf (Link)" href="/ki-presse-news" class="mt-5 inline-flex items-center gap-2 text-lg font-semibold text-brand-red hover:text-brand-redDark">
               Aktuelle Ausgabe lesen <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -188,7 +189,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
       <ol class="border-t border-white/15">
         {kennst.map((k, i) => (
           <li class="border-b border-white/15">
-            <a href={k.link} {...ext(k.link)} class="group grid md:grid-cols-12 gap-3 md:gap-8 py-7 md:py-8 items-baseline">
+            <a data-umami-event={`Kennst du das 0${i + 1}`} href={k.link} {...ext(k.link)} class="group grid md:grid-cols-12 gap-3 md:gap-8 py-7 md:py-8 items-baseline">
               <span class="md:col-span-1 font-sans font-semibold text-lg text-[#E3A07C]">0{i + 1}</span>
               <span class="md:col-span-7 text-xl md:text-2xl leading-snug text-[#F7F4EE]">{k.t}</span>
               <span class="md:col-span-4 md:text-right text-base font-semibold text-[#F7F4EE]/70 group-hover:text-[#E3A07C] transition-colors">{k.l} <span aria-hidden="true" class="inline-block group-hover:translate-x-1 transition-transform">→</span></span>
@@ -211,7 +212,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
         <div class="lg:col-span-5">
           <p class="text-base font-semibold text-[#6B7A78] mb-2">KI-Grundkurs</p>
           <h3 class="font-sans font-semibold text-3xl md:text-4xl leading-tight tracking-[-0.025em] text-[#245556] mb-6">KI sicher im Alltag nutzen</h3>
-          <a href={KURS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
+          <a data-umami-event="Grundkurs Abschnitt" href={KURS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
             Grundkurs starten <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -226,7 +227,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 md:gap-16">
-        <a href="/downloads/ki-kompass" class="group flex gap-8 items-start">
+        <a data-umami-event="KI-Kompass" href="/downloads/ki-kompass" class="group flex gap-8 items-start">
           <img src="/ki-kompass.jpg" alt="Buchcover Der ultimative KI-Kompass" class="w-32 md:w-36 rounded shadow-[0_20px_40px_-15px_rgba(19,43,44,0.5)] group-hover:-translate-y-1 transition-transform flex-shrink-0" />
           <div>
             <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] leading-tight tracking-[-0.02em] text-[#245556] mb-3">Der ultimative KI-Kompass</h3>
@@ -234,7 +235,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
             <span class="text-brand-red font-semibold text-lg">Lesen →</span>
           </div>
         </a>
-        <a href="https://kilexikon.com/" target="_blank" rel="noopener" class="group flex gap-8 items-start">
+        <a data-umami-event="KI-Lexikon" href="https://kilexikon.com/" target="_blank" rel="noopener" class="group flex gap-8 items-start">
           <img src="/images/cover-lexikon.jpg" alt="Buchcover Das große KI-Lexikon" class="w-32 md:w-36 rounded shadow-[0_20px_40px_-15px_rgba(19,43,44,0.5)] group-hover:-translate-y-1 transition-transform flex-shrink-0" />
           <div>
             <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] leading-tight tracking-[-0.02em] text-[#245556] mb-3">Das große KI-Lexikon</h3>
@@ -259,19 +260,19 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
           <div class="py-8">
             <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">KI Presse News</h3>
             <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Jede Woche die wichtigsten KI-Nachrichten, kurz und mit Originalquellen. Herausgegeben vom Verein Center for AI and Ethics, in dem ich im Vorstand bin.</p>
-            <a href="/ki-presse-news" class="text-brand-red font-semibold text-lg">Aktuelle Ausgabe lesen →</a>
+            <a data-umami-event="Zeitung Vertiefen" href="/ki-presse-news" class="text-brand-red font-semibold text-lg">Aktuelle Ausgabe lesen →</a>
           </div>
           <div class="py-8">
             <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">KI mit Ruhepuls</h3>
             <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Jeden Werktag ein kurzer KI-Impuls. Ohne Hype, ohne Fachchinesisch.</p>
-            <a href={LINKEDIN} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">LinkedIn →</a>
+            <a data-umami-event="LinkedIn Vertiefen" href={LINKEDIN} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">LinkedIn →</a>
             <span class="text-[#6B7A78]/50 mx-3">·</span>
-            <a href={INSTAGRAM} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">Instagram →</a>
+            <a data-umami-event="Instagram Vertiefen" href={INSTAGRAM} target="_blank" rel="noopener" class="text-brand-red font-semibold text-lg">Instagram →</a>
           </div>
           <div class="py-8">
             <h3 class="font-sans font-semibold text-2xl md:text-[1.75rem] tracking-[-0.02em] text-[#245556] mb-3">Blog</h3>
             <p class="text-lg text-[#1F3B3A] leading-relaxed mb-4">Längere Texte zu KI im Alltag und im Betrieb.</p>
-            <a href="/blog" class="text-brand-red font-semibold text-lg">Zum Blog →</a>
+            <a data-umami-event="Blog Vertiefen" href="/blog" class="text-brand-red font-semibold text-lg">Zum Blog →</a>
           </div>
         </div>
       </div>
@@ -302,11 +303,11 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
       <h2 class="font-sans font-semibold text-5xl md:text-6xl leading-[1.05] tracking-[-0.035em] mb-6">Steckst du fest?</h2>
       <p class="text-xl md:text-2xl text-[#F7F4EE]/80 mb-12">Schreib mir. Ich antworte persönlich.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:mail.davidmirga@gmail.com" class="inline-flex justify-center items-center px-9 py-4 bg-[#F7F4EE] text-[#245556] text-lg font-semibold rounded-xl hover:bg-[#E3A07C] transition-colors">Schreib mir</a>
-        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-9 py-4 border border-[#F7F4EE]/30 text-[#F7F4EE] text-lg font-semibold rounded-xl hover:border-[#E3A07C] hover:text-[#E3A07C] transition-colors">Auf LinkedIn</a>
+        <a data-umami-event="Schreib mir Schluss" href="mailto:mail.davidmirga@gmail.com" class="inline-flex justify-center items-center px-9 py-4 bg-[#F7F4EE] text-[#245556] text-lg font-semibold rounded-xl hover:bg-[#E3A07C] transition-colors">Schreib mir</a>
+        <a data-umami-event="LinkedIn Schluss" href={LINKEDIN} target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-9 py-4 border border-[#F7F4EE]/30 text-[#F7F4EE] text-lg font-semibold rounded-xl hover:border-[#E3A07C] hover:text-[#E3A07C] transition-colors">Auf LinkedIn</a>
       </div>
       <p class="mt-10 text-[#F7F4EE]/65 text-lg">
-        Lieber erst selbst probieren? <a href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 decoration-[#E3A07C] hover:text-[#E3A07C]">Grundkurs kostenlos starten</a>
+        Lieber erst selbst probieren? <a data-umami-event="Grundkurs Schluss" href={KURS_URL} target="_blank" rel="noopener" class="underline underline-offset-4 decoration-[#E3A07C] hover:text-[#E3A07C]">Grundkurs kostenlos starten</a>
       </p>
       <p class="mt-6 text-[#F7F4EE]/60 text-base">Zuletzt aktualisiert: {AKTUALISIERT}</p>
     </div>

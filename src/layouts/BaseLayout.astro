@@ -69,6 +69,20 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
   >
   
   <slot name="head-schema" />
+
+  <!-- Besucherzähler ohne Cookies (Umami Cloud, Server in der EU). Zählt nur auf der echten Domain, nicht lokal. -->
+  <script
+    is:inline
+    defer
+    src="https://cloud.umami.is/script.js"
+    data-website-id="4e544152-e86c-4500-9057-446348f68ec3"
+    data-domains="www.davidmirga.com,davidmirga.com"
+    data-do-not-track="true"
+  ></script>
+
+  <!-- Ladezeit bei echten Besuchern (Vercel Speed Insights, ohne Cookies). Wirkt erst, wenn es im Vercel-Projekt eingeschaltet ist. -->
+  <script is:inline>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+  <script is:inline defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body class="bg-brand-light text-slate-700 antialiased flex flex-col min-h-full font-sans">
   
@@ -95,7 +109,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 
         <a href="/blog" class="hover:text-brand-red transition-colors">Blog</a>
 
-        <a href="mailto:mail.davidmirga@gmail.com" class="px-5 py-2.5 bg-brand-red text-white rounded-xl hover:bg-brand-redDark transition-colors font-semibold ml-1">
+        <a data-umami-event="Schreib mir Kopfleiste" href="mailto:mail.davidmirga@gmail.com" class="px-5 py-2.5 bg-brand-red text-white rounded-xl hover:bg-brand-redDark transition-colors font-semibold ml-1">
           Schreib mir
         </a>
       </nav>
@@ -120,7 +134,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 
         <a href="/blog" class="py-2 text-brand-navy hover:text-brand-red transition-colors font-medium">Blog</a>
 
-        <a href="mailto:mail.davidmirga@gmail.com" class="py-3 px-5 bg-brand-red text-white rounded-xl hover:bg-brand-redDark transition-colors font-semibold text-center mt-2">
+        <a data-umami-event="Schreib mir Handy-Menue" href="mailto:mail.davidmirga@gmail.com" class="py-3 px-5 bg-brand-red text-white rounded-xl hover:bg-brand-redDark transition-colors font-semibold text-center mt-2">
           Schreib mir
         </a>
       </div>
