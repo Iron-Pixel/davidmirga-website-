@@ -1,160 +1,68 @@
 import React, { useState } from 'react';
-import MainMenu from './components/MainMenu';
 import QuizSession from './components/QuizSession';
 import ResultsView from './components/ResultsView';
-import TrainingSetup from './components/TrainingSetup';
-import { QuizMode } from './types';
-import type { Question } from './types';
-import { generateFitnessQuestions, generateChallengeQuestions, generateTrainingQuestions, generateAIActQuestions } from './services/geminiService';
-import { Loader2 } from 'lucide-react';
+import { STATUS_QUESTIONS } from './data/statusQuestions';
+import type { Answer } from './types';
+
+type View = 'start' | 'quiz' | 'result';
+
+const MAX_POINTS = STATUS_QUESTIONS.length * 5;
 
 export default function App() {
-  const [mode, setMode] = useState<QuizMode>(QuizMode.MENU);
-  const [activeQuizMode, setActiveQuizMode] = useState<QuizMode>(QuizMode.TRAINING);
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [lastScore, setLastScore] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [lastAnswers, setLastAnswers] = useState<any[]>([]);
+  const [view, setView] = useState<View>('start');
+  const [answers, setAnswers] = useState<Answer[]>([]);
 
-  const startQuiz = async (targetMode: QuizMode, context: string = "", topicId?: string) => {
-    setLoading(true);
-    try {
-      let qs: Question[] = [];
-      
-      // STATUS TEST
-      if (targetMode === QuizMode.STATUS) {
-        qs = await generateFitnessQuestions();
-      } 
-      // CHALLENGE (General)
-      else if (targetMode === QuizMode.CHALLENGE) {
-        qs = await generateChallengeQuestions();
-      } 
-      // TRAINING (General)
-      else if (targetMode === QuizMode.TRAINING) {
-        qs = await generateTrainingQuestions(context, topicId);
-      }
-      // AI ACT MODES
-      else if (targetMode === QuizMode.AIACT_LEARNING) {
-        qs = await generateAIActQuestions();
-      }
-      else if (targetMode === QuizMode.AIACT_CHALLENGE) {
-        qs = await generateAIActQuestions();
-      }
-
-      setQuestions(qs);
-      setActiveQuizMode(targetMode);
-      setMode(targetMode);
-    } catch (error) {
-      alert("Fehler beim Laden der Fragen. Bitte Seite neu laden.");
-      console.error(error);
-      setLoading(false);
-    } finally {
-      setLoading(false);
-    }
+  const scrollToTop = () => {
+    document.getElementById('ki-check-app')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleModeSelection = (selectedMode: QuizMode) => {
-    if (selectedMode === QuizMode.STATUS_INTRO) {
-      startQuiz(QuizMode.STATUS);
-    } else if (selectedMode === QuizMode.CHALLENGE_INTRO) {
-      startQuiz(QuizMode.CHALLENGE);
-    } else if (selectedMode === QuizMode.TRAINING_SETUP) {
-      setMode(QuizMode.TRAINING_SETUP);
-    } else if (selectedMode === QuizMode.AIACT_LEARNING) {
-      startQuiz(QuizMode.AIACT_LEARNING);
-    } else if (selectedMode === QuizMode.AIACT_CHALLENGE) {
-      startQuiz(QuizMode.AIACT_CHALLENGE);
-    }
+  const start = () => {
+    setAnswers([]);
+    setView('quiz');
+    scrollToTop();
   };
 
-  const handleTrainingStart = (context: string, topicId: string) => {
-    startQuiz(QuizMode.TRAINING, context, topicId);
-  };
-
-  const handleQuizComplete = async (score: number, answers: any[]) => {
-    setLastScore(score);
-    setLastAnswers(answers);
-    setMode(QuizMode.RESULTS);
+  const finish = (result: Answer[]) => {
+    setAnswers(result);
+    setView('result');
+    scrollToTop();
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1F3F] text-slate-100 flex flex-col font-sans selection:bg-[#DC2626] selection:text-white overflow-x-hidden relative">
-      
-      {/* --- NEU: EXIT BUTTON (Global für die App) --- */}
-      <nav className="absolute top-0 right-0 z-50 p-4 md:p-6">
-        <a 
-          href="/" 
-          className="text-slate-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 group"
-          title="Quiz verlassen"
-        >
-          <span className="group-hover:-translate-x-1 transition-transform text-lg">&larr;</span>
-          <span className="hidden md:inline">Zurück zur Startseite</span>
-          <span className="md:hidden">Exit</span>
-        </a>
-      </nav>
-      {/* --------------------------------------------- */}
+    <div id="ki-check-app" className="scroll-mt-24 text-[#1F3B3A]">
+      {view === 'start' && (
+        <div className="bg-[#F2EFE7] rounded-3xl px-6 md:px-14 py-10 md:py-14 text-center">
+          <p className="text-lg font-semibold text-[#B4562F] mb-3">
+            {STATUS_QUESTIONS.length} Fragen · ca. 3 Minuten
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#245556] mb-5">
+            Wo steht dein Unternehmen bei KI?
+          </h2>
+          {/* PLATZHALTER: Text von Dave folgt (Plan Schritt 3) */}
+          <p className="text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-[#1F3B3A]">
+            [Platzhalter: Hier kommt Daves Satz, was der Check ist und was man am Ende bekommt.]
+          </p>
+          <button
+            onClick={start}
+            data-umami-event="KI-Check Start"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#B4562F] text-white text-lg font-semibold rounded-xl hover:bg-[#94451F] transition-colors"
+          >
+            Check starten <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      )}
 
-      {/* Background decoration (Subtle Navy Gradient) - Professional & Dark */}
-      <div className="fixed inset-0 pointer-events-none">
-         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4"></div>
-         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#DC2626]/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
-      </div>
+      {view === 'quiz' && (
+        <QuizSession
+          questions={STATUS_QUESTIONS}
+          onComplete={finish}
+          onExit={() => { setView('start'); scrollToTop(); }}
+        />
+      )}
 
-      <main className="relative z-10 flex-grow flex flex-col">
-        {loading ? (
-          <div className="flex-grow flex flex-col items-center justify-center space-y-6">
-            <Loader2 className="w-16 h-16 text-[#DC2626] animate-spin" />
-            <p className="text-lg text-slate-400 font-medium tracking-wide animate-pulse uppercase">
-              Initialisiere System...
-            </p>
-          </div>
-        ) : (
-          <>
-            {mode === QuizMode.MENU && (
-              <MainMenu onSelectMode={handleModeSelection} />
-            )}
-
-            {mode === QuizMode.TRAINING_SETUP && (
-              <TrainingSetup 
-                onStart={handleTrainingStart} 
-                onBack={() => setMode(QuizMode.MENU)} 
-              />
-            )}
-
-            {(mode === QuizMode.STATUS || mode === QuizMode.TRAINING || mode === QuizMode.CHALLENGE || mode === QuizMode.AIACT_LEARNING || mode === QuizMode.AIACT_CHALLENGE) && (
-              <QuizSession 
-                mode={mode} 
-                questions={questions} 
-                onComplete={handleQuizComplete}
-                onExit={() => setMode(QuizMode.MENU)}
-              />
-            )}
-
-            {mode === QuizMode.RESULTS && (
-              <ResultsView 
-                score={lastScore} 
-                total={questions.length} 
-                mode={activeQuizMode}
-                answers={lastAnswers}
-                onHome={() => setMode(QuizMode.MENU)}
-                onRetry={() => {
-                   if (activeQuizMode === QuizMode.TRAINING) {
-                      setMode(QuizMode.TRAINING_SETUP);
-                   } else {
-                      startQuiz(activeQuizMode);
-                   }
-                }}
-              />
-            )}
-          </>
-        )}
-      </main>
-
-      <footer className="relative z-10 py-8 text-center border-t border-white/5 mt-auto">
-        <p className="text-slate-600 text-[10px] uppercase tracking-widest">
-          &copy; {new Date().getFullYear()} KI Kompass Vienna • All Rights Reserved
-        </p>
-      </footer>
+      {view === 'result' && (
+        <ResultsView answers={answers} maxPoints={MAX_POINTS} onRetry={start} />
+      )}
     </div>
   );
 }

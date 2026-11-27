@@ -1,181 +1,84 @@
-import React, { useEffect, useState } from 'react';
-import { QuizMode, FitnessLevel } from '../types';
-import { analyzeFitnessResult } from '../services/geminiService';
-import { Trophy, TrendingUp, Award, CalendarCheck, BookOpen, Home, Download, ExternalLink } from 'lucide-react';
-
-// --- KONFIGURATION ---
-const BOOK_LANDING_PAGE = "https://www.davidmirga.com/downloads/ki-kompass"; 
-const TALLY_LINK = "https://tally.so/r/Y5PdoB";
+import React, { useEffect } from 'react';
+import type { Answer, Stage } from '../types';
 
 interface ResultsViewProps {
-  score: number;
-  total: number;
-  mode: QuizMode;
-  answers: any[];
-  onHome: () => void;
+  answers: Answer[];
+  maxPoints: number;
   onRetry: () => void;
 }
 
-const ResultsView: React.FC<ResultsViewProps> = ({ score, total, mode, answers, onHome, onRetry }) => {
-  const [analysis, setAnalysis] = useState<{ level: FitnessLevel; text: string } | null>(null);
+interface StageInfo {
+  name: string;
+  text: string; // PLATZHALTER: Stufentexte schreibt Dave (Plan Schritt 5)
+  link: { href: string; label: string; external?: boolean };
+}
+
+const KURS = { href: 'https://www.caie.at/kurs', label: 'Zum KI-Grundkurs', external: true };
+const KOMPASS = { href: '/downloads/ki-kompass', label: 'Zum KI-Kompass' };
+const NEWS = { href: '/ki-presse-news', label: 'Zu den KI-Wochen-News' };
+
+const STAGES: Record<Stage, StageInfo> = {
+  1: { name: 'KI-Neuling', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 1]', link: KURS },
+  2: { name: 'Anwender', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 2]', link: KURS },
+  3: { name: 'Fortgeschritten', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 3]', link: KOMPASS },
+  4: { name: 'KI-Experte', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 4]', link: NEWS },
+  5: { name: 'KI-Stratege', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 5]', link: NEWS },
+};
+
+const stageFor = (percent: number): Stage => {
+  if (percent >= 85) return 5;
+  if (percent >= 65) return 4;
+  if (percent >= 45) return 3;
+  if (percent >= 25) return 2;
+  return 1;
+};
+
+const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }) => {
+  const points = answers.reduce((sum, a) => sum + a.points, 0);
+  const percent = maxPoints > 0 ? (points / maxPoints) * 100 : 0;
+  const stage = stageFor(percent);
+  const info = STAGES[stage];
 
   useEffect(() => {
-    if (mode === QuizMode.STATUS) {
-      analyzeFitnessResult(score, total, answers).then((res) => {
-        setAnalysis(res);
-      });
-    }
-  }, [mode, score, total, answers]);
-
-  const handleBookDownload = () => {
-    // Leitet auf die externe Landingpage weiter
-    window.open(BOOK_LANDING_PAGE, '_blank');
-  };
-
-  const handleConsultingClick = () => {
-    const levelName = analysis ? FitnessLevel[analysis.level] : 'Unbekannt';
-    const finalUrl = `${TALLY_LINK}?score=${score}&max=${total}&level=${levelName}`;
-    window.open(finalUrl, '_blank');
-  };
-
-  const getStatusBadge = (level: FitnessLevel) => {
-    const levels = {
-      1: { title: "KI-Neuling", desc: "Digitales Fundament aufbauen", color: "text-slate-300", bg: "bg-slate-800" },
-      2: { title: "Anwender", desc: "Erste Tools im Einsatz", color: "text-blue-300", bg: "bg-blue-900/40" },
-      3: { title: "Professional", desc: "Effiziente Nutzung etabliert", color: "text-indigo-300", bg: "bg-indigo-900/40" },
-      4: { title: "Experte", desc: "Hohe Compliance & Sicherheit", color: "text-[#DC2626]", bg: "bg-red-900/30" },
-      5: { title: "Strategist", desc: "Orchestrator & Visionär", color: "text-emerald-300", bg: "bg-emerald-900/30" }
-    };
-    // @ts-ignore
-    const current = levels[level] || levels[1];
-    
-    return (
-      <div className={`p-8 rounded-xl ${current.bg} border border-white/10 mb-8 w-full animate-fade-in`}>
-        <div className="flex flex-col items-center">
-          <div className="p-4 bg-[#0B1F3F] rounded-full mb-4 ring-1 ring-white/10">
-            <TrendingUp className={`w-10 h-10 ${current.color}`} />
-          </div>
-          <span className="text-slate-400 text-xs uppercase tracking-[0.2em] font-bold mb-2">Dein KI-Reifegrad</span>
-          <h2 className={`text-4xl font-black text-white mb-1`}>{current.title}</h2>
-          <p className={`${current.color} font-medium text-sm`}>{current.desc}</p>
-        </div>
-      </div>
-    );
-  };
+    // Zählt, welche Stufe erreicht wurde (Umami, ohne Cookies)
+    (window as any).umami?.track?.(`KI-Check Stufe ${stage}`);
+  }, [stage]);
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-6 py-12 animate-fade-in">
-      
-      {/* CARD */}
-      <div className="bg-[#11284b] rounded-2xl p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
-        
-        {/* Background Accents */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#DC2626]/5 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32"></div>
+    <div className="max-w-3xl mx-auto">
+      <div className="bg-[#F2EFE7] rounded-3xl px-6 md:px-12 py-10 md:py-12 text-center">
+        <p className="text-lg font-semibold text-[#6B7A78] mb-2">Dein Ergebnis</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-[#245556] mb-3">{info.name}</h2>
+        <p className="text-lg text-[#1F3B3A] mb-6">
+          Stufe {stage} von 5 · {points} von {maxPoints} Punkten
+        </p>
 
-        <div className="relative z-10 text-center">
-          
-          {mode === QuizMode.CHALLENGE || mode === QuizMode.AIACT_CHALLENGE ? (
-             <div className="mb-6 inline-flex p-4 bg-[#0B1F3F] rounded-2xl border border-white/10 shadow-lg">
-                <Trophy className="w-12 h-12 text-amber-500" />
-             </div>
-          ) : (
-             <div className="mb-6 inline-flex p-4 bg-[#0B1F3F] rounded-2xl border border-white/10 shadow-lg">
-                <Award className="w-12 h-12 text-[#DC2626]" />
-             </div>
-          )}
-
-          <h1 className="text-2xl font-bold text-white mb-2">Analyse abgeschlossen</h1>
-          <p className="text-slate-400 text-sm mb-10">Vielen Dank für deine Teilnahme am KI Kompass Test.</p>
-          
-          {mode !== QuizMode.STATUS && (
-              <div className="flex flex-col items-center justify-center mb-10">
-                <div className="text-7xl font-black text-white tracking-tighter">
-                  {score}<span className="text-3xl text-slate-500 font-medium">/{total}</span>
-                </div>
-                <div className="text-[#DC2626] font-bold text-sm uppercase tracking-widest mt-2">Punkte erreicht</div>
-              </div>
-          )}
-
-          {mode === QuizMode.STATUS && analysis ? (
-            <div className="text-left">
-              {getStatusBadge(analysis.level)}
-              <div className="bg-[#0B1F3F] p-8 rounded-xl border-l-4 border-[#DC2626] mb-12">
-                <h3 className="text-white font-bold mb-3 text-lg">Erste Einschätzung:</h3>
-                <p className="text-slate-300 leading-relaxed text-sm md:text-base">
-                  {analysis.text}
-                </p>
-              </div>
-            </div>
-          ) : null}
-
-          {/* --- STRATEGIC UPSELL SECTION --- */}
-          <div className="mt-8 pt-10 border-t border-white/5">
-            <h3 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-8">
-              {mode === QuizMode.STATUS ? "Dein nächster Schritt zur KI-Strategie" : "Wie geht es jetzt weiter?"}
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              
-              {/* Option 1: Consulting (TALLY LINK) */}
-              <button 
-                onClick={handleConsultingClick}
-                className={`group bg-[#DC2626] hover:bg-[#B91C1C] p-6 rounded-xl text-left transition-all hover:-translate-y-1 shadow-lg hover:shadow-red-900/20 flex flex-col h-full relative overflow-hidden ${mode === QuizMode.STATUS ? 'ring-2 ring-white/20' : ''}`}
-              >
-                {mode === QuizMode.STATUS && (
-                  <div className="absolute top-0 right-0 bg-white/20 text-white text-[9px] font-bold px-2 py-1 rounded-bl uppercase">Empfohlen</div>
-                )}
-                
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-white/10 rounded-lg text-white">
-                    <CalendarCheck className="w-6 h-6" />
-                  </div>
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">
-                  {mode === QuizMode.STATUS ? "Deep Dive Analyse anfordern" : "Tiefen-Analyse & Gespräch"}
-                </h4>
-                <p className="text-red-100 text-xs mb-4 flex-grow leading-relaxed">
-                  {mode === QuizMode.STATUS 
-                    ? "Dies war nur der erste Check. Erhalte jetzt deine individuelle Roadmap im kostenlosen Strategie-Gespräch."
-                    : "Buche jetzt dein kostenloses Strategie-Gespräch & fülle den detaillierten Fragebogen aus."}
-                </p>
-                <div className="flex items-center text-white font-bold text-xs uppercase tracking-wider group-hover:gap-2 transition-all mt-auto">
-                  Termin sichern <span>→</span>
-                </div>
-              </button>
-
-              {/* Option 2: Book Download */}
-              <button 
-                onClick={handleBookDownload}
-                className="group bg-[#0B1F3F] hover:bg-[#162e55] border border-white/10 p-6 rounded-xl text-left transition-all hover:-translate-y-1 flex flex-col h-full"
-              >
-                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-white/5 rounded-lg text-slate-300 group-hover:text-white transition-colors">
-                    <Download className="w-6 h-6" />
-                  </div>
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">KI-Kompass Buch</h4>
-                <p className="text-slate-400 text-xs mb-4 flex-grow leading-relaxed">
-                  Hier geht's zum offiziellen Download-Bereich für das Standardwerk.
-                </p>
-                <div className="flex items-center text-slate-300 font-bold text-xs uppercase tracking-wider group-hover:text-white transition-colors mt-auto">
-                  Zum Download <span>→</span>
-                </div>
-              </button>
-
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-12">
-            <button
-              onClick={onHome}
-              className="text-slate-500 hover:text-white transition-colors text-sm font-medium flex items-center gap-2"
-            >
-              <Home className="w-4 h-4" />
-              Zurück zur Startseite
-            </button>
-          </div>
+        {/* Stufen-Leiste */}
+        <div className="flex justify-center gap-2 mb-8" aria-hidden="true">
+          {[1, 2, 3, 4, 5].map(n => (
+            <span key={n} className={`h-3 w-12 rounded-full ${n <= stage ? 'bg-[#B4562F]' : 'bg-[#245556]/15'}`} />
+          ))}
         </div>
+
+        <p className="text-xl leading-relaxed max-w-2xl mx-auto mb-10">{info.text}</p>
+
+        <a
+          href={info.link.href}
+          {...(info.link.external ? { target: '_blank', rel: 'noopener' } : {})}
+          data-umami-event={`KI-Check weiter Stufe ${stage}`}
+          className="inline-flex items-center gap-3 px-8 py-4 bg-[#B4562F] text-white text-lg font-semibold rounded-xl hover:bg-[#94451F] transition-colors"
+        >
+          {info.link.label} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8 text-lg">
+        <button onClick={onRetry} className="text-[#245556] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
+          Check nochmal machen
+        </button>
+        <a href="/" className="text-[#245556] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
+          Zur Startseite
+        </a>
       </div>
     </div>
   );

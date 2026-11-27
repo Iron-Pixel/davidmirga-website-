@@ -1,83 +1,77 @@
 ---
 // src/pages/ki-check.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-// Wichtig: Wir importieren die App genau so, wie sie heißt
 import App from '../components/KiKompassQuiz/App.tsx';
 
-// Metadaten für SEO
+// Metadaten für Google (Plan Schritt 8: neuer Titel/Beschreibung folgt nach Daves Entscheidung)
 const pageTitle = "Der große KI-Reifegrad Check | David Mirga";
 const pageDescription = "Wo steht dein Unternehmen wirklich? Mache den kostenlosen KI-Check. In 2 Minuten zur Analyse für Strategie, Sicherheit und Recruiting.";
 ---
 
 <BaseLayout pageTitle={pageTitle} description={pageDescription}>
-  
-  <section class="pt-16 pb-8 bg-slate-50">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <div class="inline-block mb-6 px-4 py-2 border border-brand-red/20 text-sm text-brand-red rounded-full bg-red-50 font-medium">
-        🛡️ Beta-Version: Teste dein Wissen kostenlos
-      </div>
-      <h1 class="text-4xl md:text-5xl font-heading font-black text-brand-navy mb-6">
-        Wie fit bist du und dein Unternehmen <br />für die <span class="text-brand-red">KI-Ära?</span>
+
+  <section class="pt-16 md:pt-20 pb-10 bg-white">
+    <div class="container mx-auto max-w-6xl px-6 md:px-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#245556] leading-tight mb-6">
+        Wie fit bist du und dein Unternehmen <br class="hidden md:block" />für die KI-Ära?
       </h1>
-      <p class="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Keine Theorie. Keine Buzzwords. 
+      <p class="text-xl text-[#1F3B3A] leading-relaxed max-w-2xl mx-auto">
+        Keine Theorie. Keine Buzzwords.
         Teste in wenigen Minuten deinen Status Quo.
       </p>
     </div>
   </section>
 
-  <section class="pb-16 bg-slate-50">
-    <div class="container mx-auto px-4 max-w-6xl">
-       <App client:only="react" />
+  <section class="pb-16 md:pb-20 bg-white">
+    <div class="container mx-auto max-w-6xl px-6 md:px-10">
+      <App client:only="react" />
     </div>
   </section>
 
-  <section class="py-20 bg-white border-t border-slate-100 text-slate-800">
-    <div class="max-w-4xl mx-auto px-6">
-      
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-6 font-heading text-brand-navy">
+  <!-- Plan Schritt 7: Texte in diesem Abschnitt schreibt Dave neu (Zeitbombe, 90 %, Partner). Hier nur Farben und Schrift angepasst. -->
+  <section class="py-16 md:py-20 bg-[#F2EFE7] text-[#1F3B3A]">
+    <div class="container mx-auto max-w-6xl px-6 md:px-10">
+      <div class="max-w-3xl mx-auto">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#245556] mb-6">
           Warum dieser Test zukunftsentscheidend ist
         </h2>
-        
+
         <p class="text-lg leading-relaxed mb-4">
           KI ist kein Hype mehr. Sie ist Infrastruktur. Doch 90% der Unternehmen nutzen Tools wie ChatGPT ohne Sicherheitsnetz.
-          Das Ergebnis: Datenlecks, ineffiziente Prozesse und rechtliche Grauzonen (Stichwort: AI Act). 
+          Das Ergebnis: Datenlecks, ineffiziente Prozesse und rechtliche Grauzonen (Stichwort: AI Act).
           <strong>Der AI Act ist das neue EU-Gesetz, das den Einsatz von KI streng nach Risiken regelt.</strong>
         </p>
-        
-        <p class="text-lg leading-relaxed">
+
+        <p class="text-lg leading-relaxed mb-12">
           Dieser Check ist keine Spielerei. Er basiert auf meiner Arbeit als Autor von vier Fachbüchern. Er zeigt dir schonungslos, ob du KI nur "spielst" oder ob du sie strategisch sicher einsetzt.
         </p>
-      </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="p-6 bg-slate-50 rounded-lg border-l-4 border-brand-red shadow-sm">
-          <h3 class="font-bold text-xl mb-2 text-brand-navy">🔴 Das Risiko</h3>
-          <p class="text-slate-600">
-            Mitarbeiter nutzen private Accounts. Firmendaten landen auf US-Servern. 
-            Niemand hat den Überblick. Das ist die "tickende Zeitbombe", die viele Betriebe unterschätzen.
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="p-7 bg-white rounded-2xl border-t-4 border-[#B4562F]/70">
+            <h3 class="font-bold text-xl mb-3 text-[#245556]">Das Risiko</h3>
+            <p class="text-lg leading-relaxed">
+              Mitarbeiter nutzen private Accounts. Firmendaten landen auf US-Servern.
+              Niemand hat den Überblick. Das ist die "tickende Zeitbombe", die viele Betriebe unterschätzen.
+            </p>
+          </div>
+          <div class="p-7 bg-white rounded-2xl border-t-4 border-[#245556]/70">
+            <h3 class="font-bold text-xl mb-3 text-[#245556]">Die Lösung</h3>
+            <p class="text-lg leading-relaxed">
+              Ein klarer Reifegrad. Wissen, wo du stehst. Von dort aus weißt du, was als Nächstes zu tun ist.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center pt-8 border-t border-[#245556]/15">
+          <p class="italic text-[#1F3B3A] mb-4 text-xl">
+            "KI ersetzt keine Mitarbeiter. Sie macht sie leistungsfähiger. Aber nur, wenn das Fundament stimmt."
           </p>
+          <p class="font-bold text-[#245556] text-lg">David Mirga</p>
+          <p class="text-lg text-[#6B7A78]">Diplomierter KI-Manager & Strategischer Partner</p>
         </div>
-        <div class="p-6 bg-slate-50 rounded-lg border-l-4 border-green-500 shadow-sm">
-          <h3 class="font-bold text-xl mb-2 text-brand-navy">🟢 Die Lösung</h3>
-          <p class="text-slate-600">
-            Ein klarer Reifegrad. Wissen, wo du stehst. Von dort aus weißt du, was als Nächstes zu tun ist.
-          </p>
-        </div>
-      </div>
 
-      <div class="text-center mt-12 pt-8 border-t border-slate-200">
-        <p class="italic text-slate-500 mb-4 text-lg">
-          "KI ersetzt keine Mitarbeiter. Sie macht sie leistungsfähiger. Aber nur, wenn das Fundament stimmt."
-        </p>
-        
-        <div class="inline-block text-left">
-            <p class="font-bold text-brand-navy text-lg">David Mirga</p>
-            <p class="text-sm text-brand-red font-medium">Diplomierter KI-Manager & Strategischer Partner</p>
-        </div>
       </div>
-
     </div>
   </section>
 
