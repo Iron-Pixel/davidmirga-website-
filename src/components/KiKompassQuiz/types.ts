@@ -4,7 +4,8 @@ export interface Question {
   question: string;
   options: string[];
   correctIndex: number;
-  explanation: string;
+  // Ein Hinweis je Antwort, in derselben Reihenfolge wie options
+  feedback: string[];
   // Punkte je Antwort (0 bis 5)
   weights?: { [key: number]: number };
 }

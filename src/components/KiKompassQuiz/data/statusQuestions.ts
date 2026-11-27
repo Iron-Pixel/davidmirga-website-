@@ -17,7 +17,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3, 
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Ohne Roadmap bleibt KI Spielerei. Erfolgreiche Unternehmen definieren klare Use-Cases und Budgets."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Ausprobieren ist ein guter Anfang. Wenn ihr festhaltet, wofür ihr KI nutzen wollt, wird daraus mehr als Zufall.",
+      "Ideen gibt es schon. Bringt sie an einen Tisch, damit nicht jede Abteilung für sich allein anfängt.",
+      "Regeln für die Programme sind eine gute Basis. Jetzt fehlt noch der Plan: Was wollt ihr bis wann erreichen?",
+      "Sehr gut. Schaut euch den Plan regelmäßig an, denn KI verändert sich schnell.",
+    ],
   },
   {
     id: 3,
@@ -31,7 +37,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 2, 2: 4, 3: 5 },
-    explanation: "KI ist kein reines IT-Thema. Es braucht einen Orchestrator, der Technik, Recht und HR verbindet."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Wenn jeder seins macht, hat niemand den Überblick. Für den Anfang reicht eine Person, die sich kümmert.",
+      "Die IT ist ein guter Anfang. KI betrifft aber auch Datenschutz, Recht und das Team, nicht nur die Technik.",
+      "Gut: Verschiedene Abteilungen sehen verschiedene Dinge. Wichtig ist, dass am Ende jemand entscheidet.",
+      "Sehr gut. Eine klare Zuständigkeit macht KI im Betrieb planbar.",
+    ],
   },
   {
     id: 4,
@@ -45,7 +57,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Kostenlose Accounts sind oft Datenschutz-Albtraum. Enterprise-Lösungen verhindern, dass Firmendaten zum Training genutzt werden."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Hier ist Vorsicht nötig: Bei kostenlosen privaten Konten wisst ihr oft nicht, was mit euren Firmendaten passiert.",
+      "Ein Verbot wirkt sicher, aber oft wird KI dann heimlich genutzt. Besser sind erlaubte Programme mit klaren Regeln.",
+      "Ein guter Schritt. Prüft in den Einstellungen, ob eure Eingaben zum Training der KI verwendet werden dürfen.",
+      "Sehr gut. Mit einer Firmenlösung habt ihr Datenschutz und Zugänge selbst in der Hand.",
+    ],
   },
   {
     id: 5,
@@ -59,7 +77,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 2, 2: 4, 3: 5 },
-    explanation: "Copy-Paste ist ineffizient und riskant. APIs und RAG (Retrieval Augmented Generation) sind der Goldstandard."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "So landen schnell vertrauliche Daten in der KI. Eine einfache Regel hilft: Nur eingeben, was auch auf einer Postkarte stehen dürfte.",
+      "Gut: Namen und erkennbare Angaben werden vorher ersetzt. Das senkt das Risiko deutlich.",
+      "Gut, wenn die Umgebung eure Daten nicht zum Training nutzt. Das sollte schriftlich geklärt sein.",
+      "Sehr weit. Wichtig ist dann, genau festzulegen, wer welche Daten sehen darf.",
+    ],
   },
   {
     id: 6,
@@ -73,7 +97,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 1, 1: 2, 2: 4, 3: 5 },
-    explanation: "Der echte ROI liegt in der Prozess-Automation, nicht nur in der Content-Erstellung."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Ein guter Einstieg. Viele merken hier zum ersten Mal, wie viel Zeit KI sparen kann.",
+      "Ihr nutzt KI schon gezielt. Schaut, welche Aufgaben sich oft wiederholen, dort bringt KI am meisten.",
+      "Gut. Wichtig bleibt: Ein Mensch schaut drüber, bevor etwas beim Kunden ankommt.",
+      "Sehr weit. Bei vollautomatischen Abläufen braucht es feste Kontrollen, damit Fehler früh auffallen.",
+    ],
   },
   {
     id: 7,
@@ -87,7 +117,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Unwissenheit schützt nicht vor Strafe. Die KI-Kompetenzpflicht gilt ab Februar 2025."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Seit Februar 2025 verlangt der AI Act von Firmen, die KI einsetzen, dass sie sich um das KI-Wissen ihrer Mitarbeiter kümmern.",
+      "Abwarten ist riskant: Die Pflicht, für das KI-Wissen der Mitarbeiter zu sorgen, gilt schon seit Februar 2025.",
+      "Ein guter Schritt. Wer weiß, welche KI im Betrieb läuft, kann seine Pflichten richtig einschätzen.",
+      "Sehr gut. Bleibt dran, denn die Regeln werden laufend genauer ausgearbeitet.",
+    ],
   },
   {
     id: 8,
@@ -101,7 +137,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Der Faktor Mensch ist das größte Risiko. Technische Hürden sind sicherer als reine Vorschriften."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Vertrauen ist gut, aber ohne klare Regeln weiß niemand genau, was erlaubt ist. Schon ein einfaches Blatt mit Regeln hilft.",
+      "Ein Anfang. Mündliche Absprachen gehen aber schnell verloren, besonders bei neuen Mitarbeitern.",
+      "Gut. Regeln wirken aber nur, wenn alle sie kennen. Erinnert also regelmäßig daran.",
+      "Sehr gut. Technik und klare Regeln zusammen schützen am besten.",
+    ],
   },
   {
     id: 10,
@@ -115,7 +157,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 2, 2: 4, 3: 5 },
-    explanation: "Prompting ist die neue Alphabetisierung. Ohne Skill-Aufbau bleiben die Ergebnisse der KI mittelmäßig."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Viele lernen KI nebenbei. Schon eine kurze Einführung bringt deutlich bessere Ergebnisse.",
+      "Ein Anfang. KI ändert sich schnell, darum lohnt es sich, das Wissen aufzufrischen.",
+      "Sehr gut. Regelmäßiges Üben ist der beste Weg, sicher mit KI zu arbeiten.",
+      "Sehr gut. Eine gemeinsame Sammlung guter Anfragen an die KI spart allen Zeit.",
+    ],
   },
   {
     id: 11,
@@ -129,7 +177,13 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 2, 2: 3, 3: 5 },
-    explanation: "Technologie ist einfach, Change Management ist schwer. Ängste müssen aktiv gemanagt werden."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Die Angst ist verständlich. Offen darüber reden und zeigen, was KI kann und was nicht, nimmt viel davon.",
+      "Skepsis ist gesund. Kleine Erfolge im Alltag überzeugen mehr als große Versprechen.",
+      "Eine gute Voraussetzung. Neugier braucht Zeit zum Ausprobieren und klare Regeln.",
+      "Sehr gut. Achtet darauf, dass die Begeisterung nicht an euren Regeln vorbeiläuft.",
+    ],
   },
   {
     id: 12,
@@ -143,6 +197,12 @@ export const STATUS_QUESTIONS: Question[] = [
     ],
     correctIndex: 3,
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Man muss davon ausgehen, dass die KI lügt. Prozesse müssen robust gegen Fehler gebaut sein."
+    // Hinweis je Antwort (gleiche Reihenfolge wie options), Vorschlag Claude 27.11.
+    feedback: [
+      "Das ist riskant. KI kann Dinge erfinden, darum gilt: Wichtiges prüfen, bevor es rausgeht.",
+      "Dann werden Fehler eher versteckt als gemeldet. Besser ist, offen damit umzugehen und daraus zu lernen.",
+      "Gut. So lernt der ganze Betrieb aus jedem Fehler.",
+      "Sehr gut. Wer vorher testet, verhindert Fehler, bevor sie beim Kunden ankommen.",
+    ],
   }
 ];

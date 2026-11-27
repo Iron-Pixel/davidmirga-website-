@@ -83,7 +83,7 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
         <div className="space-y-6">
           <div className="bg-[#F2EFE7] border-l-4 border-[#245556] rounded-r-xl p-6">
             <p className="font-semibold text-[#245556] text-lg mb-2">Hinweis</p>
-            <p className="text-lg leading-relaxed">{question.explanation}</p>
+            <p className="text-lg leading-relaxed">{question.feedback[selected ?? 0]}</p>
           </div>
           <button
             onClick={next}
