@@ -1,10 +1,10 @@
 import type { Question } from "../types";
 
-// KI-Check: 15 Fragen zur Selbsteinschätzung, je 0 bis 5 Punkte (max. 75).
-// Die früheren Fragen für Challenge und AI Act liegen in docs/ARCHIV-KI-CHECK-FRAGEN-2026-11-27.ts (nicht im Git).
+// KI-Check: 10 Fragen zur Selbsteinschätzung, je 0 bis 5 Punkte (max. 50).
+// Gestrichen am 27.11. (Dave: 10 Fragen): Budget, Urheberrecht, Wettbewerb, Produkt, Ethik.
+// Alle alten Fragen liegen in docs/ARCHIV-KI-CHECK-FRAGEN-2026-11-27.ts (nicht im Git).
 
 export const STATUS_QUESTIONS: Question[] = [
-  // --- BLOCK A: STRATEGIE & MANAGEMENT ---
   {
     id: 1,
     category: "Strategie",
@@ -20,22 +20,8 @@ export const STATUS_QUESTIONS: Question[] = [
     explanation: "Ohne Roadmap bleibt KI Spielerei. Erfolgreiche Unternehmen definieren klare Use-Cases und Budgets."
   },
   {
-    id: 2,
-    category: "Budget",
-    question: "Wie wird KI aktuell budgetiert?",
-    options: [
-      "Gar nicht / Kostet ja fast nichts.",
-      "Wir nutzen Budgets aus anderen IT-Töpfen.",
-      "Es gibt ein explizites Innovations-Budget für KI.",
-      "KI ist als Investition (CAPEX) mit ROI-Erwartung fest eingeplant."
-    ],
-    correctIndex: 3,
-    weights: { 0: 0, 1: 2, 2: 4, 3: 5 },
-    explanation: "Wer KI als 'Kostenstelle' sieht, verpasst den Hebel. Wer es als Investition sieht, misst den Ertrag."
-  },
-  {
     id: 3,
-    category: "Orchestrierung",
+    category: "Verantwortung",
     question: "Wer verantwortet das Thema KI im Unternehmen?",
     options: [
       "Niemand offiziell / Jeder macht seins.",
@@ -47,8 +33,6 @@ export const STATUS_QUESTIONS: Question[] = [
     weights: { 0: 0, 1: 2, 2: 4, 3: 5 },
     explanation: "KI ist kein reines IT-Thema. Es braucht einen Orchestrator, der Technik, Recht und HR verbindet."
   },
-
-  // --- BLOCK B: TECHNOLOGIE & DATEN ---
   {
     id: 4,
     category: "Tools",
@@ -91,8 +75,6 @@ export const STATUS_QUESTIONS: Question[] = [
     weights: { 0: 1, 1: 2, 2: 4, 3: 5 },
     explanation: "Der echte ROI liegt in der Prozess-Automation, nicht nur in der Content-Erstellung."
   },
-
-  // --- BLOCK C: RECHT & SICHERHEIT ---
   {
     id: 7,
     category: "Compliance",
@@ -121,22 +103,6 @@ export const STATUS_QUESTIONS: Question[] = [
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
     explanation: "Der Faktor Mensch ist das größte Risiko. Technische Hürden sind sicherer als reine Vorschriften."
   },
-  {
-    id: 9,
-    category: "Urheberrecht",
-    question: "Wie geht ihr mit dem Output der KI um?",
-    options: [
-      "Wir nutzen ihn 1:1.",
-      "Wir prüfen grob auf Fehler.",
-      "Wir kennzeichnen KI-Inhalte intern.",
-      "Human-in-the-Loop Prozess & Kennzeichnungspflicht etabliert."
-    ],
-    correctIndex: 3,
-    weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "KI-Inhalte sind oft nicht urheberrechtlich schützbar und können Fehler enthalten. Kontrolle ist Pflicht."
-  },
-
-  // --- BLOCK D: MENSCH & KULTUR ---
   {
     id: 10,
     category: "Skills",
@@ -178,49 +144,5 @@ export const STATUS_QUESTIONS: Question[] = [
     correctIndex: 3,
     weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
     explanation: "Man muss davon ausgehen, dass die KI lügt. Prozesse müssen robust gegen Fehler gebaut sein."
-  },
-
-  // --- BLOCK E: ZUKUNFT ---
-  {
-    id: 13,
-    category: "Wettbewerb",
-    question: "Nutzt eure Konkurrenz KI?",
-    options: [
-      "Wissen wir nicht.",
-      "Nein, die Branche ist konservativ.",
-      "Ja, erste Gehversuche.",
-      "Ja, massiv – wir müssen aufholen / vorlegen."
-    ],
-    correctIndex: 3,
-    weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "Der Wettbewerbsvorteil durch KI schmilzt schnell. Geschwindigkeit ist jetzt entscheidend."
-  },
-  {
-    id: 14,
-    category: "Produkt",
-    question: "Verändert KI euer Produkt / Dienstleistung?",
-    options: [
-      "Nein, wir nutzen es nur intern für E-Mails.",
-      "Wir machen Marketing damit.",
-      "Wir ergänzen unsere Produkte um KI-Features.",
-      "Wir entwickeln komplett neue Geschäftsmodelle dank KI."
-    ],
-    correctIndex: 3,
-    weights: { 0: 1, 1: 2, 2: 4, 3: 5 },
-    explanation: "Interne Effizienz ist gut. Neue, skalierbare Produkte sind besser."
-  },
-  {
-    id: 15,
-    category: "Ethik",
-    question: "Prüft ihr KI-Entscheidungen auf Bias (Vorurteile)?",
-    options: [
-      "Nicht relevant für uns.",
-      "Wir hoffen, das Modell ist fair.",
-      "Stichprobenartige Kontrolle.",
-      "Feste Richtlinien für Fairness und Nicht-Diskriminierung."
-    ],
-    correctIndex: 3,
-    weights: { 0: 0, 1: 1, 2: 3, 3: 5 },
-    explanation: "KI verstärkt gesellschaftliche Vorurteile in den Trainingsdaten. Unternehmen haften für diskriminierende Ergebnisse."
   }
 ];

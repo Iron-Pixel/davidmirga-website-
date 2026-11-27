@@ -33,13 +33,13 @@ export default function App() {
       {view === 'start' && (
         <div className="bg-[#F2EFE7] rounded-3xl px-6 md:px-14 py-10 md:py-14 text-center">
           <p className="text-lg font-semibold text-[#B4562F] mb-3">
-            {STATUS_QUESTIONS.length} Fragen · ca. 3 Minuten
+            {STATUS_QUESTIONS.length} Fragen · ca. 2 Minuten
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#245556] mb-5">
             Wo steht dein Unternehmen bei KI?
           </h2>
           <p className="text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-[#1F3B3A]">
-            Du beantwortest 15 Fragen zu Strategie, Daten, Sicherheit und Team. Am Ende siehst du, auf welcher von fünf Stufen dein Unternehmen steht und was ein sinnvoller nächster Schritt ist. Ohne Anmeldung.
+            Du beantwortest 10 Fragen zu Strategie, Daten, Sicherheit und Team. Am Ende siehst du, auf welcher von fünf Stufen dein Unternehmen steht und was ein sinnvoller nächster Schritt ist. Ohne Anmeldung.
           </p>
           <button
             onClick={start}
