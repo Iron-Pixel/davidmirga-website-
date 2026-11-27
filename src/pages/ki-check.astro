@@ -3,9 +3,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import App from '../components/KiKompassQuiz/App.tsx';
 
-// Metadaten für Google (Plan Schritt 8: neuer Titel/Beschreibung folgt nach Daves Entscheidung)
-const pageTitle = "Der große KI-Reifegrad Check | David Mirga";
-const pageDescription = "Wo steht dein Unternehmen wirklich? Mache den kostenlosen KI-Check. In 2 Minuten zur Analyse für Strategie, Sicherheit und Recruiting.";
+// Metadaten für Google (Vorschlag 27.11., „ki-reifegrad-check“: 171 Anzeigen, 0 Klicks). „| David Mirga“ hängt das Layout an.
+const pageTitle = "KI-Reifegrad-Check für Unternehmen: 15 Fragen";
+const pageDescription = "Wo steht dein Unternehmen bei KI? 15 Fragen zu Strategie, Daten, Sicherheit und Team. Mit Ergebnis und nächstem Schritt, ohne Anmeldung.";
 ---
 
 <BaseLayout pageTitle={pageTitle} description={pageDescription}>
@@ -28,23 +28,20 @@ const pageDescription = "Wo steht dein Unternehmen wirklich? Mache den kostenlos
     </div>
   </section>
 
-  <!-- Plan Schritt 7: Texte in diesem Abschnitt schreibt Dave neu (Zeitbombe, 90 %, Partner). Hier nur Farben und Schrift angepasst. -->
   <section class="py-16 md:py-20 bg-[#F2EFE7] text-[#1F3B3A]">
     <div class="container mx-auto max-w-6xl px-6 md:px-10">
       <div class="max-w-3xl mx-auto">
 
         <h2 class="text-3xl md:text-4xl font-bold text-[#245556] mb-6">
-          Warum dieser Test zukunftsentscheidend ist
+          Warum dieser Check?
         </h2>
 
         <p class="text-lg leading-relaxed mb-4">
-          KI ist kein Hype mehr. Sie ist Infrastruktur. Doch 90% der Unternehmen nutzen Tools wie ChatGPT ohne Sicherheitsnetz.
-          Das Ergebnis: Datenlecks, ineffiziente Prozesse und rechtliche Grauzonen (Stichwort: AI Act).
-          <strong>Der AI Act ist das neue EU-Gesetz, das den Einsatz von KI streng nach Risiken regelt.</strong>
+          Dein Team nutzt längst KI, und keiner redet darüber. Schatten-KI kann für ein Unternehmen sehr gefährlich sein.
         </p>
 
         <p class="text-lg leading-relaxed mb-12">
-          Dieser Check ist keine Spielerei. Er basiert auf meiner Arbeit als Autor von vier Fachbüchern. Er zeigt dir schonungslos, ob du KI nur "spielst" oder ob du sie strategisch sicher einsetzt.
+          Der Check zeigt dir in wenigen Minuten, wo ihr steht. Er ersetzt keine Beratung und keine rechtliche Prüfung, aber er gibt dir einen ehrlichen ersten Überblick.
         </p>
 
         <div class="grid md:grid-cols-2 gap-6 mb-12">
@@ -52,7 +49,7 @@ const pageDescription = "Wo steht dein Unternehmen wirklich? Mache den kostenlos
             <h3 class="font-bold text-xl mb-3 text-[#245556]">Das Risiko</h3>
             <p class="text-lg leading-relaxed">
               Mitarbeiter nutzen private Accounts. Firmendaten landen auf US-Servern.
-              Niemand hat den Überblick. Das ist die "tickende Zeitbombe", die viele Betriebe unterschätzen.
+              Niemand hat den Überblick.
             </p>
           </div>
           <div class="p-7 bg-white rounded-2xl border-t-4 border-[#245556]/70">
@@ -68,7 +65,7 @@ const pageDescription = "Wo steht dein Unternehmen wirklich? Mache den kostenlos
             "KI ersetzt keine Mitarbeiter. Sie macht sie leistungsfähiger. Aber nur, wenn das Fundament stimmt."
           </p>
           <p class="font-bold text-[#245556] text-lg">David Mirga</p>
-          <p class="text-lg text-[#6B7A78]">Diplomierter KI-Manager & Strategischer Partner</p>
+          <p class="text-lg text-[#6B7A78]">Diplomierter KI-Manager · 3-facher KI-Autor</p>
         </div>
 
       </div>

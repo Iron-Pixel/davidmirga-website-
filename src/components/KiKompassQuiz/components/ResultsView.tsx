@@ -9,7 +9,7 @@ interface ResultsViewProps {
 
 interface StageInfo {
   name: string;
-  text: string; // PLATZHALTER: Stufentexte schreibt Dave (Plan Schritt 5)
+  text: string; // Vorschlag von Claude, 27.11., von Dave noch zu bestätigen
   link: { href: string; label: string; external?: boolean };
 }
 
@@ -18,11 +18,11 @@ const KOMPASS = { href: '/downloads/ki-kompass', label: 'Zum KI-Kompass' };
 const NEWS = { href: '/ki-presse-news', label: 'Zu den KI-Wochen-News' };
 
 const STAGES: Record<Stage, StageInfo> = {
-  1: { name: 'KI-Neuling', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 1]', link: KURS },
-  2: { name: 'Anwender', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 2]', link: KURS },
-  3: { name: 'Fortgeschritten', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 3]', link: KOMPASS },
-  4: { name: 'KI-Experte', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 4]', link: NEWS },
-  5: { name: 'KI-Stratege', text: '[Platzhalter: 2–3 Sätze von Dave für Stufe 5]', link: NEWS },
+  1: { name: 'KI-Neuling', text: 'Bei euch steht KI noch ganz am Anfang. Das ist kein Problem, sondern ein guter Startpunkt. Wichtig ist jetzt, dass alle die Grundlagen kennen: was KI kann, wo sie Fehler macht und was man nicht eingeben darf.', link: KURS },
+  2: { name: 'Anwender', text: 'Einzelne nutzen KI schon, aber jeder macht es auf seine Art. Jetzt lohnt es sich, gemeinsame Regeln festzulegen: Welche Programme sind erlaubt, welche Daten bleiben draußen? So wird aus Ausprobieren sichere Arbeit.', link: KURS },
+  3: { name: 'Fortgeschritten', text: 'KI gehört bei euch schon zum Alltag, und es gibt erste Regeln. Der nächste Schritt ist ein klarer Plan: Wo bringt KI wirklich etwas, wer ist verantwortlich, und wie zieht das ganze Team mit?', link: KOMPASS },
+  4: { name: 'KI-Experte', text: 'Ihr setzt KI geplant und mit Regeln ein. Jetzt geht es ums Dranbleiben: Programme, Gesetze und Möglichkeiten ändern sich laufend. Wer regelmäßig hinschaut, erkennt früh, was für euch wichtig wird.', link: NEWS },
+  5: { name: 'KI-Stratege', text: 'KI ist bei euch Teil der Strategie, mit Verantwortung, Regeln und einem Team, das mitzieht. Bleib neugierig und prüfe regelmäßig, ob eure Regeln noch zu den neuen Programmen passen.', link: NEWS },
 };
 
 const stageFor = (percent: number): Stage => {

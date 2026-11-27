@@ -38,9 +38,8 @@ export default function App() {
           <h2 className="text-3xl md:text-4xl font-bold text-[#245556] mb-5">
             Wo steht dein Unternehmen bei KI?
           </h2>
-          {/* PLATZHALTER: Text von Dave folgt (Plan Schritt 3) */}
           <p className="text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-[#1F3B3A]">
-            [Platzhalter: Hier kommt Daves Satz, was der Check ist und was man am Ende bekommt.]
+            Du beantwortest 15 Fragen zu Strategie, Daten, Sicherheit und Team. Am Ende siehst du, auf welcher von fünf Stufen dein Unternehmen steht und was ein sinnvoller nächster Schritt ist. Ohne Anmeldung.
           </p>
           <button
             onClick={start}
