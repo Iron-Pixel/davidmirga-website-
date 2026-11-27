@@ -52,7 +52,7 @@ const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }
     <div className="max-w-3xl mx-auto">
       <div className="bg-[#F2EFE7] rounded-3xl px-6 md:px-12 py-10 md:py-12 text-center">
         <p className="text-lg font-semibold text-[#6B7A78] mb-2">Dein Ergebnis</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-[#245556] mb-3">{info.name}</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-[#132B2C] mb-3">{info.name}</h2>
         <p className="text-lg text-[#1F3B3A] mb-6">
           Dein Wert: {score10Text} von 10
         </p>
@@ -60,7 +60,7 @@ const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }
         {/* 10er-Leiste */}
         <div className="flex justify-center gap-1.5 mb-8" aria-hidden="true">
           {Array.from({ length: 10 }, (_, i) => i + 1).map(n => (
-            <span key={n} className={`h-3 w-6 md:w-8 rounded-full ${n <= filled ? 'bg-[#B4562F]' : 'bg-[#245556]/15'}`} />
+            <span key={n} className={`h-3 w-6 md:w-8 rounded-full ${n <= filled ? 'bg-[#B4562F]' : 'bg-[#132B2C]/15'}`} />
           ))}
         </div>
 
@@ -77,10 +77,10 @@ const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }
       </div>
 
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8 text-lg">
-        <button onClick={onRetry} className="text-[#245556] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
+        <button onClick={onRetry} className="text-[#132B2C] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
           Check nochmal machen
         </button>
-        <a href="/" className="text-[#245556] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
+        <a href="/" className="text-[#132B2C] font-semibold underline underline-offset-4 hover:text-[#B4562F] transition-colors">
           Zur Startseite
         </a>
       </div>

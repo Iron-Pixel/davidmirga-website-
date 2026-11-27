@@ -43,7 +43,7 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
     <div className="max-w-3xl mx-auto">
       {/* Kopf: Thema und Fortschritt */}
       <div className="flex flex-wrap justify-between items-center gap-3 mb-4 text-base">
-        <span className="px-3 py-1 rounded-full bg-[#F2EFE7] text-[#245556] font-semibold">
+        <span className="px-3 py-1 rounded-full bg-[#F2EFE7] text-[#132B2C] font-semibold">
           {question.category}
         </span>
         <span className="text-[#6B7A78] font-medium">
@@ -55,8 +55,8 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
       </div>
 
       {/* Frage */}
-      <div className="bg-white rounded-2xl border border-[#245556]/15 p-6 md:p-10 mb-6">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#245556] leading-snug mb-8">
+      <div className="bg-white rounded-2xl border border-[#132B2C]/15 p-6 md:p-10 mb-6">
+        <h3 className="text-2xl md:text-3xl font-bold text-[#132B2C] leading-snug mb-8">
           {question.question}
         </h3>
 
@@ -64,7 +64,7 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
           {question.options.map((option, idx) => {
             let cls = 'w-full text-left px-5 py-4 rounded-xl border-2 text-lg transition-colors ';
             if (!isAnswered) {
-              cls += 'border-[#245556]/20 bg-white hover:border-[#B4562F] hover:bg-[#F2EFE7]';
+              cls += 'border-[#132B2C]/20 bg-white hover:border-[#B4562F] hover:bg-[#F2EFE7]';
             } else if (idx === selected) {
               cls += 'border-[#B4562F] bg-[#F2EFE7] font-semibold';
             } else {
@@ -81,8 +81,8 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
 
       {isAnswered ? (
         <div className="space-y-6">
-          <div className="bg-[#F2EFE7] border-l-4 border-[#245556] rounded-r-xl p-6">
-            <p className="font-semibold text-[#245556] text-lg mb-2">Tipp</p>
+          <div className="bg-[#F2EFE7] border-l-4 border-[#132B2C] rounded-r-xl p-6">
+            <p className="font-semibold text-[#132B2C] text-lg mb-2">Tipp</p>
             <p className="text-lg leading-relaxed">{question.feedback[selected ?? 0]}</p>
           </div>
           <button

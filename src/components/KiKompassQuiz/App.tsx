@@ -35,7 +35,7 @@ export default function App() {
           <p className="text-lg font-semibold text-[#B4562F] mb-3">
             {STATUS_QUESTIONS.length} Fragen · ca. 2 Minuten
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#245556] mb-5">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#132B2C] mb-5">
             Wo steht dein Unternehmen bei KI?
           </h2>
           <p className="text-xl leading-relaxed max-w-2xl mx-auto mb-8 text-[#1F3B3A]">
