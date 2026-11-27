@@ -71,11 +71,11 @@ const schema = JSON.stringify({
 });
 
 const kennst = [
-  { t: 'Alle reden von KI, und du fragst dich, ob dein Job bleibt.', link: KURS_URL, l: 'Im Grundkurs anfangen' },
-  { t: 'Du sitzt vor ChatGPT und weißt nicht, was du eintippen sollst.', link: KURS_URL, l: 'Die erste Übung machen' },
-  { t: 'Dein Team nutzt längst KI, und keiner redet darüber.', link: '/ki-check', l: 'Wo steht dein Betrieb?' },
-  { t: 'Jeden Tag ein neues Wunder-Tool, und du weißt nicht, was davon stimmt.', link: '/ki-presse-news', l: 'Die Woche in Ruhe lesen' },
-  { t: 'Du kennst die Tools, aber in deinem Team kommt KI nicht an.', link: '/blog', l: 'Gedanken dazu im Blog' },
+  { t: 'Alle reden von KI, und du fragst dich, ob dein Job bleibt.', link: KURS_URL, l: 'Zum KI-Grundkurs' },
+  { t: 'Du sitzt vor ChatGPT und weißt nicht, was du eintippen sollst.', link: KURS_URL, l: 'Erste Lektion im Grundkurs' },
+  { t: 'Dein Team nutzt längst KI, und keiner redet darüber. Schatten-KI kann für ein Unternehmen sehr gefährlich sein.', link: '/ki-check', l: 'Zum KI-Check' },
+  { t: 'Gefühlt kommt jeden Tag ein neues sensationelles Tool heraus. Was stimmt, und was ist nur Lärm?', link: '/ki-presse-news', l: 'KI-News, gefiltert für Produktivität' },
+  { t: 'Du kennst die Tools, aber in deinem Team kommt KI nicht an.', link: 'mailto:mail.davidmirga@gmail.com', l: 'Schreib mir' },
 ];
 
 const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {};
@@ -192,7 +192,7 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
             <a data-umami-event={`Kennst du das 0${i + 1}`} href={k.link} {...ext(k.link)} class="group grid md:grid-cols-12 gap-3 md:gap-8 py-7 md:py-8 items-baseline">
               <span class="md:col-span-1 font-sans font-semibold text-lg text-[#E3A07C]">0{i + 1}</span>
               <span class="md:col-span-7 text-xl md:text-2xl leading-snug text-[#F7F4EE]">{k.t}</span>
-              <span class="md:col-span-4 md:text-right text-base font-semibold text-[#F7F4EE]/70 group-hover:text-[#E3A07C] transition-colors">{k.l} <span aria-hidden="true" class="inline-block group-hover:translate-x-1 transition-transform">→</span></span>
+              <span class="md:col-span-4 md:text-right text-lg font-semibold text-[#E3A07C] group-hover:text-[#F7F4EE] underline-offset-4 group-hover:underline transition-colors">{k.l} <span aria-hidden="true" class="inline-block group-hover:translate-x-1 transition-transform">→</span></span>
             </a>
           </li>
         ))}
