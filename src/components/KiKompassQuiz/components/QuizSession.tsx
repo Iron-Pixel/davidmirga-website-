@@ -35,6 +35,8 @@ const QuizSession: React.FC<QuizSessionProps> = ({ questions, onComplete, onExit
     }
     setCurrentIndex(i => i + 1);
     setSelected(null);
+    // Zur neuen Frage nach oben springen, sonst bleibt man unten beim Knopf stehen
+    document.getElementById('ki-check-app')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
