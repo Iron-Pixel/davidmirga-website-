@@ -13,14 +13,14 @@ interface StageInfo {
   link: { href: string; label: string; external?: boolean };
 }
 
-const KURS = { href: 'https://www.caie.at/kurs', label: 'Zum KI-Grundkurs', external: true };
-const KOMPASS = { href: '/downloads/ki-kompass', label: 'Zum KI-Kompass' };
 const NEWS = { href: '/ki-presse-news', label: 'Zu den KI-Wochen-News' };
+// O-15 (27.11.2026): Stufe 1-3 zur ehrenamtlichen KI-Sprechstunde auf caie.at
+const SPRECHSTUNDE = { href: 'https://www.caie.at/de/ki-sprechstunde', label: 'Zur kostenlosen KI-Sprechstunde', external: true };
 
 const STAGES: Record<Stage, StageInfo> = {
-  1: { name: 'KI-Neuling', text: 'Bei euch steht KI noch ganz am Anfang. Das ist kein Problem, sondern ein guter Startpunkt. Wichtig ist jetzt, dass alle die Grundlagen kennen: was KI kann, wo sie Fehler macht und was man nicht eingeben darf.', link: KURS },
-  2: { name: 'Anwender', text: 'Einzelne nutzen KI schon, aber jeder macht es auf seine Art. Jetzt lohnt es sich, gemeinsame Regeln festzulegen: Welche Programme sind erlaubt, welche Daten bleiben draußen? So wird aus Ausprobieren sichere Arbeit.', link: KURS },
-  3: { name: 'Fortgeschritten', text: 'KI gehört bei euch schon zum Alltag, und es gibt erste Regeln. Der nächste Schritt ist ein klarer Plan: Wo bringt KI wirklich etwas, wer ist verantwortlich, und wie zieht das ganze Team mit?', link: KOMPASS },
+  1: { name: 'KI-Neuling', text: 'Bei euch steht KI noch ganz am Anfang. Das ist kein Problem, sondern ein guter Startpunkt. Wichtig ist jetzt, dass alle die Grundlagen kennen: was KI kann, wo sie Fehler macht und was man nicht eingeben darf.', link: SPRECHSTUNDE },
+  2: { name: 'Anwender', text: 'Einzelne nutzen KI schon, aber jeder macht es auf seine Art. Jetzt lohnt es sich, gemeinsame Regeln festzulegen: Welche Programme sind erlaubt, welche Daten bleiben draußen? So wird aus Ausprobieren sichere Arbeit.', link: SPRECHSTUNDE },
+  3: { name: 'Fortgeschritten', text: 'KI gehört bei euch schon zum Alltag, und es gibt erste Regeln. Der nächste Schritt ist ein klarer Plan: Wo bringt KI wirklich etwas, wer ist verantwortlich, und wie zieht das ganze Team mit?', link: SPRECHSTUNDE },
   4: { name: 'KI-Experte', text: 'Ihr setzt KI geplant und mit Regeln ein. Jetzt geht es ums Dranbleiben: Programme, Gesetze und Möglichkeiten ändern sich laufend. Wer regelmäßig hinschaut, erkennt früh, was für euch wichtig wird.', link: NEWS },
   5: { name: 'KI-Stratege', text: 'KI ist bei euch Teil der Strategie, mit Verantwortung, Regeln und einem Team, das mitzieht. Bleib neugierig und prüfe regelmäßig, ob eure Regeln noch zu den neuen Programmen passen.', link: NEWS },
 };

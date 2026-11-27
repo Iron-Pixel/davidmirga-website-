@@ -4,6 +4,7 @@ import KiPresseEmbed from '../components/KiPresseEmbed.astro';
 
 // Bauplan v2 (26.11.2026), Premium-Fassung. Siehe ENTWURF-STARTSEITE.md
 const KURS_URL = 'https://www.caie.at/kurs';
+const SPRECHSTUNDE_URL = 'https://www.caie.at/de/ki-sprechstunde';
 const LINKEDIN = 'https://www.linkedin.com/in/david-mirga-847336134/';
 const INSTAGRAM = 'https://www.instagram.com/davidmirga_ki_mit_ruhepuls/';
 const AKTUALISIERT = '26. November 2026';
@@ -107,11 +108,15 @@ const ext = (u: string) => u.startsWith('http') ? { target: '_blank', rel: 'noop
               <p class="text-xl md:text-[1.35rem] leading-relaxed text-[#1F3B3A] mb-8 [text-wrap:pretty]">{CAIE_SATZ}</p>
             )}
 
-            <div class="flex flex-col sm:flex-row gap-4 mb-10">
-              <a data-umami-event="Grundkurs Kopf" href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
-                Grundkurs kostenlos starten <span aria-hidden="true">→</span>
+            <div class="flex flex-col sm:flex-row gap-4 mb-3">
+              <a data-umami-event="Sprechstunde Kopf" href={SPRECHSTUNDE_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 bg-brand-red text-white text-lg font-semibold rounded-xl hover:bg-brand-redDark transition-colors">
+                Zur KI-Sprechstunde <span aria-hidden="true">→</span>
+              </a>
+              <a data-umami-event="Grundkurs Kopf" href={KURS_URL} target="_blank" rel="noopener" class="whitespace-nowrap inline-flex justify-center items-center gap-3 px-7 py-4 border-2 border-[#245556]/25 text-[#245556] text-lg font-semibold rounded-xl hover:border-[#245556] transition-colors">
+                Grundkurs kostenlos starten
               </a>
             </div>
+            <p class="text-base text-[#6B7A78] mb-10">KI-Sprechstunde für Unternehmen: 15 Minuten am Telefon, kostenlos.</p>
 
             <p class="text-base font-semibold text-brand-red mb-2">Meine Mission</p>
             <p class="text-lg md:text-xl leading-relaxed text-[#6B7A78]">
