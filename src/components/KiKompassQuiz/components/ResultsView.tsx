@@ -38,6 +38,10 @@ const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }
   const percent = maxPoints > 0 ? (points / maxPoints) * 100 : 0;
   const stage = stageFor(percent);
   const info = STAGES[stage];
+  // Feine Anzeige auf einer 10er-Skala (Dave 27.11.), Texte bleiben bei 5 Stufen
+  const score10 = Math.round((percent / 10) * 10) / 10;
+  const score10Text = score10.toLocaleString('de-AT', { maximumFractionDigits: 1 });
+  const filled = Math.round(score10);
 
   useEffect(() => {
     // Zählt, welche Stufe erreicht wurde (Umami, ohne Cookies)
@@ -50,13 +54,13 @@ const ResultsView: React.FC<ResultsViewProps> = ({ answers, maxPoints, onRetry }
         <p className="text-lg font-semibold text-[#6B7A78] mb-2">Dein Ergebnis</p>
         <h2 className="text-4xl md:text-5xl font-bold text-[#245556] mb-3">{info.name}</h2>
         <p className="text-lg text-[#1F3B3A] mb-6">
-          Stufe {stage} von 5 · {points} von {maxPoints} Punkten
+          Dein Wert: {score10Text} von 10
         </p>
 
-        {/* Stufen-Leiste */}
-        <div className="flex justify-center gap-2 mb-8" aria-hidden="true">
-          {[1, 2, 3, 4, 5].map(n => (
-            <span key={n} className={`h-3 w-12 rounded-full ${n <= stage ? 'bg-[#B4562F]' : 'bg-[#245556]/15'}`} />
+        {/* 10er-Leiste */}
+        <div className="flex justify-center gap-1.5 mb-8" aria-hidden="true">
+          {Array.from({ length: 10 }, (_, i) => i + 1).map(n => (
+            <span key={n} className={`h-3 w-6 md:w-8 rounded-full ${n <= filled ? 'bg-[#B4562F]' : 'bg-[#245556]/15'}`} />
           ))}
         </div>
 
